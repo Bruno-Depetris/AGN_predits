@@ -47,11 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexiones\ConectarBD.cs" />
+    <Compile Include="Formularios\Caja\AbrirCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Caja\AbrirCaja.Designer.cs">
+      <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Caja\Caja.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Caja\Caja.Designer.cs">
       <DependentUpon>Caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Caja\CerrarCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Caja\CerrarCaja.Designer.cs">
+      <DependentUpon>CerrarCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Caja\Detalles.cs">
       <SubType>Form</SubType>
@@ -64,6 +77,12 @@
     </Compile>
     <Compile Include="Formularios\Caja\Movimiento.Designer.cs">
       <DependentUpon>Movimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\DashBoard\DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\DashBoard\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Stoc k\nuevoPorducto.cs">
       <SubType>Form</SubType>
@@ -103,11 +122,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Caja\AbrirCaja.resx">
+      <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Caja\Caja.resx">
       <DependentUpon>Caja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Caja\CerrarCaja.resx">
+      <DependentUpon>CerrarCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Caja\Detalles.resx">
+      <DependentUpon>Detalles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Caja\Movimiento.resx">
       <DependentUpon>Movimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\DashBoard\DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Stoc k\nuevoPorducto.resx">
       <DependentUpon>nuevoPorducto.cs</DependentUpon>
@@ -153,6 +184,9 @@
   <ItemGroup>
     <PackageReference Include="ReaLTaiizor">
       <Version>3.8.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <Version>1.0.119</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
