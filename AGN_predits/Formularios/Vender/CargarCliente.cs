@@ -16,8 +16,11 @@ namespace AGN_predits.Formularios {
     public partial class CargarCliente : Form {
         public CargarCliente() {
             InitializeComponent();
+            label_Cargando.Hide();
+       
+
         }
-        float dni = 0;
+        string dni = "0";
         public bool Validaciones() {
             Mensaje msj = new Mensaje();    
             if (string.IsNullOrEmpty(materialTextBoxEdit_Nombre.Text)) {
@@ -31,7 +34,9 @@ namespace AGN_predits.Formularios {
                 return false;
             }
             if (string.IsNullOrEmpty(materialTextBoxEdit_Dni.Text)) {
-                dni = 0;
+                dni = "0";
+            } else {
+                dni = materialTextBoxEdit_Dni.Text;
             }
             if (string.IsNullOrEmpty(materialTextBoxEdit_Telefono.Text)) {
                 materialTextBoxEdit_Telefono.Focus();
@@ -46,9 +51,15 @@ namespace AGN_predits.Formularios {
 
             return true;
         }
-
-        private void materialButton_CargarCliente_Click(object sender, EventArgs e) {
-            /*
+        private void Restaurar() {
+            materialTextBoxEdit_Nombre.Clear();
+            materialTextBoxEdit_Apellido.Clear();
+            materialTextBoxEdit_Dni.Clear();
+            materialTextBoxEdit_Telefono.Clear();
+            materialTextBoxEdit_Gmail.Clear();
+        }
+        private async void materialButton_CargarCliente_Click(object sender, EventArgs e) {
+            
             if (Validaciones()) {
                 Cliente cliente = new Cliente();
                 cliente.Nombre = materialTextBoxEdit_Nombre.Text;
@@ -57,20 +68,29 @@ namespace AGN_predits.Formularios {
                 cliente.Telefono = materialTextBoxEdit_Telefono.Text;
                 cliente.Gmail = materialTextBoxEdit_Gmail.Text;
 
-                if( await LogicaCliente.Instancia.CargarCliente(cliente)) {
+                label_Cargando.Show();
+                pictureBox_Cargando.Image = Image.FromFile("Gif/Dual Ring@1x-1.0s-200px-200px.gif");
+                pictureBox_Cargando.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox_Cargando.Show();
+                if (await LogicaCliente.Instancia.CargarCliente(cliente)) {
                     Mensaje msj = new Mensaje();
                     msj.Show("Felicitaciones","Cliente cargado",Color.Green,Color.White,Mensaje.TipoIcono.Ok,Mensaje.TipoSonido.Confirmacion);
+                    Restaurar();
                 }
+                pictureBox_Cargando.Hide();
+                label_Cargando.Hide();
+            }
 
-               
-            }*/
-
-            LogicaCliente.Instancia.Connect();
+   
         }
 
         private void materialButton_VerClientes_Click(object sender, EventArgs e) {
             ListaClientes listaClientes = new ListaClientes();
             listaClientes.Show();
         }
+
+
+
+
     }
 }

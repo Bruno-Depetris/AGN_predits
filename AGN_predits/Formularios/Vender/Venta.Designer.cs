@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Venta));
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            this.pictureBox_Cliente = new System.Windows.Forms.PictureBox();
             this.materialComboBox_Cantidad = new ReaLTaiizor.Controls.MaterialComboBox();
             this.parrotFlatProgressBar_BarraProgresoFormulario = new ReaLTaiizor.Controls.ParrotFlatProgressBar();
             this.airSeparator4 = new ReaLTaiizor.Controls.AirSeparator();
@@ -38,16 +39,19 @@
             this.materialSwitch_canje = new ReaLTaiizor.Controls.MaterialSwitch();
             this.materialComboBox_Cuotas = new ReaLTaiizor.Controls.MaterialComboBox();
             this.materialComboBox_FormasPago = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.parrotPictureBox2 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.materialComboBox_SelectProducto = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.materialComboBox_SeleccionCliente = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.pictureBox_Prod = new System.Windows.Forms.PictureBox();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Prod)).BeginInit();
             this.SuspendLayout();
             // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.pictureBox_Prod);
+            this.materialCard1.Controls.Add(this.pictureBox_Cliente);
             this.materialCard1.Controls.Add(this.materialComboBox_Cantidad);
             this.materialCard1.Controls.Add(this.parrotFlatProgressBar_BarraProgresoFormulario);
             this.materialCard1.Controls.Add(this.airSeparator4);
@@ -61,9 +65,7 @@
             this.materialCard1.Controls.Add(this.materialSwitch_canje);
             this.materialCard1.Controls.Add(this.materialComboBox_Cuotas);
             this.materialCard1.Controls.Add(this.materialComboBox_FormasPago);
-            this.materialCard1.Controls.Add(this.parrotPictureBox2);
             this.materialCard1.Controls.Add(this.materialComboBox_SelectProducto);
-            this.materialCard1.Controls.Add(this.parrotPictureBox1);
             this.materialCard1.Controls.Add(this.materialComboBox_SeleccionCliente);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -74,6 +76,14 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(753, 482);
             this.materialCard1.TabIndex = 0;
+            // 
+            // pictureBox_Cliente
+            // 
+            this.pictureBox_Cliente.Location = new System.Drawing.Point(14, 17);
+            this.pictureBox_Cliente.Name = "pictureBox_Cliente";
+            this.pictureBox_Cliente.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_Cliente.TabIndex = 19;
+            this.pictureBox_Cliente.TabStop = false;
             // 
             // materialComboBox_Cantidad
             // 
@@ -359,26 +369,6 @@
             this.materialComboBox_FormasPago.TabIndex = 2;
             this.materialComboBox_FormasPago.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_FormasPago_SelectedIndexChanged);
             // 
-            // parrotPictureBox2
-            // 
-            this.parrotPictureBox2.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox2.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox2.FilterAlpha = 0;
-            this.parrotPictureBox2.FilterEnabled = false;
-            this.parrotPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox2.Image")));
-            this.parrotPictureBox2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox2.IsElipse = false;
-            this.parrotPictureBox2.IsParallax = false;
-            this.parrotPictureBox2.Location = new System.Drawing.Point(686, 95);
-            this.parrotPictureBox2.Name = "parrotPictureBox2";
-            this.parrotPictureBox2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.parrotPictureBox2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox2.TabIndex = 3;
-            this.parrotPictureBox2.Text = "parrotPictureBox2";
-            this.parrotPictureBox2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            // 
             // materialComboBox_SelectProducto
             // 
             this.materialComboBox_SelectProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -405,26 +395,6 @@
             this.materialComboBox_SelectProducto.TabIndex = 1;
             this.materialComboBox_SelectProducto.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SelectProducto_SelectedIndexChanged);
             // 
-            // parrotPictureBox1
-            // 
-            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox1.FilterAlpha = 0;
-            this.parrotPictureBox1.FilterEnabled = false;
-            this.parrotPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox1.Image")));
-            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox1.IsElipse = false;
-            this.parrotPictureBox1.IsParallax = false;
-            this.parrotPictureBox1.Location = new System.Drawing.Point(17, 17);
-            this.parrotPictureBox1.Name = "parrotPictureBox1";
-            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox1.TabIndex = 1;
-            this.parrotPictureBox1.Text = "parrotPictureBox1";
-            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            // 
             // materialComboBox_SeleccionCliente
             // 
             this.materialComboBox_SeleccionCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -450,6 +420,14 @@
             this.materialComboBox_SeleccionCliente.TabIndex = 0;
             this.materialComboBox_SeleccionCliente.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SeleccionCliente_SelectedIndexChanged);
             // 
+            // pictureBox_Prod
+            // 
+            this.pictureBox_Prod.Location = new System.Drawing.Point(686, 94);
+            this.pictureBox_Prod.Name = "pictureBox_Prod";
+            this.pictureBox_Prod.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_Prod.TabIndex = 20;
+            this.pictureBox_Prod.TabStop = false;
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +441,8 @@
             this.Load += new System.EventHandler(this.Venta_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Prod)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,12 +450,10 @@
         #endregion
 
         private ReaLTaiizor.Controls.MaterialCard materialCard1;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox1;
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_SeleccionCliente;
         private ReaLTaiizor.Controls.MaterialSwitch materialSwitch_canje;
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_Cuotas;
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_FormasPago;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox2;
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_SelectProducto;
         private ReaLTaiizor.Controls.MaterialButton materialButton_VerVentas;
         private ReaLTaiizor.Controls.MaterialButton materialButton_CargarNuevoCliente;
@@ -487,5 +465,7 @@
         private ReaLTaiizor.Controls.AirSeparator airSeparator3;
         private ReaLTaiizor.Controls.AirSeparator airSeparator2;
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_Cantidad;
+        private System.Windows.Forms.PictureBox pictureBox_Cliente;
+        private System.Windows.Forms.PictureBox pictureBox_Prod;
     }
 }

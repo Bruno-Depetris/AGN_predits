@@ -56,6 +56,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Ventas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(112, 35);
             this.Name = "Lista_Ventas";
             this.Text = "Lista_Ventas";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;

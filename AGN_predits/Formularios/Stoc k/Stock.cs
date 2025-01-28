@@ -13,5 +13,10 @@ namespace AGN_predits.Formularios.Stoc_k {
         public Stock() {
             InitializeComponent();
         }
+
+        private void materialButton1_Click(object sender, EventArgs e) {
+            nuevoPorducto nuevoPorducto = new nuevoPorducto();
+            nuevoPorducto.Show();
+        }
     }
 }

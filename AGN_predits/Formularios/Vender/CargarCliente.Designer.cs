@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarCliente));
             this.airForm1 = new ReaLTaiizor.Forms.AirForm();
+            this.label_Cargando = new System.Windows.Forms.Label();
+            this.pictureBox_Cargando = new System.Windows.Forms.PictureBox();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.materialButton_VerClientes = new ReaLTaiizor.Controls.MaterialButton();
             this.materialButton_CargarCliente = new ReaLTaiizor.Controls.MaterialButton();
@@ -34,12 +36,15 @@
             this.materialTextBoxEdit_Apellido = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTextBoxEdit_Nombre = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.airForm1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cargando)).BeginInit();
             this.SuspendLayout();
             // 
             // airForm1
             // 
             this.airForm1.BackColor = System.Drawing.Color.White;
             this.airForm1.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.airForm1.Controls.Add(this.label_Cargando);
+            this.airForm1.Controls.Add(this.pictureBox_Cargando);
             this.airForm1.Controls.Add(this.parrotGradientPanel1);
             this.airForm1.Controls.Add(this.materialButton_VerClientes);
             this.airForm1.Controls.Add(this.materialButton_CargarCliente);
@@ -65,6 +70,23 @@
             this.airForm1.Text = "Clientes";
             this.airForm1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm1.Transparent = false;
+            // 
+            // label_Cargando
+            // 
+            this.label_Cargando.AutoSize = true;
+            this.label_Cargando.Location = new System.Drawing.Point(273, 9);
+            this.label_Cargando.Name = "label_Cargando";
+            this.label_Cargando.Size = new System.Drawing.Size(59, 15);
+            this.label_Cargando.TabIndex = 15;
+            this.label_Cargando.Text = "Cargando";
+            // 
+            // pictureBox_Cargando
+            // 
+            this.pictureBox_Cargando.Location = new System.Drawing.Point(237, 3);
+            this.pictureBox_Cargando.Name = "pictureBox_Cargando";
+            this.pictureBox_Cargando.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox_Cargando.TabIndex = 14;
+            this.pictureBox_Cargando.TabStop = false;
             // 
             // parrotGradientPanel1
             // 
@@ -295,6 +317,7 @@
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm1.ResumeLayout(false);
             this.airForm1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cargando)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,5 +333,7 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit_Apellido;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit_Nombre;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
+        private System.Windows.Forms.Label label_Cargando;
+        private System.Windows.Forms.PictureBox pictureBox_Cargando;
     }
 }

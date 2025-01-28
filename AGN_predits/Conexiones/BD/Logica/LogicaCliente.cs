@@ -14,6 +14,7 @@ using System.Globalization;
 using System.Media;
 using AGN_predits.Conexiones.BD.Modelo;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 
 
@@ -45,6 +46,66 @@ namespace AGN_predits.Conexiones.BD.Logica {
                 MessageBox.Show("Error al conectar: " + ex.Message);
             }
         }
+
+        public async Task<bool> CargarCliente(Cliente cli) {
+            try {
+                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
+                    await conexion.OpenAsync(); // Abre la conexión de manera asíncrona
+
+                    string query = "INSERT INTO clientes (Nombre, Apellido, Dni, Telefono, Gmail) " +
+                                   "VALUES (@Nombre, @Apellido, @Dni, @Telefono, @Gmail)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                        cmd.Parameters.AddWithValue("@Nombre", cli.Nombre);
+                        cmd.Parameters.AddWithValue("@Apellido", cli.Apellido);
+                        cmd.Parameters.AddWithValue("@Dni", cli.Dni);
+                        cmd.Parameters.AddWithValue("@Telefono", cli.Telefono);
+                        cmd.Parameters.AddWithValue("@Gmail", cli.Gmail);
+
+                        int filasAfectadas = await cmd.ExecuteNonQueryAsync(); // Ejecuta de forma asíncrona
+                        return filasAfectadas > 0;
+                    }
+                }
+            } catch (Exception ex) {
+                throw new Exception($"Error al cargar el cliente: {ex.Message}");
+            }
+        }
+
+
+        public async Task<List<Cliente>> ListarClientesAsync() {
+            List<Cliente> lista = new List<Cliente>();
+
+            try {
+                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
+                    await conexion.OpenAsync(); // Abre la conexión de manera asíncrona
+
+                    string query = "SELECT * FROM clientes";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+
+                        using (var reader = await cmd.ExecuteReaderAsync()) { // Ejecuta la consulta de forma asíncrona
+                            while (await reader.ReadAsync()) { // Itera de forma asíncrona
+                                var cliente = new Cliente {
+                                    ClienteID = Convert.ToInt32(reader["ClienteID"]),
+                                    Nombre = reader["Nombre"].ToString(),
+                                    Apellido = reader["Apellido"].ToString(),
+                                    Dni = reader["Dni"].ToString(),
+                                    Telefono = reader["Telefono"].ToString(),
+                                    Gmail = reader["Gmail"].ToString(),
+                                };
+                                lista.Add(cliente);
+                            }
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+                Console.WriteLine($"Error: {ex.Message}");
+                throw;
+            }
+
+            return lista;
+        }
+
+
 
     }
 }

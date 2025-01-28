@@ -28,7 +28,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
             this.materialCard_ContenedorDataGreed = new ReaLTaiizor.Controls.MaterialCard();
-            this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             this.poisonDataGridView_Stock = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.Column_ProductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,7 @@
             this.Column_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column_Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             this.materialCard_ContenedorDataGreed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView_Stock)).BeginInit();
             this.SuspendLayout();
@@ -59,29 +59,9 @@
             this.materialCard_ContenedorDataGreed.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard_ContenedorDataGreed.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard_ContenedorDataGreed.Name = "materialCard_ContenedorDataGreed";
+            this.materialCard_ContenedorDataGreed.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard_ContenedorDataGreed.Size = new System.Drawing.Size(753, 440);
             this.materialCard_ContenedorDataGreed.TabIndex = 0;
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton1.Icon")));
-            this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton1.Location = new System.Drawing.Point(23, 483);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(239, 36);
-            this.materialButton1.TabIndex = 1;
-            this.materialButton1.Text = "Cargar Nuevo Producto";
-            this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
             // 
             // poisonDataGridView_Stock
             // 
@@ -125,7 +105,7 @@
             this.poisonDataGridView_Stock.EnableHeadersVisualStyles = false;
             this.poisonDataGridView_Stock.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.poisonDataGridView_Stock.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView_Stock.Location = new System.Drawing.Point(0, 0);
+            this.poisonDataGridView_Stock.Location = new System.Drawing.Point(14, 14);
             this.poisonDataGridView_Stock.Name = "poisonDataGridView_Stock";
             this.poisonDataGridView_Stock.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -139,7 +119,7 @@
             this.poisonDataGridView_Stock.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.poisonDataGridView_Stock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.poisonDataGridView_Stock.ShowRowErrors = false;
-            this.poisonDataGridView_Stock.Size = new System.Drawing.Size(753, 440);
+            this.poisonDataGridView_Stock.Size = new System.Drawing.Size(725, 412);
             this.poisonDataGridView_Stock.TabIndex = 0;
             // 
             // Column_ProductoID
@@ -219,6 +199,28 @@
             this.Column_Borrar.Image = ((System.Drawing.Image)(resources.GetObject("Column_Borrar.Image")));
             this.Column_Borrar.Name = "Column_Borrar";
             this.Column_Borrar.ReadOnly = true;
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton1.Icon")));
+            this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton1.Location = new System.Drawing.Point(23, 483);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(239, 36);
+            this.materialButton1.TabIndex = 1;
+            this.materialButton1.Text = "Cargar Nuevo Producto";
+            this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // Stock
             // 

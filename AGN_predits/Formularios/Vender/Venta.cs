@@ -1,10 +1,12 @@
-﻿using AGN_predits.Formularios.Vender;
+﻿using AGN_predits.Conexiones.BD.Logica;
+using AGN_predits.Formularios.Vender;
 using AGN_predits.Notificaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,17 +24,29 @@ namespace AGN_predits.Formularios {
             materialComboBox_SelectProducto.SelectedIndex = 0;
 
             materialComboBox_FormasPago.Items.Insert(0, "Seleccionar");
+            materialComboBox_FormasPago.Items.Insert(1, "Transferencia");
+            materialComboBox_FormasPago.Items.Insert(2, "Efectivo");
+            materialComboBox_FormasPago.Items.Insert(3, "Credito");
+            materialComboBox_FormasPago.Items.Insert(4, "Crypto");
             materialComboBox_FormasPago.SelectedIndex = 0;
 
             materialComboBox_Cuotas.Items.Insert(0, "Seleccionar");
+            materialComboBox_Cuotas.Items.Insert(1, "1");
+            materialComboBox_Cuotas.Items.Insert(2, "2");
+            materialComboBox_Cuotas.Items.Insert(3, "6");
+            materialComboBox_Cuotas.Items.Insert(4, "12");
             materialComboBox_Cuotas.SelectedIndex = 0;
 
             materialComboBox_Cantidad.Items.Insert(0, "Seleccionar");
+            materialComboBox_Cantidad.Items.Insert(1, "1");
+            materialComboBox_Cantidad.Items.Insert(2, "2");
+            materialComboBox_Cantidad.Items.Insert(3, "3");
+            materialComboBox_Cantidad.Items.Insert(4, "4");
             materialComboBox_Cantidad.SelectedIndex = 0;
+
+            
         }
-
-
-
+        string Client = Path.Combine(Application.StartupPath, "Img/Iconos", "tab_client.png");
         private bool Validaciones() {
             Mensaje mensaje = new Mensaje();
             if (materialComboBox_SeleccionCliente.SelectedIndex == 0) {
@@ -95,9 +109,27 @@ namespace AGN_predits.Formularios {
             }
         }
 
-        private void Venta_Load(object sender, EventArgs e) {
+        private async void Venta_Load(object sender, EventArgs e) {
+
+            try {
+                pictureBox_Cliente.Image = Image.FromFile("Gif/Pulse@1x-1.0s-200px-200px.gif");
+                pictureBox_Cliente.SizeMode = PictureBoxSizeMode.Zoom;
+
+                var clientes = await LogicaCliente.Instancia.ListarClientesAsync(); 
+
+                int i = 1;
+                foreach (var dato in clientes) {
+                    materialComboBox_SeleccionCliente.Items.Insert(i, $"{dato.Nombre} {dato.Apellido} {dato.Telefono} {dato.Gmail}");
+                    i++;
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"Error al cargar los clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            pictureBox_Cliente.Image = Image.FromFile(Client);
+
             
         }
+
 
         private void materialComboBox_SeleccionCliente_SelectedIndexChanged(object sender, EventArgs e) {
             VerificarProgreso();

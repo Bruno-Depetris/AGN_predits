@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexiones\BD\Logica\LogicaCliente.cs" />
+    <Compile Include="Conexiones\BD\Logica\LogicaProducto.cs" />
     <Compile Include="Conexiones\BD\Modelo\Caja.cs" />
     <Compile Include="Conexiones\BD\Modelo\Cierre.cs" />
     <Compile Include="Conexiones\BD\Modelo\Cliente.cs" />
@@ -223,10 +224,25 @@
     <Folder Include="Conexiones\APIs\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Gif\Dual Ball%401x-1.0s-200px-200px.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Gif\Dual Ring%401x-1.0s-200px-200px.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Gif\Pulse%401x-1.0s-200px-200px.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\Iconos\1490793813-user-interface20_82328.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Img\Iconos\admin - Copia.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Img\Iconos\bd - Copia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\Iconos\box_open_icon_246527.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Img\Iconos\buscar.png">
@@ -247,7 +263,19 @@
     <Content Include="Img\Iconos\correo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Img\Iconos\customer_business_support_client_icon_262106.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\Iconos\dashboard_119241.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Img\Iconos\delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\Iconos\details_more_icon_214604.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\Iconos\economic_sustainability_business_money_financial_icon_189076.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Img\Iconos\eliminarclient.png">
@@ -268,16 +296,28 @@
     <Content Include="Img\Iconos\ModificarContraseñá.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Img\Iconos\movement_icon_216773.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Img\Iconos\mujer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Img\Iconos\nuy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Img\Iconos\pay_payment_bill_dollar_cash_icon_143281.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Img\Iconos\pencil-striped.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Img\Iconos\Predits.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\Iconos\product_box_icon_225732.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\Iconos\product_refund_icon_181857.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Img\Iconos\relog arena.png">
@@ -295,6 +335,9 @@
     <Content Include="Img\Iconos\stock.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Img\Iconos\tab_client.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Img\Iconos\tarjeta.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -305,6 +348,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Img\Iconos\Usuario Basico.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\Iconos\withdrawl_finance_economy_money_bank_icon_192192.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Sonidos\achive-sound-132273.wav">
