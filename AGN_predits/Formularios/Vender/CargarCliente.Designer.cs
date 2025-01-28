@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarCliente));
             this.airForm1 = new ReaLTaiizor.Forms.AirForm();
+            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.materialButton_VerClientes = new ReaLTaiizor.Controls.MaterialButton();
             this.materialButton_CargarCliente = new ReaLTaiizor.Controls.MaterialButton();
             this.materialTextBoxEdit_Gmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -32,7 +33,6 @@
             this.materialTextBoxEdit_Dni = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTextBoxEdit_Apellido = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTextBoxEdit_Nombre = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.airForm1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,25 @@
             this.airForm1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm1.Transparent = false;
             // 
+            // parrotGradientPanel1
+            // 
+            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.Black;
+            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Fuchsia;
+            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(0, 382);
+            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
+            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel1.Size = new System.Drawing.Size(392, 13);
+            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
+            this.parrotGradientPanel1.TabIndex = 13;
+            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.White;
+            this.parrotGradientPanel1.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            // 
             // materialButton_VerClientes
             // 
             this.materialButton_VerClientes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -85,6 +104,7 @@
             this.materialButton_VerClientes.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_VerClientes.UseAccentColor = false;
             this.materialButton_VerClientes.UseVisualStyleBackColor = true;
+            this.materialButton_VerClientes.Click += new System.EventHandler(this.materialButton_VerClientes_Click);
             // 
             // materialButton_CargarCliente
             // 
@@ -105,6 +125,7 @@
             this.materialButton_CargarCliente.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_CargarCliente.UseAccentColor = false;
             this.materialButton_CargarCliente.UseVisualStyleBackColor = true;
+            this.materialButton_CargarCliente.Click += new System.EventHandler(this.materialButton_CargarCliente_Click);
             // 
             // materialTextBoxEdit_Gmail
             // 
@@ -260,25 +281,6 @@
             this.materialTextBoxEdit_Nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBoxEdit_Nombre.TrailingIcon = null;
             this.materialTextBoxEdit_Nombre.UseSystemPasswordChar = false;
-            // 
-            // parrotGradientPanel1
-            // 
-            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.Black;
-            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Fuchsia;
-            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel1.Location = new System.Drawing.Point(0, 382);
-            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
-            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
-            this.parrotGradientPanel1.Size = new System.Drawing.Size(392, 13);
-            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
-            this.parrotGradientPanel1.TabIndex = 13;
-            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.White;
-            this.parrotGradientPanel1.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
             // CargarCliente
             // 

@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AGN_predits.Conexiones.BD.Modelo {
+    internal class Producto {
+        public int ProductoID { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public string Condicion { get; set; }
+        public int Almacenamiento { get; set; }
+        public int Bateria { get; set; }
+        public int Stock { get; set; }
+        public decimal PrecioCosto { get; set; }
+        public decimal PrecioVenta { get; set; }
+    }
+}

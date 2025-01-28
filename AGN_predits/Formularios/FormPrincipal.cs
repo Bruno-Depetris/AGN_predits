@@ -3,6 +3,7 @@ using AGN_predits.Formularios;
 using AGN_predits.Formularios.Caja;
 using AGN_predits.Formularios.DashBoard;
 using AGN_predits.Formularios.Stoc_k;
+using AGN_predits.Notificaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,24 +80,13 @@ namespace AGN_predits {
             AbrirFormNuevo(new DashBoard());
 
             MoverPanel(parrotButton_Dashboard);
+
+
         }
 
-        private async void parrotButton_Vender_Click(object sender, EventArgs e) {
+        private void parrotButton_Vender_Click(object sender, EventArgs e) {
             AbrirFormNuevo(new Venta());
             MoverPanel(parrotButton_Vender);
-
-            string endpoint = "sqlitecloud://czghjoyohz.g1.sqlite.cloud:8860/AgnPredistClient001?apikey=kQqdE8He6RhI8DsPuYzTL1L0T5CAphRbz12aKtuGPV8";
-            using (var conectar = new ConectarBD(endpoint)) {
-                try {
-
-                    string response = await conectar.GetAsync(endpoint);
-
-                    Console.WriteLine(response);
-                } catch (Exception ex) {
-                    throw ex;
-                }
-            }
-
         }
 
         private void parrotButton_Caja_Click(object sender, EventArgs e) {

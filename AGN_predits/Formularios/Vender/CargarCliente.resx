@@ -121,7 +121,7 @@
   <data name="materialButton_VerClientes.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAKzFJREFUeF7t3Xu073Vd5/HDVQQVL3EtaOlUDtV4WWGlppZKWTpLSRM1jApdS9PM
+        EAAACxABrSO9dQAAKzFJREFUeF7t3Xu073Vd5/HDVQQVL3EtaOlUDtV4WWGlppZKWTpLSRM1jApdS9PM
         S6hjLrGLLFxQijmaJboyTRJUnKGZtMnlBRyNMrRRSGUSRlAHQwgvoWK93od+h33Oee1z9t7v7+Xz/n6e
         j7We/xzlnM/+7t/+vt9nn/37/bYBAAAAANCy26l7qoerk9Wz1G+o31S/o16inq+eqn5W3U8drvZRAACg
         gAPUA1QM9PPVp9Qt6l+30PXqYvVK9UR1lAIAAI24i/pFdaH6inLDfKg+oc5UP6L4DgEAABPbVz1CvV3d
@@ -311,7 +311,7 @@
   <data name="materialButton_CargarCliente.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAY4AAAIACAYAAACVVotJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        AQAABwEB+MrcSwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACdmSURBVHhe7d0J
+        AAAABwABKo0+rwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACdmSURBVHhe7d0J
         nGRFneDxqkYUVBgUUEdH8UBcW7sq470+KuNlk+MKM+3tqGllRFbT2kqP44UX6jpqeyCOosgosDsuIHgu
         KK46KKg7iigOggqoICgeCKIoHiBXc9RsRNUfwax/N5VVebzj9/t8vp8Wq7q6KjPiRb6MypdjRGWu1mjt
         ndjO+jTrbErr/uWJdW8w1r/TWHd0cGL471PDf38pyfw3Tea+H/78WfjzmvDntvDnLSbzv0sy9/PE+h+E
