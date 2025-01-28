@@ -15,5 +15,6 @@ namespace AGN_predits.Conexiones.BD.Modelo {
         public int Stock { get; set; }
         public decimal PrecioCosto { get; set; }
         public decimal PrecioVenta { get; set; }
+        public string descripcion { get; set; }
     }
 }

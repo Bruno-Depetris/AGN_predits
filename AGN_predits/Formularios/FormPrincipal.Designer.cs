@@ -33,7 +33,7 @@
             this.label_BLUE = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.bigLabel2 = new ReaLTaiizor.Controls.BigLabel();
+            this.bigLabel_Hora = new ReaLTaiizor.Controls.BigLabel();
             this.bigLabel_Dia = new ReaLTaiizor.Controls.BigLabel();
             this.airSeparator1 = new ReaLTaiizor.Controls.AirSeparator();
             this.parrotButton_Stock = new ReaLTaiizor.Controls.ParrotButton();
@@ -45,7 +45,7 @@
             this.panel1 = new ReaLTaiizor.Controls.Panel();
             this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.panel_Contenedor = new System.Windows.Forms.Panel();
-            this.timer_movimientos = new System.Windows.Forms.Timer(this.components);
+            this.timer_Fecha = new System.Windows.Forms.Timer(this.components);
             this.panel_ContenedorLateral.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.panel_ContenedorLateral.Controls.Add(this.bigLabel_Fecha_completa);
             this.panel_ContenedorLateral.Controls.Add(this.panel2);
             this.panel_ContenedorLateral.Controls.Add(this.parrotGradientPanel1);
-            this.panel_ContenedorLateral.Controls.Add(this.bigLabel2);
+            this.panel_ContenedorLateral.Controls.Add(this.bigLabel_Hora);
             this.panel_ContenedorLateral.Controls.Add(this.bigLabel_Dia);
             this.panel_ContenedorLateral.Controls.Add(this.airSeparator1);
             this.panel_ContenedorLateral.Controls.Add(this.parrotButton_Stock);
@@ -119,7 +119,7 @@
             this.bigLabel_Fecha_completa.BackColor = System.Drawing.Color.Transparent;
             this.bigLabel_Fecha_completa.Font = new System.Drawing.Font("Arboria Light", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bigLabel_Fecha_completa.ForeColor = System.Drawing.Color.Black;
-            this.bigLabel_Fecha_completa.Location = new System.Drawing.Point(55, 315);
+            this.bigLabel_Fecha_completa.Location = new System.Drawing.Point(50, 315);
             this.bigLabel_Fecha_completa.Name = "bigLabel_Fecha_completa";
             this.bigLabel_Fecha_completa.Size = new System.Drawing.Size(136, 40);
             this.bigLabel_Fecha_completa.TabIndex = 28;
@@ -177,17 +177,17 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(103)))), ((int)(((byte)(203)))));
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(143)))), ((int)(((byte)(243)))));
             // 
-            // bigLabel2
+            // bigLabel_Hora
             // 
-            this.bigLabel2.AutoSize = true;
-            this.bigLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel2.Font = new System.Drawing.Font("Arboria Light", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bigLabel2.Location = new System.Drawing.Point(113, 355);
-            this.bigLabel2.Name = "bigLabel2";
-            this.bigLabel2.Size = new System.Drawing.Size(125, 40);
-            this.bigLabel2.TabIndex = 26;
-            this.bigLabel2.Text = "18:13:10";
+            this.bigLabel_Hora.AutoSize = true;
+            this.bigLabel_Hora.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel_Hora.Font = new System.Drawing.Font("Arboria Light", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel_Hora.ForeColor = System.Drawing.Color.Black;
+            this.bigLabel_Hora.Location = new System.Drawing.Point(50, 395);
+            this.bigLabel_Hora.Name = "bigLabel_Hora";
+            this.bigLabel_Hora.Size = new System.Drawing.Size(125, 40);
+            this.bigLabel_Hora.TabIndex = 26;
+            this.bigLabel_Hora.Text = "18:13:10";
             // 
             // bigLabel_Dia
             // 
@@ -195,7 +195,7 @@
             this.bigLabel_Dia.BackColor = System.Drawing.Color.Transparent;
             this.bigLabel_Dia.Font = new System.Drawing.Font("Arboria Light", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bigLabel_Dia.ForeColor = System.Drawing.Color.Black;
-            this.bigLabel_Dia.Location = new System.Drawing.Point(13, 355);
+            this.bigLabel_Dia.Location = new System.Drawing.Point(50, 355);
             this.bigLabel_Dia.Name = "bigLabel_Dia";
             this.bigLabel_Dia.Size = new System.Drawing.Size(104, 40);
             this.bigLabel_Dia.TabIndex = 25;
@@ -383,10 +383,10 @@
             this.panel_Contenedor.Size = new System.Drawing.Size(798, 528);
             this.panel_Contenedor.TabIndex = 5;
             // 
-            // timer_movimientos
+            // timer_Fecha
             // 
-            this.timer_movimientos.Enabled = true;
-            this.timer_movimientos.Tick += new System.EventHandler(this.timer_movimientos_Tick);
+            this.timer_Fecha.Enabled = true;
+            this.timer_Fecha.Tick += new System.EventHandler(this.timer_movimientos_Tick);
             // 
             // FormPrincipal
             // 
@@ -423,7 +423,7 @@
         private ReaLTaiizor.Controls.ParrotButton parrotButton_Caja;
         private ReaLTaiizor.Controls.AirSeparator airSeparator1;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
-        private ReaLTaiizor.Controls.BigLabel bigLabel2;
+        private ReaLTaiizor.Controls.BigLabel bigLabel_Hora;
         private ReaLTaiizor.Controls.BigLabel bigLabel_Dia;
         private ReaLTaiizor.Forms.HopeForm hopeForm1;
         private ReaLTaiizor.Controls.BigLabel bigLabel_Fecha_completa;
@@ -435,7 +435,7 @@
         private ReaLTaiizor.Controls.Panel panel1;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel2;
         private System.Windows.Forms.Panel panel_Contenedor;
-        private System.Windows.Forms.Timer timer_movimientos;
+        private System.Windows.Forms.Timer timer_Fecha;
     }
 }
 

@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexiones\APIs\Logica\ApiCotizacion.cs" />
+    <Compile Include="Conexiones\APIs\Modelo\ModeloApiCotizacion .cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaCliente.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaProducto.cs" />
     <Compile Include="Conexiones\BD\Modelo\Caja.cs" />
@@ -220,9 +222,7 @@
       <Version>9.0.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Conexiones\APIs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Gif\Dual Ball%401x-1.0s-200px-200px.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

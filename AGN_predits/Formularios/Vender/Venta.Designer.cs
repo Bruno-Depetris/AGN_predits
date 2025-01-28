@@ -122,13 +122,13 @@
             this.parrotFlatProgressBar_BarraProgresoFormulario.IncompletedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.parrotFlatProgressBar_BarraProgresoFormulario.InocmpletedColor = System.Drawing.Color.White;
             this.parrotFlatProgressBar_BarraProgresoFormulario.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotFlatProgressBar_BarraProgresoFormulario.Location = new System.Drawing.Point(14, 322);
+            this.parrotFlatProgressBar_BarraProgresoFormulario.Location = new System.Drawing.Point(14, 360);
             this.parrotFlatProgressBar_BarraProgresoFormulario.MaxValue = 100;
             this.parrotFlatProgressBar_BarraProgresoFormulario.Name = "parrotFlatProgressBar_BarraProgresoFormulario";
             this.parrotFlatProgressBar_BarraProgresoFormulario.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             this.parrotFlatProgressBar_BarraProgresoFormulario.Positions = ((System.Collections.Generic.List<float>)(resources.GetObject("parrotFlatProgressBar_BarraProgresoFormulario.Positions")));
             this.parrotFlatProgressBar_BarraProgresoFormulario.ShowBorder = true;
-            this.parrotFlatProgressBar_BarraProgresoFormulario.Size = new System.Drawing.Size(719, 10);
+            this.parrotFlatProgressBar_BarraProgresoFormulario.Size = new System.Drawing.Size(719, 2);
             this.parrotFlatProgressBar_BarraProgresoFormulario.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.parrotFlatProgressBar_BarraProgresoFormulario.TabIndex = 17;
             this.parrotFlatProgressBar_BarraProgresoFormulario.Text = "parrotFlatProgressBar1";
