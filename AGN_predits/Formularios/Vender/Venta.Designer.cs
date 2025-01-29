@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Venta));
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            this.pictureBox_Prod = new System.Windows.Forms.PictureBox();
             this.pictureBox_Cliente = new System.Windows.Forms.PictureBox();
             this.materialComboBox_Cantidad = new ReaLTaiizor.Controls.MaterialComboBox();
             this.parrotFlatProgressBar_BarraProgresoFormulario = new ReaLTaiizor.Controls.ParrotFlatProgressBar();
@@ -35,16 +36,14 @@
             this.materialTextBoxEdit_DetallesVenta = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialButton_Vender = new ReaLTaiizor.Controls.MaterialButton();
             this.materialButton_VerVentas = new ReaLTaiizor.Controls.MaterialButton();
-            this.materialButton_CargarNuevoCliente = new ReaLTaiizor.Controls.MaterialButton();
             this.materialSwitch_canje = new ReaLTaiizor.Controls.MaterialSwitch();
             this.materialComboBox_Cuotas = new ReaLTaiizor.Controls.MaterialComboBox();
             this.materialComboBox_FormasPago = new ReaLTaiizor.Controls.MaterialComboBox();
             this.materialComboBox_SelectProducto = new ReaLTaiizor.Controls.MaterialComboBox();
             this.materialComboBox_SeleccionCliente = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.pictureBox_Prod = new System.Windows.Forms.PictureBox();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Prod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cliente)).BeginInit();
             this.SuspendLayout();
             // 
             // materialCard1
@@ -61,7 +60,6 @@
             this.materialCard1.Controls.Add(this.materialTextBoxEdit_DetallesVenta);
             this.materialCard1.Controls.Add(this.materialButton_Vender);
             this.materialCard1.Controls.Add(this.materialButton_VerVentas);
-            this.materialCard1.Controls.Add(this.materialButton_CargarNuevoCliente);
             this.materialCard1.Controls.Add(this.materialSwitch_canje);
             this.materialCard1.Controls.Add(this.materialComboBox_Cuotas);
             this.materialCard1.Controls.Add(this.materialComboBox_FormasPago);
@@ -76,6 +74,14 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(753, 482);
             this.materialCard1.TabIndex = 0;
+            // 
+            // pictureBox_Prod
+            // 
+            this.pictureBox_Prod.Location = new System.Drawing.Point(686, 94);
+            this.pictureBox_Prod.Name = "pictureBox_Prod";
+            this.pictureBox_Prod.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_Prod.TabIndex = 20;
+            this.pictureBox_Prod.TabStop = false;
             // 
             // pictureBox_Cliente
             // 
@@ -244,7 +250,7 @@
             this.materialButton_Vender.HighEmphasis = true;
             this.materialButton_Vender.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_Vender.Icon")));
             this.materialButton_Vender.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_Vender.Location = new System.Drawing.Point(282, 371);
+            this.materialButton_Vender.Location = new System.Drawing.Point(282, 426);
             this.materialButton_Vender.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton_Vender.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton_Vender.Name = "materialButton_Vender";
@@ -266,7 +272,7 @@
             this.materialButton_VerVentas.HighEmphasis = true;
             this.materialButton_VerVentas.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_VerVentas.Icon")));
             this.materialButton_VerVentas.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_VerVentas.Location = new System.Drawing.Point(222, 426);
+            this.materialButton_VerVentas.Location = new System.Drawing.Point(18, 426);
             this.materialButton_VerVentas.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton_VerVentas.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton_VerVentas.Name = "materialButton_VerVentas";
@@ -278,28 +284,6 @@
             this.materialButton_VerVentas.UseAccentColor = false;
             this.materialButton_VerVentas.UseVisualStyleBackColor = true;
             this.materialButton_VerVentas.Click += new System.EventHandler(this.materialButton_VerVentas_Click);
-            // 
-            // materialButton_CargarNuevoCliente
-            // 
-            this.materialButton_CargarNuevoCliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton_CargarNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialButton_CargarNuevoCliente.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton_CargarNuevoCliente.Depth = 0;
-            this.materialButton_CargarNuevoCliente.HighEmphasis = true;
-            this.materialButton_CargarNuevoCliente.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_CargarNuevoCliente.Icon")));
-            this.materialButton_CargarNuevoCliente.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_CargarNuevoCliente.Location = new System.Drawing.Point(14, 426);
-            this.materialButton_CargarNuevoCliente.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton_CargarNuevoCliente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialButton_CargarNuevoCliente.Name = "materialButton_CargarNuevoCliente";
-            this.materialButton_CargarNuevoCliente.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton_CargarNuevoCliente.Size = new System.Drawing.Size(200, 36);
-            this.materialButton_CargarNuevoCliente.TabIndex = 8;
-            this.materialButton_CargarNuevoCliente.Text = "Gestionar Clientes";
-            this.materialButton_CargarNuevoCliente.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton_CargarNuevoCliente.UseAccentColor = false;
-            this.materialButton_CargarNuevoCliente.UseVisualStyleBackColor = true;
-            this.materialButton_CargarNuevoCliente.Click += new System.EventHandler(this.materialButton_CargarNuevoCliente_Click);
             // 
             // materialSwitch_canje
             // 
@@ -420,14 +404,6 @@
             this.materialComboBox_SeleccionCliente.TabIndex = 0;
             this.materialComboBox_SeleccionCliente.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SeleccionCliente_SelectedIndexChanged);
             // 
-            // pictureBox_Prod
-            // 
-            this.pictureBox_Prod.Location = new System.Drawing.Point(686, 94);
-            this.pictureBox_Prod.Name = "pictureBox_Prod";
-            this.pictureBox_Prod.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox_Prod.TabIndex = 20;
-            this.pictureBox_Prod.TabStop = false;
-            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,8 +417,8 @@
             this.Load += new System.EventHandler(this.Venta_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Prod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,7 +432,6 @@
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_FormasPago;
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_SelectProducto;
         private ReaLTaiizor.Controls.MaterialButton materialButton_VerVentas;
-        private ReaLTaiizor.Controls.MaterialButton materialButton_CargarNuevoCliente;
         private ReaLTaiizor.Controls.AirSeparator airSeparator1;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit_DetallesVenta;
         private ReaLTaiizor.Controls.MaterialButton materialButton_Vender;

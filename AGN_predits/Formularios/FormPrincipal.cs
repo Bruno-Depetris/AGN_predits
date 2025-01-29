@@ -1,6 +1,7 @@
 ﻿using AGN_predits.Conexiones;
 using AGN_predits.Formularios;
 using AGN_predits.Formularios.Caja;
+using AGN_predits.Formularios.Cliente;
 using AGN_predits.Formularios.DashBoard;
 using AGN_predits.Formularios.Stoc_k;
 using AGN_predits.Notificaciones;
@@ -70,7 +71,7 @@ namespace AGN_predits {
             bigLabel_Dia.Text = fechaActual.ToString("dddd");
 
             // Actualiza el label con la hora en formato hh:mm:22
-            bigLabel_Hora.Text = fechaActual.ToString("HH:mm:22");
+            bigLabel_Hora.Text = fechaActual.ToString("HH:mm:ss");
         }
 
         private void AbrirFormNuevo(Form FormHijo) {
@@ -149,5 +150,13 @@ namespace AGN_predits {
             
         }
 
+        private void panel_ContenedorLateral_Paint(object sender, PaintEventArgs e) {
+
+        }
+
+        private void parrotButton_Clientes_Click(object sender, EventArgs e) {
+            AbrirFormNuevo(new ClientesForm());
+            MoverPanel(parrotButton_Clientes);
+        }
     }
 }

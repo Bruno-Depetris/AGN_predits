@@ -61,7 +61,8 @@ namespace AGN_predits.Formularios {
         private async void materialButton_CargarCliente_Click(object sender, EventArgs e) {
             
             if (Validaciones()) {
-                Cliente cliente = new Cliente();
+
+                ClienteMod cliente = new ClienteMod();
                 cliente.Nombre = materialTextBoxEdit_Nombre.Text;
                 cliente.Apellido = materialTextBoxEdit_Apellido.Text;
                 cliente.Dni = dni.ToString();
@@ -82,11 +83,6 @@ namespace AGN_predits.Formularios {
             }
 
    
-        }
-
-        private void materialButton_VerClientes_Click(object sender, EventArgs e) {
-            ListaClientes listaClientes = new ListaClientes();
-            listaClientes.Show();
         }
 
 

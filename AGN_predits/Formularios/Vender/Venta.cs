@@ -47,6 +47,8 @@ namespace AGN_predits.Formularios {
             
         }
         string Client = Path.Combine(Application.StartupPath, "Img/Iconos", "tab_client.png");
+        string Producto = Path.Combine(Application.StartupPath, "Img/Iconos", "nuy.png");
+        
         private bool Validaciones() {
             Mensaje mensaje = new Mensaje();
             if (materialComboBox_SeleccionCliente.SelectedIndex == 0) {
@@ -89,7 +91,7 @@ namespace AGN_predits.Formularios {
         }
 
         private void VerificarProgreso() {
-            int totalCampos = 6;
+            int totalCampos = 5;
             int camposCompletos = 0;
 
             if (materialComboBox_SeleccionCliente.SelectedIndex != 0) camposCompletos++;
@@ -103,31 +105,38 @@ namespace AGN_predits.Formularios {
             int porcentaje = (int)((double)camposCompletos / totalCampos * 100);
             parrotFlatProgressBar_BarraProgresoFormulario.Value = porcentaje;
         }
-        private void materialButton_Vender_Click(object sender, EventArgs e) {
-            if (Validaciones()) {
-                
-            }
-        }
+
 
         private async void Venta_Load(object sender, EventArgs e) {
 
             try {
+                //load cliente
                 pictureBox_Cliente.Image = Image.FromFile("Gif/Pulse@1x-1.0s-200px-200px.gif");
                 pictureBox_Cliente.SizeMode = PictureBoxSizeMode.Zoom;
 
-                var clientes = await LogicaCliente.Instancia.ListarClientesAsync(); 
+                //load producto
+                pictureBox_Prod.Image = Image.FromFile("Gif/Pulse@1x-1.0s-200px-200px.gif");
+                pictureBox_Prod.SizeMode = PictureBoxSizeMode.Zoom;
+
+                var clientes = await LogicaCliente.Instancia.ListarClientesAsync();
+                var producto = await LogicaProducto.Instancia.ListarProductos();
 
                 int i = 1;
                 foreach (var dato in clientes) {
                     materialComboBox_SeleccionCliente.Items.Insert(i, $"{dato.Nombre} {dato.Apellido} {dato.Telefono} {dato.Gmail}");
                     i++;
                 }
+                int x = 1;
+                foreach (var dato in producto) {
+                    materialComboBox_SelectProducto.Items.Insert(x, $"{dato.Marca} {dato.Modelo} {dato.Condicion} almacenamiento: {dato.Almacenamiento} bateria: {dato.Bateria} precio: {dato.PrecioVenta}");
+                    x++;
+                }
             } catch (Exception ex) {
                 MessageBox.Show($"Error al cargar los clientes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             pictureBox_Cliente.Image = Image.FromFile(Client);
+            pictureBox_Prod.Image = Image.FromFile(Producto);
 
-            
         }
 
 
@@ -161,8 +170,14 @@ namespace AGN_predits.Formularios {
         }
 
         private void materialButton_VerVentas_Click(object sender, EventArgs e) {
-            Lista_Ventas listaventas = new Lista_Ventas();
-            listaventas.Show();
+
+        }
+
+
+        private void materialButton_Vender_Click(object sender, EventArgs e) {
+            if (Validaciones()) {
+
+            }
         }
     }
 }

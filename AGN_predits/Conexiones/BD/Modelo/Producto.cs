@@ -10,8 +10,8 @@ namespace AGN_predits.Conexiones.BD.Modelo {
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Condicion { get; set; }
-        public int Almacenamiento { get; set; }
-        public int Bateria { get; set; }
+        public decimal Almacenamiento { get; set; }
+        public decimal Bateria { get; set; }
         public int Stock { get; set; }
         public decimal PrecioCosto { get; set; }
         public decimal PrecioVenta { get; set; }

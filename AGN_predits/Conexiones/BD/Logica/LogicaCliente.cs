@@ -47,7 +47,7 @@ namespace AGN_predits.Conexiones.BD.Logica {
             }
         }
 
-        public async Task<bool> CargarCliente(Cliente cli) {
+        public async Task<bool> CargarCliente(ClienteMod cli) {
             try {
                 using (MySqlConnection conexion = new MySqlConnection(cadena)) {
                     await conexion.OpenAsync(); // Abre la conexión de manera asíncrona
@@ -72,8 +72,8 @@ namespace AGN_predits.Conexiones.BD.Logica {
         }
 
 
-        public async Task<List<Cliente>> ListarClientesAsync() {
-            List<Cliente> lista = new List<Cliente>();
+        public async Task<List<ClienteMod>> ListarClientesAsync() {
+            List<ClienteMod> lista = new List<ClienteMod>();
 
             try {
                 using (MySqlConnection conexion = new MySqlConnection(cadena)) {
@@ -84,7 +84,7 @@ namespace AGN_predits.Conexiones.BD.Logica {
 
                         using (var reader = await cmd.ExecuteReaderAsync()) { // Ejecuta la consulta de forma asíncrona
                             while (await reader.ReadAsync()) { // Itera de forma asíncrona
-                                var cliente = new Cliente {
+                                var cliente = new ClienteMod {
                                     ClienteID = Convert.ToInt32(reader["ClienteID"]),
                                     Nombre = reader["Nombre"].ToString(),
                                     Apellido = reader["Apellido"].ToString(),
@@ -105,6 +105,50 @@ namespace AGN_predits.Conexiones.BD.Logica {
             return lista;
         }
 
+        public async Task<bool> EditarCliente(ClienteMod cli) {
+            try {
+                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
+                    await conexion.OpenAsync();
+
+                    string query = "UPDATE clientes SET Nombre = @Nombre, Apellido = @Apellido, Dni = @Dni, " +
+                                   "Telefono = @Telefono, Gmail = @Gmail WHERE ClienteID = @ClienteID";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                        cmd.Parameters.AddWithValue("@Nombre", cli.Nombre);
+                        cmd.Parameters.AddWithValue("@Apellido", cli.Apellido);
+                        cmd.Parameters.AddWithValue("@Dni", cli.Dni);
+                        cmd.Parameters.AddWithValue("@Telefono", cli.Telefono);
+                        cmd.Parameters.AddWithValue("@Gmail", cli.Gmail);
+                        cmd.Parameters.AddWithValue("@ClienteID", cli.ClienteID);
+
+                        int filasAfectadas = await cmd.ExecuteNonQueryAsync();
+                        return filasAfectadas > 0;
+                    }
+                }
+            } catch (Exception ex) {
+                Console.WriteLine($"Error al editar el cliente: {ex.Message}");
+                return false;
+            }
+        }
+        public async Task<bool> EliminarCliente(int id) {
+            try {
+                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
+                    await conexion.OpenAsync();
+
+                    string query = "DELETE FROM clientes WHERE ClienteID = @ClienteID";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                        cmd.Parameters.AddWithValue("@ClienteID", id);
+
+                        int filasAfectadas = await cmd.ExecuteNonQueryAsync();
+                        return filasAfectadas > 0;
+                    }
+                }
+            } catch (Exception ex) {
+                Console.WriteLine($"Error al eliminar el cliente: {ex.Message}");
+                return false;
+            }
+        }
 
 
     }

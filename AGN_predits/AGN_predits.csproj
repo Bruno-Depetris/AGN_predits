@@ -13,6 +13,25 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Bruno\Desktop\PRUEBA\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Aplicacion Gestion</ProductName>
+    <PublisherName>Predits</PublisherName>
+    <SuiteName>Aplicaciones para gestion</SuiteName>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +51,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9CB51969932303DF50E38CB2B74D5772E0209190</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AGN_predits_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Predits.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,7 +87,7 @@
     <Compile Include="Conexiones\BD\Logica\LogicaProducto.cs" />
     <Compile Include="Conexiones\BD\Modelo\Caja.cs" />
     <Compile Include="Conexiones\BD\Modelo\Cierre.cs" />
-    <Compile Include="Conexiones\BD\Modelo\Cliente.cs" />
+    <Compile Include="Conexiones\BD\Modelo\ClienteMod.cs" />
     <Compile Include="Conexiones\BD\Modelo\DetalleVenta.cs" />
     <Compile Include="Conexiones\BD\Modelo\MedioPago.cs" />
     <Compile Include="Conexiones\BD\Modelo\Producto.cs" />
@@ -86,6 +120,12 @@
     </Compile>
     <Compile Include="Formularios\Caja\Movimiento.Designer.cs">
       <DependentUpon>Movimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\ClientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\ClientesForm.Designer.cs">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\DashBoard\DashBoard.cs">
       <SubType>Form</SubType>
@@ -123,12 +163,6 @@
     <Compile Include="Formularios\Vender\ListaVentas.Designer.cs">
       <DependentUpon>ListaVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Vender\ListaClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Vender\ListaClientes.Designer.cs">
-      <DependentUpon>ListaClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Vender\Venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +192,9 @@
     <EmbeddedResource Include="Formularios\Caja\Movimiento.resx">
       <DependentUpon>Movimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\ClientesForm.resx">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\DashBoard\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,9 +213,6 @@
     <EmbeddedResource Include="Formularios\Vender\ListaVentas.resx">
       <DependentUpon>ListaVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Vender\ListaClientes.resx">
-      <DependentUpon>ListaClientes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Vender\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +229,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="AGN_predits_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -222,7 +257,18 @@
       <Version>9.0.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Gif\Dual Ball%401x-1.0s-200px-200px.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -353,6 +399,7 @@
     <Content Include="Img\Iconos\withdrawl_finance_economy_money_bank_icon_192192.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Predits.ico" />
     <Content Include="Sonidos\achive-sound-132273.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

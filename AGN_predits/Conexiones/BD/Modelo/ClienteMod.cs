@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AGN_predits.Conexiones.BD.Modelo {
-    public class Cliente {
+    public class ClienteMod {
         public int ClienteID { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
