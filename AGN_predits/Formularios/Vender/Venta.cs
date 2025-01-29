@@ -164,13 +164,9 @@ namespace AGN_predits.Formularios {
             VerificarProgreso();
         }
 
-        private void materialButton_CargarNuevoCliente_Click(object sender, EventArgs e) {
-            CargarCliente cargarCliente = new CargarCliente();
-            cargarCliente.Show();
-        }
-
         private void materialButton_VerVentas_Click(object sender, EventArgs e) {
-
+           Lista_Ventas listaventas = new Lista_Ventas();
+            listaventas.Show();
         }
 
 

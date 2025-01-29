@@ -250,7 +250,7 @@
             this.materialButton_Vender.HighEmphasis = true;
             this.materialButton_Vender.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_Vender.Icon")));
             this.materialButton_Vender.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_Vender.Location = new System.Drawing.Point(282, 426);
+            this.materialButton_Vender.Location = new System.Drawing.Point(269, 426);
             this.materialButton_Vender.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton_Vender.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton_Vender.Name = "materialButton_Vender";
@@ -280,7 +280,7 @@
             this.materialButton_VerVentas.Size = new System.Drawing.Size(136, 36);
             this.materialButton_VerVentas.TabIndex = 9;
             this.materialButton_VerVentas.Text = "Ver Ventas";
-            this.materialButton_VerVentas.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton_VerVentas.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.materialButton_VerVentas.UseAccentColor = false;
             this.materialButton_VerVentas.UseVisualStyleBackColor = true;
             this.materialButton_VerVentas.Click += new System.EventHandler(this.materialButton_VerVentas_Click);

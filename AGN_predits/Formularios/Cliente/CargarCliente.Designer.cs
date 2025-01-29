@@ -28,7 +28,6 @@
             this.label_Cargando = new System.Windows.Forms.Label();
             this.pictureBox_Cargando = new System.Windows.Forms.PictureBox();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            this.materialButton_VerClientes = new ReaLTaiizor.Controls.MaterialButton();
             this.materialButton_CargarCliente = new ReaLTaiizor.Controls.MaterialButton();
             this.materialTextBoxEdit_Gmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTextBoxEdit_Telefono = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -46,7 +45,6 @@
             this.airForm1.Controls.Add(this.label_Cargando);
             this.airForm1.Controls.Add(this.pictureBox_Cargando);
             this.airForm1.Controls.Add(this.parrotGradientPanel1);
-            this.airForm1.Controls.Add(this.materialButton_VerClientes);
             this.airForm1.Controls.Add(this.materialButton_CargarCliente);
             this.airForm1.Controls.Add(this.materialTextBoxEdit_Gmail);
             this.airForm1.Controls.Add(this.materialTextBoxEdit_Telefono);
@@ -107,27 +105,6 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.White;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
-            // materialButton_VerClientes
-            // 
-            this.materialButton_VerClientes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton_VerClientes.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton_VerClientes.Depth = 0;
-            this.materialButton_VerClientes.HighEmphasis = true;
-            this.materialButton_VerClientes.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_VerClientes.Icon")));
-            this.materialButton_VerClientes.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_VerClientes.Location = new System.Drawing.Point(210, 318);
-            this.materialButton_VerClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton_VerClientes.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialButton_VerClientes.Name = "materialButton_VerClientes";
-            this.materialButton_VerClientes.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton_VerClientes.Size = new System.Drawing.Size(160, 36);
-            this.materialButton_VerClientes.TabIndex = 12;
-            this.materialButton_VerClientes.Text = "Lista Clientes";
-            this.materialButton_VerClientes.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton_VerClientes.UseAccentColor = false;
-            this.materialButton_VerClientes.UseVisualStyleBackColor = true;
-            this.materialButton_VerClientes.Click += new System.EventHandler(this.materialButton_VerClientes_Click);
-            // 
             // materialButton_CargarCliente
             // 
             this.materialButton_CargarCliente.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -136,7 +113,7 @@
             this.materialButton_CargarCliente.HighEmphasis = true;
             this.materialButton_CargarCliente.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_CargarCliente.Icon")));
             this.materialButton_CargarCliente.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_CargarCliente.Location = new System.Drawing.Point(12, 318);
+            this.materialButton_CargarCliente.Location = new System.Drawing.Point(110, 318);
             this.materialButton_CargarCliente.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton_CargarCliente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton_CargarCliente.Name = "materialButton_CargarCliente";
@@ -325,7 +302,6 @@
         #endregion
 
         private ReaLTaiizor.Forms.AirForm airForm1;
-        private ReaLTaiizor.Controls.MaterialButton materialButton_VerClientes;
         private ReaLTaiizor.Controls.MaterialButton materialButton_CargarCliente;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit_Gmail;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit_Telefono;

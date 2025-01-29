@@ -145,10 +145,10 @@
     <Compile Include="Formularios\Stoc k\Stock.Designer.cs">
       <DependentUpon>Stock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Vender\CargarCliente.cs">
+    <Compile Include="Formularios\Cliente\CargarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Vender\CargarCliente.Designer.cs">
+    <Compile Include="Formularios\Cliente\CargarCliente.Designer.cs">
       <DependentUpon>CargarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormPrincipal.cs">
@@ -204,7 +204,7 @@
     <EmbeddedResource Include="Formularios\Stoc k\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Vender\CargarCliente.resx">
+    <EmbeddedResource Include="Formularios\Cliente\CargarCliente.resx">
       <DependentUpon>CargarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormPrincipal.resx">

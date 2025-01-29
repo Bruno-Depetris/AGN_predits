@@ -51,6 +51,9 @@ namespace AGN_predits.Formularios {
 
             return true;
         }
+        public void SetClienteData(int clienteID, string nombre, string apellido, string dni, string telefono, string gmail) {
+            materialTextBoxEdit_Nombre.Text = nombre;
+        }
         private void Restaurar() {
             materialTextBoxEdit_Nombre.Clear();
             materialTextBoxEdit_Apellido.Clear();

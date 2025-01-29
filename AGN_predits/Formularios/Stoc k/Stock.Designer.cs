@@ -29,7 +29,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
             this.materialCard_ContenedorDataGreed = new ReaLTaiizor.Controls.MaterialCard();
             this.poisonDataGridView_Stock = new ReaLTaiizor.Controls.PoisonDataGridView();
-            this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             this.Column_ProductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,7 @@
             this.Column_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column_Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             this.pictureBox_Cargando = new System.Windows.Forms.PictureBox();
             this.label_Cargando = new System.Windows.Forms.Label();
             this.materialCard_ContenedorDataGreed.SuspendLayout();
@@ -125,28 +125,6 @@
             this.poisonDataGridView_Stock.Size = new System.Drawing.Size(725, 412);
             this.poisonDataGridView_Stock.TabIndex = 0;
             // 
-            // materialButton1
-            // 
-            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton1.Icon")));
-            this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton1.Location = new System.Drawing.Point(23, 483);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(239, 36);
-            this.materialButton1.TabIndex = 1;
-            this.materialButton1.Text = "Cargar Nuevo Producto";
-            this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
-            // 
             // Column_ProductoID
             // 
             this.Column_ProductoID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -227,8 +205,31 @@
             this.Column_Borrar.Name = "Column_Borrar";
             this.Column_Borrar.ReadOnly = true;
             // 
+            // materialButton1
+            // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton1.Icon")));
+            this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton1.Location = new System.Drawing.Point(23, 483);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(239, 36);
+            this.materialButton1.TabIndex = 1;
+            this.materialButton1.Text = "Cargar Nuevo Producto";
+            this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
             // pictureBox_Cargando
             // 
+            this.pictureBox_Cargando.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox_Cargando.Location = new System.Drawing.Point(269, 484);
             this.pictureBox_Cargando.Name = "pictureBox_Cargando";
             this.pictureBox_Cargando.Size = new System.Drawing.Size(35, 35);
@@ -237,6 +238,7 @@
             // 
             // label_Cargando
             // 
+            this.label_Cargando.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label_Cargando.AutoSize = true;
             this.label_Cargando.Location = new System.Drawing.Point(310, 495);
             this.label_Cargando.Name = "label_Cargando";

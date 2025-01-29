@@ -223,7 +223,7 @@
             this.bigLabel_Dia.BackColor = System.Drawing.Color.Transparent;
             this.bigLabel_Dia.Font = new System.Drawing.Font("Arboria Light", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bigLabel_Dia.ForeColor = System.Drawing.Color.Black;
-            this.bigLabel_Dia.Location = new System.Drawing.Point(63, 444);
+            this.bigLabel_Dia.Location = new System.Drawing.Point(47, 444);
             this.bigLabel_Dia.Name = "bigLabel_Dia";
             this.bigLabel_Dia.Size = new System.Drawing.Size(104, 40);
             this.bigLabel_Dia.TabIndex = 25;

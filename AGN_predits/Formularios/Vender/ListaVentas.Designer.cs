@@ -42,7 +42,7 @@
             this.Ventas.Sizable = true;
             this.Ventas.Size = new System.Drawing.Size(800, 450);
             this.Ventas.SmartBounds = true;
-            this.Ventas.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
+            this.Ventas.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Ventas.TabIndex = 0;
             this.Ventas.Text = "Ventas";
             this.Ventas.TransparencyKey = System.Drawing.Color.Fuchsia;
@@ -58,6 +58,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(112, 35);
             this.Name = "Lista_Ventas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista_Ventas";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.ResumeLayout(false);
