@@ -121,11 +121,11 @@
     <Compile Include="Formularios\Caja\Movimiento.Designer.cs">
       <DependentUpon>Movimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Cliente\ClientesForm.cs">
+    <Compile Include="Formularios\Cliente\ClientesFormLista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Cliente\ClientesForm.Designer.cs">
-      <DependentUpon>ClientesForm.cs</DependentUpon>
+    <Compile Include="Formularios\Cliente\ClientesFormLista.Designer.cs">
+      <DependentUpon>ClientesFormLista.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\DashBoard\DashBoard.cs">
       <SubType>Form</SubType>
@@ -192,8 +192,8 @@
     <EmbeddedResource Include="Formularios\Caja\Movimiento.resx">
       <DependentUpon>Movimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Cliente\ClientesForm.resx">
-      <DependentUpon>ClientesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Cliente\ClientesFormLista.resx">
+      <DependentUpon>ClientesFormLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\DashBoard\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>

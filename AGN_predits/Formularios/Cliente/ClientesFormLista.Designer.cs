@@ -1,5 +1,5 @@
 ﻿namespace AGN_predits.Formularios.Cliente {
-    partial class ClientesForm {
+    partial class ClientesFormLista {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -26,7 +26,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesFormLista));
             this.panel_Contenedor = new System.Windows.Forms.Panel();
             this.poisonDataGridView_Clientes = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.Column_ClienteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
