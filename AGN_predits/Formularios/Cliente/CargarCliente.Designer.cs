@@ -65,7 +65,7 @@
             this.airForm1.SmartBounds = true;
             this.airForm1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.airForm1.TabIndex = 0;
-            this.airForm1.Text = "Clientes";
+            this.airForm1.Text = "Cliente";
             this.airForm1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm1.Transparent = false;
             // 

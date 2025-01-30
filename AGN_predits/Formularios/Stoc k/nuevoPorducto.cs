@@ -13,18 +13,20 @@ using System.Windows.Forms;
 
 namespace AGN_predits.Formularios.Stoc_k {
     public partial class nuevoPorducto : Form {
-        public nuevoPorducto() {
+        private Stock _stock;
+        public nuevoPorducto(Stock stock)   {
             InitializeComponent();
             materialSwitch_Condicion.Checked = false;
             label_Cargando.Hide();
             pictureBox_Cargando.Image = Image.FromFile("Gif/Dual Ring@1x-1.0s-200px-200px.gif");
             pictureBox_Cargando.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox_Cargando.Hide();
+            _stock = stock;
         }
-
         decimal almacenamiento,bateria, costo, venta;
         string condicion = string.Empty;
-
+        bool editar = false;
+        int IdSeleccionado;
         private bool Validaciones() {
 
             Mensaje msj = new Mensaje();
@@ -43,7 +45,7 @@ namespace AGN_predits.Formularios.Stoc_k {
 
             if (decimal.TryParse(materialTextBoxEdit_Almacenamiento.Text.Replace(",", "."),
                 System.Globalization.NumberStyles.Any,
-                System.Globalization.CultureInfo.CurrentCulture,
+                System.Globalization.CultureInfo.InvariantCulture,
                 out almacenamiento)) {
 
             } else {
@@ -57,7 +59,7 @@ namespace AGN_predits.Formularios.Stoc_k {
 
             if (decimal.TryParse(materialTextBoxEdit_Bateria.Text.Replace(",", "."),
                 System.Globalization.NumberStyles.Any,
-                System.Globalization.CultureInfo.CurrentCulture,
+                System.Globalization.CultureInfo.InvariantCulture,
                 out bateria)) {
 
             } else {
@@ -83,7 +85,7 @@ namespace AGN_predits.Formularios.Stoc_k {
 
             if (decimal.TryParse(materialTextBoxEdit_Costo.Text.Replace(",", "."),
                 System.Globalization.NumberStyles.Any,
-                System.Globalization.CultureInfo.CurrentCulture,
+                System.Globalization.CultureInfo.InvariantCulture,
                 out costo)) {
 
             } else {
@@ -97,7 +99,7 @@ namespace AGN_predits.Formularios.Stoc_k {
 
             if (decimal.TryParse(materialTextBoxEdit_Venta.Text.Replace(",", "."),
                 System.Globalization.NumberStyles.Any,
-                System.Globalization.CultureInfo.CurrentCulture,
+                System.Globalization.CultureInfo.InvariantCulture,
                 out venta)) {
 
             } else {
@@ -110,8 +112,27 @@ namespace AGN_predits.Formularios.Stoc_k {
             }
             return true;
         }
-        
+        public void SetProductData(int ProductoID, string marca, string modelo, string condicion, decimal almacenamiento, decimal bateria, string descripcion, string stock, decimal costo, decimal venta) {
 
+           IdSeleccionado = ProductoID;
+           materialTextBoxEdit_Marca.Text = marca;
+           materialTextBoxEdit_Modelo.Text = modelo;
+           materialTextBoxEdit_Almacenamiento.Text = almacenamiento.ToString();
+            if (condicion == "Nuevo") {
+                materialSwitch_Condicion.Checked = false;
+            }else if (condicion == "Usado") {
+                materialSwitch_Condicion.Checked = true;
+            }
+            materialTextBoxEdit_Bateria.Text = bateria.ToString();
+            materialTextBoxEdit_Stock.Text = stock.ToString();  
+            materialTextBoxEdit_Descripcion.Text = descripcion;
+            materialTextBoxEdit_Costo.Text = costo.ToString();
+            materialTextBoxEdit_Venta.Text = venta.ToString();
+
+            materialButton_CargarProducto.Text = "Editar";
+            editar = true;
+  
+        }
         private void Restaurar() {
             materialTextBoxEdit_Marca.Clear();
             materialTextBoxEdit_Modelo.Clear();
@@ -123,7 +144,7 @@ namespace AGN_predits.Formularios.Stoc_k {
             materialTextBoxEdit_Venta.Clear();
         }
         private async void materialButton_CargarProducto_Click(object sender, EventArgs e) {
-            if (Validaciones()) {
+            if (Validaciones() && editar == false) {
                 Producto producto = new Producto();
                 
                 producto.Marca = materialTextBoxEdit_Marca.Text;
@@ -140,17 +161,52 @@ namespace AGN_predits.Formularios.Stoc_k {
 
                 pictureBox_Cargando.Show();
                 label_Cargando.Show();
+               
                 if (await LogicaProducto.Instancia.CargarProducto(producto)) {
                    
                     msj.Show("Producto","Cargado",Color.Green,Color.White,Mensaje.TipoIcono.Ok,Mensaje.TipoSonido.start);
                     Restaurar();
                 } else {
-                    msj.Show("Error", "logica producto", Color.Red, Color.White, Mensaje.TipoIcono.BaseDatos, Mensaje.TipoSonido.archive);
+                    msj.Show("Error", "logica producto", Color.Red, Color.White, Mensaje.TipoIcono.Error , Mensaje.TipoSonido.archive);
                 }
+                await _stock.ActualizarDataGreed();
                 pictureBox_Cargando.Hide();
                 label_Cargando.Hide();
 
+                return;
+            }
 
+            if (Validaciones() && editar == true) {
+                Producto producto = new Producto();
+
+                producto.ProductoID = IdSeleccionado;
+                producto.Marca = materialTextBoxEdit_Marca.Text;
+                producto.Modelo = materialTextBoxEdit_Modelo.Text;
+                producto.Condicion = condicion;
+                producto.Almacenamiento = almacenamiento;
+                producto.Bateria = bateria;
+                producto.Stock = int.Parse(materialTextBoxEdit_Stock.Text);
+                producto.descripcion = materialTextBoxEdit_Descripcion.Text;
+                producto.PrecioCosto = costo;
+                producto.PrecioVenta = venta;
+                Mensaje msj = new Mensaje();
+
+
+                pictureBox_Cargando.Show();
+                label_Cargando.Show();
+
+                if (await LogicaProducto.Instancia.EditarProducto(producto)) {
+
+                    msj.Show("Producto", "Editado", Color.Green, Color.White, Mensaje.TipoIcono.Ok, Mensaje.TipoSonido.start);
+                    Restaurar();
+                    this.Close();
+                } else {
+                    msj.Show("Error", "logica Edicion", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.archive);
+                }
+                await _stock.ActualizarDataGreed();
+                pictureBox_Cargando.Hide();
+                label_Cargando.Hide();
+                return;
             }
         }
     }

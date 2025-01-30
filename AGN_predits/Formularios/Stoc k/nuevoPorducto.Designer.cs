@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(nuevoPorducto));
             this.airForm1 = new ReaLTaiizor.Forms.AirForm();
+            this.label_Cargando = new System.Windows.Forms.Label();
+            this.pictureBox_Cargando = new System.Windows.Forms.PictureBox();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.materialButton_CargarProducto = new ReaLTaiizor.Controls.MaterialButton();
             this.materialTextBoxEdit_Venta = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -36,8 +38,6 @@
             this.materialTextBoxEdit_Almacenamiento = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTextBoxEdit_Modelo = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTextBoxEdit_Marca = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.pictureBox_Cargando = new System.Windows.Forms.PictureBox();
-            this.label_Cargando = new System.Windows.Forms.Label();
             this.airForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cargando)).BeginInit();
             this.SuspendLayout();
@@ -73,9 +73,26 @@
             this.airForm1.SmartBounds = true;
             this.airForm1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.airForm1.TabIndex = 0;
-            this.airForm1.Text = "Cargar Nuevo Producto";
+            this.airForm1.Text = "Producto";
             this.airForm1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm1.Transparent = false;
+            // 
+            // label_Cargando
+            // 
+            this.label_Cargando.AutoSize = true;
+            this.label_Cargando.Location = new System.Drawing.Point(288, 318);
+            this.label_Cargando.Name = "label_Cargando";
+            this.label_Cargando.Size = new System.Drawing.Size(68, 15);
+            this.label_Cargando.TabIndex = 22;
+            this.label_Cargando.Text = "Cargando...";
+            // 
+            // pictureBox_Cargando
+            // 
+            this.pictureBox_Cargando.Location = new System.Drawing.Point(247, 308);
+            this.pictureBox_Cargando.Name = "pictureBox_Cargando";
+            this.pictureBox_Cargando.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox_Cargando.TabIndex = 21;
+            this.pictureBox_Cargando.TabStop = false;
             // 
             // parrotGradientPanel1
             // 
@@ -380,23 +397,6 @@
             this.materialTextBoxEdit_Marca.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBoxEdit_Marca.TrailingIcon = null;
             this.materialTextBoxEdit_Marca.UseSystemPasswordChar = false;
-            // 
-            // pictureBox_Cargando
-            // 
-            this.pictureBox_Cargando.Location = new System.Drawing.Point(247, 308);
-            this.pictureBox_Cargando.Name = "pictureBox_Cargando";
-            this.pictureBox_Cargando.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox_Cargando.TabIndex = 21;
-            this.pictureBox_Cargando.TabStop = false;
-            // 
-            // label_Cargando
-            // 
-            this.label_Cargando.AutoSize = true;
-            this.label_Cargando.Location = new System.Drawing.Point(288, 318);
-            this.label_Cargando.Name = "label_Cargando";
-            this.label_Cargando.Size = new System.Drawing.Size(68, 15);
-            this.label_Cargando.TabIndex = 22;
-            this.label_Cargando.Text = "Cargando...";
             // 
             // nuevoPorducto
             // 

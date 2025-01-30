@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AGN_predits.Conexiones.BD.Logica {
+ 
     internal class LogicaProducto {
+
         private static string cadena = ConfigurationManager.ConnectionStrings["cadena"].ConnectionString;
 
 
@@ -94,31 +96,35 @@ namespace AGN_predits.Conexiones.BD.Logica {
         public async Task<bool> EliminarProducto(int id) {
             try {
                 using (MySqlConnection conexion = new MySqlConnection(cadena)) {
+                    await conexion.OpenAsync(); 
 
-                    string query = "DELETE FROM Productos WHERE ID = @ProductoID";
+                    string query = "DELETE FROM producto WHERE ProductoID = @ProductoID";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
-
                         cmd.Parameters.AddWithValue("@ProductoID", id);
                         int filasAfectadas = await cmd.ExecuteNonQueryAsync();
                         return filasAfectadas > 0;
                     }
                 }
-            }catch
-            (Exception ex) { Console.WriteLine(ex.Message); return false; }
-
+            } catch (Exception ex) {
+                Console.WriteLine($"Error al eliminar producto: {ex.Message}"); 
+                return false;
+            }
         }
+
         public async Task<bool> EditarProducto(Producto prod) {
             try {
                 using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                    await conexion.OpenAsync();
+                    await conexion.OpenAsync(); 
 
-                    string query = "UPDATE producto SET Marca = @Marca, Modelo = @Modelo, Condicion = @Condicion, " +
-                                   "Almacenamiento = @Almacenamiento, Bateria = @Bateria, Stock = @Stock, " +
-                                   "PrecioCosto = @PrecioCosto, PrecioVenta = @PrecioVenta, descripcion = @descripcion " +
-                                   "WHERE ProductoID = @ProductoID";
+                    string query = "UPDATE producto SET Marca = @Marca, Modelo = @Modelo, Condicion = @Condicion," +
+                                    "Almacenamiento = @Almacenamiento, Bateria = @Bateria, Stock = @Stock, " +
+                                    "PrecioCosto = @PrecioCosto, PrecioVenta = @PrecioVenta, descripcion = @Descripcion " +
+                                    " WHERE ProductoID = @ProductoID";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                    
+
                         cmd.Parameters.AddWithValue("@Marca", prod.Marca);
                         cmd.Parameters.AddWithValue("@Modelo", prod.Modelo);
                         cmd.Parameters.AddWithValue("@Condicion", prod.Condicion);
@@ -127,18 +133,26 @@ namespace AGN_predits.Conexiones.BD.Logica {
                         cmd.Parameters.AddWithValue("@Stock", prod.Stock);
                         cmd.Parameters.AddWithValue("@PrecioCosto", prod.PrecioCosto);
                         cmd.Parameters.AddWithValue("@PrecioVenta", prod.PrecioVenta);
-                        cmd.Parameters.AddWithValue("@descripcion", prod.descripcion);
+                        cmd.Parameters.AddWithValue("@Descripcion", prod.descripcion);
                         cmd.Parameters.AddWithValue("@ProductoID", prod.ProductoID);
 
+                        Console.WriteLine($"Marca: {prod.Marca}, Modelo: {prod.Modelo}, Condicion: {prod.Condicion}");
+                        Console.WriteLine($"Almacenamiento: {prod.Almacenamiento}, Bateria: {prod.Bateria}, Stock: {prod.Stock}");
+                        Console.WriteLine($"PrecioCosto: {prod.PrecioCosto}, PrecioVenta: {prod.PrecioVenta}, Descripcion: {prod.descripcion}");
+                        Console.WriteLine($"ProductoID: {prod.ProductoID}");
+
+
                         int filasAfectadas = await cmd.ExecuteNonQueryAsync();
+                        Console.WriteLine($"Filas afectadas: {filasAfectadas}");
                         return filasAfectadas > 0;
                     }
                 }
             } catch (Exception ex) {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Error al editar producto: {ex.Message}");
                 return false;
             }
         }
+
 
 
     }

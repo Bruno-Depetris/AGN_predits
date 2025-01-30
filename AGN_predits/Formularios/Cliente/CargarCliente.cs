@@ -25,6 +25,7 @@ namespace AGN_predits.Formularios {
         }
         string dni = "0";
         int ClienteIDEditar;
+        bool editar = false;    
         public bool Validaciones() {
             Mensaje msj = new Mensaje();    
             if (string.IsNullOrEmpty(materialTextBoxEdit_Nombre.Text)) {
@@ -62,6 +63,9 @@ namespace AGN_predits.Formularios {
             materialTextBoxEdit_Telefono.Text = telefono;
             materialTextBoxEdit_Gmail.Text = gmail;
             ClienteIDEditar = clienteID;
+
+            editar = true;
+            materialButton_CargarCliente.Text = "Editar Cliente";
         }
         private void Restaurar() {
             materialTextBoxEdit_Nombre.Clear();
@@ -96,10 +100,11 @@ namespace AGN_predits.Formularios {
                 label_Cargando.Hide();
 
             }
-            if (ClienteIDEditar == ) {
+            if (Validaciones() && editar == true) {
                 Console.WriteLine(editar);
-                materialButton_CargarCliente.Text = "Editar Cliente";
+                
                 ClienteMod cliente = new ClienteMod();
+                cliente.ClienteID = ClienteIDEditar;
                 cliente.Nombre = materialTextBoxEdit_Nombre.Text;
                 cliente.Apellido = materialTextBoxEdit_Apellido.Text;
                 cliente.Dni = dni.ToString();
@@ -115,6 +120,9 @@ namespace AGN_predits.Formularios {
                     Mensaje msj = new Mensaje();
                     msj.Show("Felicitaciones", "Cliente Editado", Color.Green, Color.White, Mensaje.TipoIcono.Ok, Mensaje.TipoSonido.Confirmacion);
                     Restaurar();
+                } else {
+                    Mensaje msj = new Mensaje();
+                    msj.Show("Error", "Contactar Soporte", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.popTres);
                 }
                 await _formClientes.ActualizarDataGreed();
                 pictureBox_Cargando.Hide();

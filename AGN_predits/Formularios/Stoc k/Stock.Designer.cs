@@ -124,6 +124,7 @@
             this.poisonDataGridView_Stock.ShowRowErrors = false;
             this.poisonDataGridView_Stock.Size = new System.Drawing.Size(725, 412);
             this.poisonDataGridView_Stock.TabIndex = 0;
+            this.poisonDataGridView_Stock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.poisonDataGridView_Stock_CellContentClick);
             // 
             // Column_ProductoID
             // 

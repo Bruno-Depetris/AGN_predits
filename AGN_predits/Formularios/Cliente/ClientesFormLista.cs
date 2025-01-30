@@ -74,10 +74,15 @@ namespace AGN_predits.Formularios.Cliente {
             DialogResult result = MessageBox.Show($"Seguro que desea borrar a {NombreApellido}?  ", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             Mensaje mensaje = new Mensaje();
             if (result == DialogResult.Yes) {
-
+                pictureBox_Cargando.Show();
+                label_Cargando.Show();
                 if (await LogicaCliente.Instancia.EliminarCliente(IDselected)) {
+                    await ActualizarDataGreed();
 
-                    mensaje.Show($"{NombreApellido}", "Eliminado", Color.Orange, Color.BlanchedAlmond, Mensaje.TipoIcono.Ok, Mensaje.TipoSonido.Confirmacion);
+                    pictureBox_Cargando.Hide();
+                    label_Cargando.Hide();
+
+                    mensaje.Show($"{NombreApellido}", "Eliminado", Color.White, Color.White, Mensaje.TipoIcono.Ok, Mensaje.TipoSonido.Confirmacion);
                     mensaje.Show();
                 } else {
                     mensaje.Show("Error", $"Contactar soporte", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.Error);
@@ -87,7 +92,7 @@ namespace AGN_predits.Formularios.Cliente {
                 mensaje.Show("Cancelar", $"Operacion Cancelada", Color.Black, Color.White, Mensaje.TipoIcono.Ok, Mensaje.TipoSonido.Intermedio);
                 mensaje.Show();
             }
-            await ActualizarDataGreed();
+
         }
         private void poisonDataGridView_Clientes_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0) {
