@@ -68,7 +68,7 @@ namespace AGN_predits {
             bigLabel_Fecha_completa.Text = fechaActual.ToString("dd/MM/yy");
 
             // Actualiza el label con el día de la semana
-            bigLabel_Dia.Text = fechaActual.ToString("dddd");
+            bigLabel_Dia.Text = char.ToUpper(fechaActual.ToString("dddd")[0]) + fechaActual.ToString("dddd").Substring(1);
 
             // Actualiza el label con la hora en formato hh:mm:22
             bigLabel_Hora.Text = fechaActual.ToString("HH:mm:ss");

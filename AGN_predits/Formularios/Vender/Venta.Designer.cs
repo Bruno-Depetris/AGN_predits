@@ -32,7 +32,6 @@
             this.airSeparator4 = new ReaLTaiizor.Controls.AirSeparator();
             this.airSeparator3 = new ReaLTaiizor.Controls.AirSeparator();
             this.airSeparator2 = new ReaLTaiizor.Controls.AirSeparator();
-            this.airSeparator1 = new ReaLTaiizor.Controls.AirSeparator();
             this.materialTextBoxEdit_DetallesVenta = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialButton_Vender = new ReaLTaiizor.Controls.MaterialButton();
             this.materialButton_VerVentas = new ReaLTaiizor.Controls.MaterialButton();
@@ -41,14 +40,22 @@
             this.materialComboBox_FormasPago = new ReaLTaiizor.Controls.MaterialComboBox();
             this.materialComboBox_SelectProducto = new ReaLTaiizor.Controls.MaterialComboBox();
             this.materialComboBox_SeleccionCliente = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.label_Cargando = new System.Windows.Forms.Label();
+            this.pictureBox_Cargando = new System.Windows.Forms.PictureBox();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Prod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cargando)).BeginInit();
             this.SuspendLayout();
             // 
             // materialCard1
             // 
+            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.label_Cargando);
+            this.materialCard1.Controls.Add(this.pictureBox_Cargando);
             this.materialCard1.Controls.Add(this.pictureBox_Prod);
             this.materialCard1.Controls.Add(this.pictureBox_Cliente);
             this.materialCard1.Controls.Add(this.materialComboBox_Cantidad);
@@ -56,7 +63,6 @@
             this.materialCard1.Controls.Add(this.airSeparator4);
             this.materialCard1.Controls.Add(this.airSeparator3);
             this.materialCard1.Controls.Add(this.airSeparator2);
-            this.materialCard1.Controls.Add(this.airSeparator1);
             this.materialCard1.Controls.Add(this.materialTextBoxEdit_DetallesVenta);
             this.materialCard1.Controls.Add(this.materialButton_Vender);
             this.materialCard1.Controls.Add(this.materialButton_VerVentas);
@@ -77,7 +83,8 @@
             // 
             // pictureBox_Prod
             // 
-            this.pictureBox_Prod.Location = new System.Drawing.Point(686, 94);
+            this.pictureBox_Prod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_Prod.Location = new System.Drawing.Point(686, 130);
             this.pictureBox_Prod.Name = "pictureBox_Prod";
             this.pictureBox_Prod.Size = new System.Drawing.Size(50, 50);
             this.pictureBox_Prod.TabIndex = 20;
@@ -93,8 +100,7 @@
             // 
             // materialComboBox_Cantidad
             // 
-            this.materialComboBox_Cantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialComboBox_Cantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialComboBox_Cantidad.AutoResize = false;
             this.materialComboBox_Cantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialComboBox_Cantidad.Depth = 0;
@@ -108,7 +114,7 @@
             this.materialComboBox_Cantidad.Hint = "Cantidad";
             this.materialComboBox_Cantidad.IntegralHeight = false;
             this.materialComboBox_Cantidad.ItemHeight = 43;
-            this.materialComboBox_Cantidad.Location = new System.Drawing.Point(534, 176);
+            this.materialComboBox_Cantidad.Location = new System.Drawing.Point(534, 224);
             this.materialComboBox_Cantidad.MaxDropDownItems = 4;
             this.materialComboBox_Cantidad.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.materialComboBox_Cantidad.Name = "materialComboBox_Cantidad";
@@ -119,7 +125,9 @@
             // 
             // parrotFlatProgressBar_BarraProgresoFormulario
             // 
-            this.parrotFlatProgressBar_BarraProgresoFormulario.BarStyle = ReaLTaiizor.Controls.ParrotFlatProgressBar.Style.Material;
+            this.parrotFlatProgressBar_BarraProgresoFormulario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parrotFlatProgressBar_BarraProgresoFormulario.BarStyle = ReaLTaiizor.Controls.ParrotFlatProgressBar.Style.Flat;
             this.parrotFlatProgressBar_BarraProgresoFormulario.BorderColor = System.Drawing.Color.Black;
             this.parrotFlatProgressBar_BarraProgresoFormulario.Colors = ((System.Collections.Generic.List<System.Drawing.Color>)(resources.GetObject("parrotFlatProgressBar_BarraProgresoFormulario.Colors")));
             this.parrotFlatProgressBar_BarraProgresoFormulario.CompleteBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(250)))));
@@ -128,7 +136,7 @@
             this.parrotFlatProgressBar_BarraProgresoFormulario.IncompletedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.parrotFlatProgressBar_BarraProgresoFormulario.InocmpletedColor = System.Drawing.Color.White;
             this.parrotFlatProgressBar_BarraProgresoFormulario.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotFlatProgressBar_BarraProgresoFormulario.Location = new System.Drawing.Point(14, 360);
+            this.parrotFlatProgressBar_BarraProgresoFormulario.Location = new System.Drawing.Point(18, 408);
             this.parrotFlatProgressBar_BarraProgresoFormulario.MaxValue = 100;
             this.parrotFlatProgressBar_BarraProgresoFormulario.Name = "parrotFlatProgressBar_BarraProgresoFormulario";
             this.parrotFlatProgressBar_BarraProgresoFormulario.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
@@ -150,7 +158,7 @@
             this.airSeparator4.Customization = "";
             this.airSeparator4.Font = new System.Drawing.Font("Verdana", 8F);
             this.airSeparator4.Image = null;
-            this.airSeparator4.Location = new System.Drawing.Point(14, 315);
+            this.airSeparator4.Location = new System.Drawing.Point(17, 391);
             this.airSeparator4.Name = "airSeparator4";
             this.airSeparator4.NoRounding = false;
             this.airSeparator4.Size = new System.Drawing.Size(719, 1);
@@ -160,14 +168,14 @@
             // 
             // airSeparator3
             // 
-            this.airSeparator3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.airSeparator3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.airSeparator3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.airSeparator3.Colors = new ReaLTaiizor.Util.BloomAir[0];
             this.airSeparator3.Customization = "";
             this.airSeparator3.Font = new System.Drawing.Font("Verdana", 8F);
             this.airSeparator3.Image = null;
-            this.airSeparator3.Location = new System.Drawing.Point(14, 151);
+            this.airSeparator3.Location = new System.Drawing.Point(17, 186);
             this.airSeparator3.Name = "airSeparator3";
             this.airSeparator3.NoRounding = false;
             this.airSeparator3.Size = new System.Drawing.Size(719, 1);
@@ -177,7 +185,8 @@
             // 
             // airSeparator2
             // 
-            this.airSeparator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.airSeparator2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.airSeparator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.airSeparator2.Colors = new ReaLTaiizor.Util.BloomAir[0];
@@ -192,25 +201,10 @@
             this.airSeparator2.Text = "airSeparator2";
             this.airSeparator2.Transparent = false;
             // 
-            // airSeparator1
-            // 
-            this.airSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.airSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.airSeparator1.Colors = new ReaLTaiizor.Util.BloomAir[0];
-            this.airSeparator1.Customization = "";
-            this.airSeparator1.Font = new System.Drawing.Font("Verdana", 8F);
-            this.airSeparator1.Image = null;
-            this.airSeparator1.Location = new System.Drawing.Point(17, 416);
-            this.airSeparator1.Name = "airSeparator1";
-            this.airSeparator1.NoRounding = false;
-            this.airSeparator1.Size = new System.Drawing.Size(719, 1);
-            this.airSeparator1.TabIndex = 13;
-            this.airSeparator1.Text = "airSeparator1";
-            this.airSeparator1.Transparent = false;
-            // 
             // materialTextBoxEdit_DetallesVenta
             // 
+            this.materialTextBoxEdit_DetallesVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTextBoxEdit_DetallesVenta.AnimateReadOnly = false;
             this.materialTextBoxEdit_DetallesVenta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.materialTextBoxEdit_DetallesVenta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -221,7 +215,7 @@
             this.materialTextBoxEdit_DetallesVenta.HideSelection = true;
             this.materialTextBoxEdit_DetallesVenta.Hint = "Detalles";
             this.materialTextBoxEdit_DetallesVenta.LeadingIcon = null;
-            this.materialTextBoxEdit_DetallesVenta.Location = new System.Drawing.Point(17, 231);
+            this.materialTextBoxEdit_DetallesVenta.Location = new System.Drawing.Point(17, 290);
             this.materialTextBoxEdit_DetallesVenta.MaxLength = 32767;
             this.materialTextBoxEdit_DetallesVenta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.materialTextBoxEdit_DetallesVenta.Name = "materialTextBoxEdit_DetallesVenta";
@@ -233,7 +227,7 @@
             this.materialTextBoxEdit_DetallesVenta.SelectionLength = 0;
             this.materialTextBoxEdit_DetallesVenta.SelectionStart = 0;
             this.materialTextBoxEdit_DetallesVenta.ShortcutsEnabled = true;
-            this.materialTextBoxEdit_DetallesVenta.Size = new System.Drawing.Size(719, 48);
+            this.materialTextBoxEdit_DetallesVenta.Size = new System.Drawing.Size(716, 48);
             this.materialTextBoxEdit_DetallesVenta.TabIndex = 5;
             this.materialTextBoxEdit_DetallesVenta.TabStop = false;
             this.materialTextBoxEdit_DetallesVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -243,6 +237,8 @@
             // 
             // materialButton_Vender
             // 
+            this.materialButton_Vender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton_Vender.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_Vender.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialButton_Vender.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -250,7 +246,7 @@
             this.materialButton_Vender.HighEmphasis = true;
             this.materialButton_Vender.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_Vender.Icon")));
             this.materialButton_Vender.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_Vender.Location = new System.Drawing.Point(269, 426);
+            this.materialButton_Vender.Location = new System.Drawing.Point(272, 426);
             this.materialButton_Vender.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton_Vender.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton_Vender.Name = "materialButton_Vender";
@@ -265,6 +261,7 @@
             // 
             // materialButton_VerVentas
             // 
+            this.materialButton_VerVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.materialButton_VerVentas.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_VerVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialButton_VerVentas.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -287,9 +284,11 @@
             // 
             // materialSwitch_canje
             // 
+            this.materialSwitch_canje.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSwitch_canje.AutoSize = true;
             this.materialSwitch_canje.Depth = 0;
-            this.materialSwitch_canje.Location = new System.Drawing.Point(17, 282);
+            this.materialSwitch_canje.Location = new System.Drawing.Point(17, 341);
             this.materialSwitch_canje.Margin = new System.Windows.Forms.Padding(0);
             this.materialSwitch_canje.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialSwitch_canje.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
@@ -303,8 +302,7 @@
             // 
             // materialComboBox_Cuotas
             // 
-            this.materialComboBox_Cuotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialComboBox_Cuotas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialComboBox_Cuotas.AutoResize = false;
             this.materialComboBox_Cuotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialComboBox_Cuotas.Depth = 0;
@@ -318,11 +316,11 @@
             this.materialComboBox_Cuotas.Hint = "Seleccionar Cantidad Cuotas";
             this.materialComboBox_Cuotas.IntegralHeight = false;
             this.materialComboBox_Cuotas.ItemHeight = 43;
-            this.materialComboBox_Cuotas.Location = new System.Drawing.Point(282, 176);
+            this.materialComboBox_Cuotas.Location = new System.Drawing.Point(283, 224);
             this.materialComboBox_Cuotas.MaxDropDownItems = 4;
             this.materialComboBox_Cuotas.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.materialComboBox_Cuotas.Name = "materialComboBox_Cuotas";
-            this.materialComboBox_Cuotas.Size = new System.Drawing.Size(246, 49);
+            this.materialComboBox_Cuotas.Size = new System.Drawing.Size(245, 49);
             this.materialComboBox_Cuotas.StartIndex = 0;
             this.materialComboBox_Cuotas.TabIndex = 3;
             this.materialComboBox_Cuotas.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_Cuotas_SelectedIndexChanged);
@@ -344,7 +342,7 @@
             this.materialComboBox_FormasPago.Hint = "Seleccionar Forma de Pago";
             this.materialComboBox_FormasPago.IntegralHeight = false;
             this.materialComboBox_FormasPago.ItemHeight = 43;
-            this.materialComboBox_FormasPago.Location = new System.Drawing.Point(17, 176);
+            this.materialComboBox_FormasPago.Location = new System.Drawing.Point(18, 224);
             this.materialComboBox_FormasPago.MaxDropDownItems = 4;
             this.materialComboBox_FormasPago.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.materialComboBox_FormasPago.Name = "materialComboBox_FormasPago";
@@ -370,7 +368,7 @@
             this.materialComboBox_SelectProducto.Hint = "Seleccionar Producto";
             this.materialComboBox_SelectProducto.IntegralHeight = false;
             this.materialComboBox_SelectProducto.ItemHeight = 43;
-            this.materialComboBox_SelectProducto.Location = new System.Drawing.Point(17, 95);
+            this.materialComboBox_SelectProducto.Location = new System.Drawing.Point(17, 131);
             this.materialComboBox_SelectProducto.MaxDropDownItems = 4;
             this.materialComboBox_SelectProducto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.materialComboBox_SelectProducto.Name = "materialComboBox_SelectProducto";
@@ -404,6 +402,25 @@
             this.materialComboBox_SeleccionCliente.TabIndex = 0;
             this.materialComboBox_SeleccionCliente.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_SeleccionCliente_SelectedIndexChanged);
             // 
+            // label_Cargando
+            // 
+            this.label_Cargando.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_Cargando.AutoSize = true;
+            this.label_Cargando.Location = new System.Drawing.Point(505, 437);
+            this.label_Cargando.Name = "label_Cargando";
+            this.label_Cargando.Size = new System.Drawing.Size(62, 13);
+            this.label_Cargando.TabIndex = 22;
+            this.label_Cargando.Text = "Cargando...";
+            // 
+            // pictureBox_Cargando
+            // 
+            this.pictureBox_Cargando.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox_Cargando.Location = new System.Drawing.Point(464, 426);
+            this.pictureBox_Cargando.Name = "pictureBox_Cargando";
+            this.pictureBox_Cargando.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox_Cargando.TabIndex = 21;
+            this.pictureBox_Cargando.TabStop = false;
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +436,7 @@
             this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Prod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cargando)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,7 +450,6 @@
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_FormasPago;
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_SelectProducto;
         private ReaLTaiizor.Controls.MaterialButton materialButton_VerVentas;
-        private ReaLTaiizor.Controls.AirSeparator airSeparator1;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit_DetallesVenta;
         private ReaLTaiizor.Controls.MaterialButton materialButton_Vender;
         private ReaLTaiizor.Controls.ParrotFlatProgressBar parrotFlatProgressBar_BarraProgresoFormulario;
@@ -442,5 +459,7 @@
         private ReaLTaiizor.Controls.MaterialComboBox materialComboBox_Cantidad;
         private System.Windows.Forms.PictureBox pictureBox_Cliente;
         private System.Windows.Forms.PictureBox pictureBox_Prod;
+        private System.Windows.Forms.Label label_Cargando;
+        private System.Windows.Forms.PictureBox pictureBox_Cargando;
     }
 }

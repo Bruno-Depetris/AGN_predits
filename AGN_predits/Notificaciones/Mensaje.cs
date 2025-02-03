@@ -54,7 +54,7 @@ namespace AGN_predits.Notificaciones {
         // Rutas de íconos
         string ErrorPath = Path.Combine(Application.StartupPath, "Img/Iconos", "error.png");
         string OkPath = Path.Combine(Application.StartupPath, "Img/Iconos", "check.png");
-        string CashPath = Path.Combine(Application.StartupPath, "Img/Iconos", "cash.png");
+        string CashPath = Path.Combine(Application.StartupPath, "Img/Iconos", "forex_trade_chart_stock.png");
         string Admin = Path.Combine(Application.StartupPath, "Img/Iconos", "admin.png");
         string BaseDatos = Path.Combine(Application.StartupPath, "Img/Iconos", "bd.png");
         string Buscar = Path.Combine(Application.StartupPath, "Img/Iconos", "buscar.png");
@@ -168,28 +168,31 @@ namespace AGN_predits.Notificaciones {
         private void timer_Muestra_Tick(object sender, EventArgs e) {
             if (estado == false) {
 
-
                 if (posicionY >= ScreenHeight - this.Height - 30) {
                     posicionY -= 5;
 
+                    //aqui llega a 806 px en Y y en 801 entra al else
+                    //Console.WriteLine(posicionY);
                 } else {
                     estado = true;
                     contador = 200;
                 }
 
-
-
             } else if (estado == true) {
+                
                 contador--;
-
+                
                 if (contador <= 100 && contador >= 0) {
-                    posicionY += 5;
-                    if (posicionY == ScreenHeight) {
 
+                    posicionY += 5;
+            
+
+                    if (posicionY >= ScreenHeight) { //si dejaba el == corres el riezgo de que nunca de exactamente igual, en mi caso en lugar de 900 daba 901
+    
+                        this.Close();
                         timer_Muestra.Stop();
                         timer_Muestra.Dispose();
-                        this.Close();
-
+                        
                     }
                 }
             }
@@ -198,13 +201,15 @@ namespace AGN_predits.Notificaciones {
         }
 
         private void position() {
-
-            posicionY = ScreenHeight - this.Height; //815 
-            posicionX = ScreenWidth - this.Width - 30; //900 - 300 - 30 = 570
-
+      
+            posicionY = ScreenHeight - this.Height; //836
+            posicionX = ScreenWidth - this.Width - 30; //1600 - 274 - 30 = 1296
+            
 
             this.Location = new Point(posicionX, ScreenHeight);
+
             timer_Muestra.Start();
+
             estado = false;
 
         }

@@ -258,6 +258,7 @@
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.materialCard_ContenedorDataGreed);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Stock";
             this.Text = "Stock";
             this.Load += new System.EventHandler(this.Stock_Load);

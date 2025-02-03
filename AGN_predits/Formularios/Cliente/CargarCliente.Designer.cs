@@ -63,7 +63,7 @@
             this.airForm1.Sizable = true;
             this.airForm1.Size = new System.Drawing.Size(392, 395);
             this.airForm1.SmartBounds = true;
-            this.airForm1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
+            this.airForm1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.airForm1.TabIndex = 0;
             this.airForm1.Text = "Cliente";
             this.airForm1.TransparencyKey = System.Drawing.Color.Fuchsia;
@@ -288,9 +288,11 @@
             this.ClientSize = new System.Drawing.Size(392, 395);
             this.Controls.Add(this.airForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(112, 35);
             this.Name = "CargarCliente";
-            this.Text = "CargarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cliente";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm1.ResumeLayout(false);
             this.airForm1.PerformLayout();

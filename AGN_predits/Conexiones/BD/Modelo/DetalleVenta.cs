@@ -11,5 +11,11 @@ namespace AGN_predits.Conexiones.BD.Modelo {
         public int ClienteID { get; set; }
         public int ProductoID { get; set; }
         public int MedioPagoID { get; set; }
+
+        // Nuevas propiedades
+        public int Cuotas { get; set; }
+        public string Detalles { get; set; }
+        public string PlanCanje { get; set; }
+        public int Cantidad { get; set; }
     }
 }

@@ -219,11 +219,12 @@
             // 
             // bigLabel_Dia
             // 
+            this.bigLabel_Dia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bigLabel_Dia.AutoSize = true;
             this.bigLabel_Dia.BackColor = System.Drawing.Color.Transparent;
             this.bigLabel_Dia.Font = new System.Drawing.Font("Arboria Light", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bigLabel_Dia.ForeColor = System.Drawing.Color.Black;
-            this.bigLabel_Dia.Location = new System.Drawing.Point(47, 444);
+            this.bigLabel_Dia.Location = new System.Drawing.Point(63, 444);
             this.bigLabel_Dia.Name = "bigLabel_Dia";
             this.bigLabel_Dia.Size = new System.Drawing.Size(104, 40);
             this.bigLabel_Dia.TabIndex = 25;
@@ -428,11 +429,12 @@
             this.Controls.Add(this.panel_ContenedorLateral);
             this.Controls.Add(this.hopeForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1600, 900);
             this.MinimumSize = new System.Drawing.Size(190, 40);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Gestion";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.panel_ContenedorLateral.ResumeLayout(false);
             this.panel_ContenedorLateral.PerformLayout();

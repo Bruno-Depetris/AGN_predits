@@ -45,7 +45,7 @@ namespace AGN_predits.Conexiones.BD.Logica {
                         cmd.Parameters.AddWithValue("@PrecioVenta", prod.PrecioVenta);
                         cmd.Parameters.AddWithValue("@descripcion", prod.descripcion);
 
-                        int filasAfectadas = await cmd.ExecuteNonQueryAsync(); // Ejecuta de forma asíncrona
+                        int filasAfectadas = await cmd.ExecuteNonQueryAsync(); 
                         return filasAfectadas > 0;
                     }
                 }

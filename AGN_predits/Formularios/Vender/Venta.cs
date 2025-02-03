@@ -1,4 +1,5 @@
 ﻿using AGN_predits.Conexiones.BD.Logica;
+using AGN_predits.Conexiones.BD.Modelo;
 using AGN_predits.Formularios.Vender;
 using AGN_predits.Notificaciones;
 using System;
@@ -17,38 +18,16 @@ namespace AGN_predits.Formularios {
         public Venta() {
             InitializeComponent();
             VerificarProgreso();
-            materialComboBox_SeleccionCliente.Items.Insert(0,"Seleccionar");
-            materialComboBox_SeleccionCliente.SelectedIndex = 0;
+            Restaurar();
 
-            materialComboBox_SelectProducto.Items.Insert(0, "Seleccionar");
-            materialComboBox_SelectProducto.SelectedIndex = 0;
-
-            materialComboBox_FormasPago.Items.Insert(0, "Seleccionar");
-            materialComboBox_FormasPago.Items.Insert(1, "Transferencia");
-            materialComboBox_FormasPago.Items.Insert(2, "Efectivo");
-            materialComboBox_FormasPago.Items.Insert(3, "Credito");
-            materialComboBox_FormasPago.Items.Insert(4, "Crypto");
-            materialComboBox_FormasPago.SelectedIndex = 0;
-
-            materialComboBox_Cuotas.Items.Insert(0, "Seleccionar");
-            materialComboBox_Cuotas.Items.Insert(1, "1");
-            materialComboBox_Cuotas.Items.Insert(2, "2");
-            materialComboBox_Cuotas.Items.Insert(3, "6");
-            materialComboBox_Cuotas.Items.Insert(4, "12");
-            materialComboBox_Cuotas.SelectedIndex = 0;
-
-            materialComboBox_Cantidad.Items.Insert(0, "Seleccionar");
-            materialComboBox_Cantidad.Items.Insert(1, "1");
-            materialComboBox_Cantidad.Items.Insert(2, "2");
-            materialComboBox_Cantidad.Items.Insert(3, "3");
-            materialComboBox_Cantidad.Items.Insert(4, "4");
-            materialComboBox_Cantidad.SelectedIndex = 0;
-
-            
+            label_Cargando.Hide();
+            pictureBox_Cargando.Image = Image.FromFile("Gif/Dual Ring@1x-1.0s-200px-200px.gif");
+            pictureBox_Cargando.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox_Cargando.Hide();
         }
         string Client = Path.Combine(Application.StartupPath, "Img/Iconos", "tab_client.png");
         string Producto = Path.Combine(Application.StartupPath, "Img/Iconos", "nuy.png");
-        
+        string plan = string.Empty;
         private bool Validaciones() {
             Mensaje mensaje = new Mensaje();
             if (materialComboBox_SeleccionCliente.SelectedIndex == 0) {
@@ -123,12 +102,12 @@ namespace AGN_predits.Formularios {
 
                 int i = 1;
                 foreach (var dato in clientes) {
-                    materialComboBox_SeleccionCliente.Items.Insert(i, $"{dato.Nombre} {dato.Apellido} {dato.Telefono} {dato.Gmail}");
+                    materialComboBox_SeleccionCliente.Items.Insert(i, $"ID:{dato.ClienteID} | {dato.Nombre}  {dato.Apellido}  {dato.Telefono}  {dato.Gmail}");
                     i++;
                 }
                 int x = 1;
                 foreach (var dato in producto) {
-                    materialComboBox_SelectProducto.Items.Insert(x, $"{dato.Marca} {dato.Modelo} {dato.Condicion} almacenamiento: {dato.Almacenamiento} bateria: {dato.Bateria} precio: {dato.PrecioVenta}");
+                    materialComboBox_SelectProducto.Items.Insert(x, $"ID:{dato.ProductoID} | {dato.Marca}  {dato.Modelo} {dato.Condicion} almacenamiento: {dato.Almacenamiento} bateria: {dato.Bateria} precio: {dato.PrecioVenta}");
                     x++;
                 }
             } catch (Exception ex) {
@@ -136,15 +115,16 @@ namespace AGN_predits.Formularios {
             }
             pictureBox_Cliente.Image = Image.FromFile(Client);
             pictureBox_Prod.Image = Image.FromFile(Producto);
-
         }
 
-
+       
         private void materialComboBox_SeleccionCliente_SelectedIndexChanged(object sender, EventArgs e) {
+
             VerificarProgreso();
         }
 
         private void materialComboBox_SelectProducto_SelectedIndexChanged(object sender, EventArgs e) {
+            
             VerificarProgreso();
         }
 
@@ -169,11 +149,91 @@ namespace AGN_predits.Formularios {
             listaventas.Show();
         }
 
+        private void Restaurar() {
+            materialComboBox_SeleccionCliente.Items.Insert(0, "Seleccionar");
+            materialComboBox_SeleccionCliente.SelectedIndex = 0;
 
-        private void materialButton_Vender_Click(object sender, EventArgs e) {
-            if (Validaciones()) {
+            materialComboBox_SelectProducto.Items.Insert(0, "Seleccionar");
+            materialComboBox_SelectProducto.SelectedIndex = 0;
 
-            }
+            materialComboBox_FormasPago.Items.Insert(0, "Seleccionar");
+            materialComboBox_FormasPago.Items.Insert(1, "Transferencia");
+            materialComboBox_FormasPago.Items.Insert(2, "Efectivo");
+            materialComboBox_FormasPago.Items.Insert(3, "Credito");
+            materialComboBox_FormasPago.Items.Insert(4, "Crypto");
+            materialComboBox_FormasPago.SelectedIndex = 0;
+
+            materialComboBox_Cuotas.Items.Insert(0, "Seleccionar");
+            materialComboBox_Cuotas.Items.Insert(1, "1");
+            materialComboBox_Cuotas.Items.Insert(2, "2");
+            materialComboBox_Cuotas.Items.Insert(3, "6");
+            materialComboBox_Cuotas.Items.Insert(4, "12");
+            materialComboBox_Cuotas.SelectedIndex = 0;
+
+            materialComboBox_Cantidad.Items.Insert(0, "Seleccionar");
+            materialComboBox_Cantidad.Items.Insert(1, "1");
+            materialComboBox_Cantidad.Items.Insert(2, "2");
+            materialComboBox_Cantidad.Items.Insert(3, "3");
+            materialComboBox_Cantidad.Items.Insert(4, "4");
+            materialComboBox_Cantidad.SelectedIndex = 0;
+            materialTextBoxEdit_DetallesVenta.Clear();
+            materialSwitch_canje.Checked = false;
         }
+        private async void materialButton_Vender_Click(object sender, EventArgs e) {
+            
+            if (Validaciones()) {
+                Mensaje msj = new Mensaje();
+
+                DetalleVenta nuevaVenta = new DetalleVenta(); 
+                nuevaVenta.ProductoID = Convert.ToInt32(materialComboBox_SelectProducto.Text.ToString().Split(' ')[0].Replace("ID:", ""));
+                nuevaVenta.ClienteID = Convert.ToInt32(materialComboBox_SeleccionCliente.Text.ToString().Split(' ')[0].Replace("ID:", ""));
+                nuevaVenta.Fecha = DateTime.Now;
+                int formaPago = 0;
+                switch (materialComboBox_FormasPago.Text) {
+                    case "Transferencia":
+                        formaPago = 1;
+                        break;
+                    case "Efectivo":
+                        formaPago = 2;
+                        break;
+                    case "Credito":
+                        formaPago = 3;
+                        break;
+                    case "Crypto":
+                        formaPago = 4;
+                        break;
+                }
+                nuevaVenta.MedioPagoID = formaPago;
+                nuevaVenta.Cantidad = Convert.ToInt32(materialComboBox_Cantidad.Text.ToString());
+                nuevaVenta.Cuotas = Convert.ToInt32(materialComboBox_Cuotas.Text.ToString());
+                string detalle = string.Empty;
+                if (string.IsNullOrEmpty(materialTextBoxEdit_DetallesVenta.Text.ToString())) {
+                    detalle = "Sin detalle";
+                } else {
+                    detalle = materialTextBoxEdit_DetallesVenta.Text.ToString();
+                }
+                nuevaVenta.Detalles = detalle;
+                if (materialSwitch_canje.Checked) {
+                    plan = "Canje";
+                } else {
+                    plan = "Sin plan";
+                }
+                nuevaVenta.PlanCanje = plan;
+
+                label_Cargando.Show();
+                pictureBox_Cargando.Show();
+                if (await LogicaDetalleVenta.Instancia.CargarDetalleVenta(nuevaVenta)) {
+                    msj.Show("Exito", "Venta Concretada", Color.White, Color.White, Mensaje.TipoIcono.Cash, Mensaje.TipoSonido.Money);
+                } else {
+                    msj.Show("Error", "Logica Venta", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.popTres);
+                }
+                label_Cargando.Hide();
+                pictureBox_Cargando.Hide();
+                Restaurar();
+            }
+   
+        }
+
+        
     }
 }

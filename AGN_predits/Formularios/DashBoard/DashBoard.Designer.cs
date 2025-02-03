@@ -23,36 +23,70 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
-            this.parrotLineGraph1 = new ReaLTaiizor.Controls.ParrotLineGraph();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.label_dineroInvertido = new ReaLTaiizor.Controls.DungeonHeaderLabel();
+            this.airSeparator1 = new ReaLTaiizor.Controls.AirSeparator();
+            this.airSeparator2 = new ReaLTaiizor.Controls.AirSeparator();
             this.SuspendLayout();
             // 
-            // parrotLineGraph1
+            // bigLabel1
             // 
-            this.parrotLineGraph1.BackGroundColor = System.Drawing.Color.White;
-            this.parrotLineGraph1.BelowLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(142)))));
-            this.parrotLineGraph1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.parrotLineGraph1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.parrotLineGraph1.GraphStyle = ReaLTaiizor.Controls.ParrotLineGraph.Style.Curved;
-            this.parrotLineGraph1.GraphTitle = "Ventas Diarias";
-            this.parrotLineGraph1.GraphTitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.parrotLineGraph1.Items = ((System.Collections.Generic.List<int>)(resources.GetObject("parrotLineGraph1.Items")));
-            this.parrotLineGraph1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.parrotLineGraph1.Location = new System.Drawing.Point(0, 413);
-            this.parrotLineGraph1.Name = "parrotLineGraph1";
-            this.parrotLineGraph1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotLineGraph1.PointSize = 7;
-            this.parrotLineGraph1.ShowBorder = false;
-            this.parrotLineGraph1.ShowPoints = false;
-            this.parrotLineGraph1.ShowTitle = true;
-            this.parrotLineGraph1.ShowVerticalLines = false;
-            this.parrotLineGraph1.Size = new System.Drawing.Size(799, 115);
-            this.parrotLineGraph1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.parrotLineGraph1.TabIndex = 1;
-            this.parrotLineGraph1.Text = "Ventas";
-            this.parrotLineGraph1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotLineGraph1.TitleAlignment = System.Drawing.StringAlignment.Near;
-            this.parrotLineGraph1.VerticalLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.bigLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bigLabel1.AutoSize = true;
+            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel1.Font = new System.Drawing.Font("Arboria Thin", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.bigLabel1.Location = new System.Drawing.Point(98, 3);
+            this.bigLabel1.Name = "bigLabel1";
+            this.bigLabel1.Size = new System.Drawing.Size(615, 115);
+            this.bigLabel1.TabIndex = 0;
+            this.bigLabel1.Text = "BIENVENIDO";
+            // 
+            // label_dineroInvertido
+            // 
+            this.label_dineroInvertido.AutoSize = true;
+            this.label_dineroInvertido.BackColor = System.Drawing.Color.Transparent;
+            this.label_dineroInvertido.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label_dineroInvertido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.label_dineroInvertido.Location = new System.Drawing.Point(372, 499);
+            this.label_dineroInvertido.Name = "label_dineroInvertido";
+            this.label_dineroInvertido.Size = new System.Drawing.Size(88, 20);
+            this.label_dineroInvertido.TabIndex = 2;
+            this.label_dineroInvertido.Text = "Cargando...";
+            // 
+            // airSeparator1
+            // 
+            this.airSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.airSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(143)))), ((int)(((byte)(243)))));
+            this.airSeparator1.Colors = new ReaLTaiizor.Util.BloomAir[0];
+            this.airSeparator1.Customization = "";
+            this.airSeparator1.Font = new System.Drawing.Font("Verdana", 8F);
+            this.airSeparator1.Image = null;
+            this.airSeparator1.Location = new System.Drawing.Point(-33, 127);
+            this.airSeparator1.Name = "airSeparator1";
+            this.airSeparator1.NoRounding = false;
+            this.airSeparator1.Size = new System.Drawing.Size(871, 1);
+            this.airSeparator1.TabIndex = 3;
+            this.airSeparator1.Text = "airSeparator1";
+            this.airSeparator1.Transparent = false;
+            // 
+            // airSeparator2
+            // 
+            this.airSeparator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.airSeparator2.BackColor = System.Drawing.Color.Black;
+            this.airSeparator2.Colors = new ReaLTaiizor.Util.BloomAir[0];
+            this.airSeparator2.Customization = "";
+            this.airSeparator2.Font = new System.Drawing.Font("Verdana", 8F);
+            this.airSeparator2.Image = null;
+            this.airSeparator2.Location = new System.Drawing.Point(-34, 125);
+            this.airSeparator2.Name = "airSeparator2";
+            this.airSeparator2.NoRounding = false;
+            this.airSeparator2.Size = new System.Drawing.Size(871, 1);
+            this.airSeparator2.TabIndex = 4;
+            this.airSeparator2.Text = "airSeparator2";
+            this.airSeparator2.Transparent = false;
             // 
             // DashBoard
             // 
@@ -60,16 +94,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(799, 528);
-            this.Controls.Add(this.parrotLineGraph1);
+            this.Controls.Add(this.airSeparator2);
+            this.Controls.Add(this.airSeparator1);
+            this.Controls.Add(this.label_dineroInvertido);
+            this.Controls.Add(this.bigLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashBoard";
             this.Text = "DashBoard";
+            this.Load += new System.EventHandler(this.DashBoard_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private ReaLTaiizor.Controls.ParrotLineGraph parrotLineGraph1;
+        private ReaLTaiizor.Controls.BigLabel bigLabel1;
+        private ReaLTaiizor.Controls.DungeonHeaderLabel label_dineroInvertido;
+        private ReaLTaiizor.Controls.AirSeparator airSeparator1;
+        private ReaLTaiizor.Controls.AirSeparator airSeparator2;
     }
 }

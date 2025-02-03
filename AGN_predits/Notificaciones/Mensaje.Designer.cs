@@ -141,7 +141,9 @@
             this.Controls.Add(this.parrotGradientPanel1);
             this.Controls.Add(this.parrotPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mensaje";
+            this.ShowIcon = false;
             this.Text = "Mensaje";
             this.Load += new System.EventHandler(this.Mensaje_Load);
             this.ResumeLayout(false);
