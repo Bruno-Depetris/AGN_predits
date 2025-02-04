@@ -23,7 +23,7 @@ namespace AGN_predits.Formularios {
             label_Cargando.Hide();
 
         }
-        string dni = "0";
+        string dni = "0", telefono = string.Empty;
         int ClienteIDEditar;
         bool editar = false;    
         public bool Validaciones() {
@@ -38,15 +38,20 @@ namespace AGN_predits.Formularios {
                 msj.Show("Apellido?", "Ingresar Apellido", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.Intermedio);
                 return false;
             }
-            if (string.IsNullOrEmpty(materialTextBoxEdit_Dni.Text)) {
-                dni = "0";
+            if (int.TryParse(materialTextBoxEdit_Dni.Text, out int dni)) {
+                // El valor ingresado es un número entero válido
+                this.dni = dni.ToString();
             } else {
-                dni = materialTextBoxEdit_Dni.Text;
+                // Si está vacío o no es un número válido, asigna "0"
+                this.dni = "0";
             }
-            if (string.IsNullOrEmpty(materialTextBoxEdit_Telefono.Text)) {
-                materialTextBoxEdit_Telefono.Focus();
-                msj.Show("Telefono?", "Ingresar numero", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.Intermedio);
-                return false;
+
+            if (int.TryParse(materialTextBoxEdit_Telefono.Text, out int telefono)) {
+                // El valor ingresado es un número entero válido
+                this.telefono = telefono.ToString();
+            } else {
+                // Si está vacío o no es un número válido, asigna "0"
+                this.telefono = "0";
             }
             if (string.IsNullOrEmpty(materialTextBoxEdit_Gmail.Text) || materialTextBoxEdit_Gmail.Text.IndexOf("@") == -1) {
                 materialTextBoxEdit_Gmail.Focus();
@@ -82,7 +87,7 @@ namespace AGN_predits.Formularios {
                 cliente.Nombre = materialTextBoxEdit_Nombre.Text;
                 cliente.Apellido = materialTextBoxEdit_Apellido.Text;
                 cliente.Dni = dni.ToString();
-                cliente.Telefono = materialTextBoxEdit_Telefono.Text;
+                cliente.Telefono = telefono;
                 cliente.Gmail = materialTextBoxEdit_Gmail.Text;
 
                 label_Cargando.Show();
@@ -99,8 +104,7 @@ namespace AGN_predits.Formularios {
                 pictureBox_Cargando.Hide();
                 label_Cargando.Hide();
 
-            }
-            if (Validaciones() && editar == true) {
+            }else if (Validaciones() && editar == true) {
                 Console.WriteLine(editar);
                 
                 ClienteMod cliente = new ClienteMod();

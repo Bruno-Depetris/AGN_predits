@@ -57,6 +57,11 @@ namespace AGN_predits.Formularios.Stoc_k {
                 msj.Show();
             }
 
+            if (string.IsNullOrEmpty(materialTextBoxEdit_Email.Text)) {
+                materialTextBoxEdit_Email.Focus();
+                msj.Show("Error", "Colocar Email", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.simple);
+                return false;
+            }
             if (decimal.TryParse(materialTextBoxEdit_Bateria.Text.Replace(",", "."),
                 System.Globalization.NumberStyles.Any,
                 System.Globalization.CultureInfo.InvariantCulture,
@@ -112,7 +117,7 @@ namespace AGN_predits.Formularios.Stoc_k {
             }
             return true;
         }
-        public void SetProductData(int ProductoID, string marca, string modelo, string condicion, decimal almacenamiento, decimal bateria, string descripcion, string stock, decimal costo, decimal venta) {
+        public void SetProductData(int ProductoID, string marca, string modelo,string condicion, decimal almacenamiento, decimal bateria, string descripcion, string email, string stock, decimal costo, decimal venta) {
 
            IdSeleccionado = ProductoID;
            materialTextBoxEdit_Marca.Text = marca;
@@ -128,13 +133,14 @@ namespace AGN_predits.Formularios.Stoc_k {
             materialTextBoxEdit_Descripcion.Text = descripcion;
             materialTextBoxEdit_Costo.Text = costo.ToString();
             materialTextBoxEdit_Venta.Text = venta.ToString();
-
+            materialTextBoxEdit_Email.Text = email.ToString();
             materialButton_CargarProducto.Text = "Editar";
             editar = true;
   
         }
         private void Restaurar() {
             materialTextBoxEdit_Marca.Clear();
+            materialTextBoxEdit_Email.Clear();
             materialTextBoxEdit_Modelo.Clear();
             materialTextBoxEdit_Almacenamiento.Clear();
             materialTextBoxEdit_Bateria.Clear();
@@ -156,6 +162,7 @@ namespace AGN_predits.Formularios.Stoc_k {
                 producto.descripcion = materialTextBoxEdit_Descripcion.Text;
                 producto.PrecioCosto = costo;
                 producto.PrecioVenta = venta;
+                producto.Email = materialTextBoxEdit_Email.Text;
                 Mensaje msj = new Mensaje();
 
 
@@ -189,6 +196,7 @@ namespace AGN_predits.Formularios.Stoc_k {
                 producto.descripcion = materialTextBoxEdit_Descripcion.Text;
                 producto.PrecioCosto = costo;
                 producto.PrecioVenta = venta;
+                producto.Email = materialTextBoxEdit_Email.Text;
                 Mensaje msj = new Mensaje();
 
 

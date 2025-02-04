@@ -19,7 +19,7 @@ namespace AGN_predits.Formularios {
             InitializeComponent();
             VerificarProgreso();
             Restaurar();
-
+            CargarCB();
             label_Cargando.Hide();
             pictureBox_Cargando.Image = Image.FromFile("Gif/Dual Ring@1x-1.0s-200px-200px.gif");
             pictureBox_Cargando.SizeMode = PictureBoxSizeMode.Zoom;
@@ -84,10 +84,7 @@ namespace AGN_predits.Formularios {
             int porcentaje = (int)((double)camposCompletos / totalCampos * 100);
             parrotFlatProgressBar_BarraProgresoFormulario.Value = porcentaje;
         }
-
-
-        private async void Venta_Load(object sender, EventArgs e) {
-
+        private async void CargarCB() {
             try {
                 //load cliente
                 pictureBox_Cliente.Image = Image.FromFile("Gif/Pulse@1x-1.0s-200px-200px.gif");
@@ -115,6 +112,11 @@ namespace AGN_predits.Formularios {
             }
             pictureBox_Cliente.Image = Image.FromFile(Client);
             pictureBox_Prod.Image = Image.FromFile(Producto);
+        }
+
+        private void Venta_Load(object sender, EventArgs e) {
+            Restaurar();
+  
         }
 
        
@@ -150,6 +152,9 @@ namespace AGN_predits.Formularios {
         }
 
         private void Restaurar() {
+            materialComboBox_SeleccionCliente.Items.Clear();
+            materialComboBox_SelectProducto.Items.Clear();
+
             materialComboBox_SeleccionCliente.Items.Insert(0, "Seleccionar");
             materialComboBox_SeleccionCliente.SelectedIndex = 0;
 
@@ -178,6 +183,8 @@ namespace AGN_predits.Formularios {
             materialComboBox_Cantidad.SelectedIndex = 0;
             materialTextBoxEdit_DetallesVenta.Clear();
             materialSwitch_canje.Checked = false;
+
+           
         }
         private async void materialButton_Vender_Click(object sender, EventArgs e) {
             
@@ -230,6 +237,7 @@ namespace AGN_predits.Formularios {
                 label_Cargando.Hide();
                 pictureBox_Cargando.Hide();
                 Restaurar();
+                CargarCB();
             }
    
         }

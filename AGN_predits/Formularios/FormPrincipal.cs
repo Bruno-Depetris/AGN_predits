@@ -158,5 +158,9 @@ namespace AGN_predits {
             AbrirFormNuevo(new ClientesFormLista());
             MoverPanel(parrotButton_Clientes);
         }
+
+        private void parrotButton_Tecnico_Click(object sender, EventArgs e) {
+            MoverPanel(parrotButton_Tecnico);
+        }
     }
 }

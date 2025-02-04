@@ -13,6 +13,7 @@ namespace AGN_predits.Conexiones.BD.Modelo {
         public decimal Almacenamiento { get; set; }
         public decimal Bateria { get; set; }
         public int Stock { get; set; }
+        public string Email { get; set; }   
         public decimal PrecioCosto { get; set; }
         public decimal PrecioVenta { get; set; }
         public string descripcion { get; set; }

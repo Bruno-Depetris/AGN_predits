@@ -38,6 +38,7 @@
             this.materialTextBoxEdit_Almacenamiento = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTextBoxEdit_Modelo = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialTextBoxEdit_Marca = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.materialTextBoxEdit_Email = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.airForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cargando)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             // 
             this.airForm1.BackColor = System.Drawing.Color.White;
             this.airForm1.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.airForm1.Controls.Add(this.materialTextBoxEdit_Email);
             this.airForm1.Controls.Add(this.label_Cargando);
             this.airForm1.Controls.Add(this.pictureBox_Cargando);
             this.airForm1.Controls.Add(this.parrotGradientPanel1);
@@ -69,9 +71,9 @@
             this.airForm1.Name = "airForm1";
             this.airForm1.NoRounding = false;
             this.airForm1.Sizable = true;
-            this.airForm1.Size = new System.Drawing.Size(386, 377);
+            this.airForm1.Size = new System.Drawing.Size(386, 442);
             this.airForm1.SmartBounds = true;
-            this.airForm1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
+            this.airForm1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.airForm1.TabIndex = 0;
             this.airForm1.Text = "Producto";
             this.airForm1.TransparencyKey = System.Drawing.Color.Fuchsia;
@@ -80,7 +82,7 @@
             // label_Cargando
             // 
             this.label_Cargando.AutoSize = true;
-            this.label_Cargando.Location = new System.Drawing.Point(288, 318);
+            this.label_Cargando.Location = new System.Drawing.Point(280, 402);
             this.label_Cargando.Name = "label_Cargando";
             this.label_Cargando.Size = new System.Drawing.Size(68, 15);
             this.label_Cargando.TabIndex = 22;
@@ -88,7 +90,7 @@
             // 
             // pictureBox_Cargando
             // 
-            this.pictureBox_Cargando.Location = new System.Drawing.Point(247, 308);
+            this.pictureBox_Cargando.Location = new System.Drawing.Point(239, 392);
             this.pictureBox_Cargando.Name = "pictureBox_Cargando";
             this.pictureBox_Cargando.Size = new System.Drawing.Size(35, 35);
             this.pictureBox_Cargando.TabIndex = 21;
@@ -101,7 +103,7 @@
             this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel1.Location = new System.Drawing.Point(0, 365);
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(0, 430);
             this.parrotGradientPanel1.Name = "parrotGradientPanel1";
             this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
@@ -121,13 +123,13 @@
             this.materialButton_CargarProducto.HighEmphasis = true;
             this.materialButton_CargarProducto.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_CargarProducto.Icon")));
             this.materialButton_CargarProducto.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_CargarProducto.Location = new System.Drawing.Point(133, 307);
+            this.materialButton_CargarProducto.Location = new System.Drawing.Point(125, 391);
             this.materialButton_CargarProducto.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton_CargarProducto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton_CargarProducto.Name = "materialButton_CargarProducto";
             this.materialButton_CargarProducto.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton_CargarProducto.Size = new System.Drawing.Size(107, 36);
-            this.materialButton_CargarProducto.TabIndex = 19;
+            this.materialButton_CargarProducto.TabIndex = 10;
             this.materialButton_CargarProducto.Text = "Cargar";
             this.materialButton_CargarProducto.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_CargarProducto.UseAccentColor = false;
@@ -146,7 +148,7 @@
             this.materialTextBoxEdit_Venta.HideSelection = true;
             this.materialTextBoxEdit_Venta.Hint = "Venta";
             this.materialTextBoxEdit_Venta.LeadingIcon = null;
-            this.materialTextBoxEdit_Venta.Location = new System.Drawing.Point(196, 250);
+            this.materialTextBoxEdit_Venta.Location = new System.Drawing.Point(198, 304);
             this.materialTextBoxEdit_Venta.MaxLength = 32767;
             this.materialTextBoxEdit_Venta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.materialTextBoxEdit_Venta.Name = "materialTextBoxEdit_Venta";
@@ -159,7 +161,7 @@
             this.materialTextBoxEdit_Venta.SelectionStart = 0;
             this.materialTextBoxEdit_Venta.ShortcutsEnabled = true;
             this.materialTextBoxEdit_Venta.Size = new System.Drawing.Size(179, 48);
-            this.materialTextBoxEdit_Venta.TabIndex = 8;
+            this.materialTextBoxEdit_Venta.TabIndex = 9;
             this.materialTextBoxEdit_Venta.TabStop = false;
             this.materialTextBoxEdit_Venta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBoxEdit_Venta.TrailingIcon = null;
@@ -177,7 +179,7 @@
             this.materialTextBoxEdit_Costo.HideSelection = true;
             this.materialTextBoxEdit_Costo.Hint = "Costo";
             this.materialTextBoxEdit_Costo.LeadingIcon = null;
-            this.materialTextBoxEdit_Costo.Location = new System.Drawing.Point(11, 250);
+            this.materialTextBoxEdit_Costo.Location = new System.Drawing.Point(11, 304);
             this.materialTextBoxEdit_Costo.MaxLength = 32767;
             this.materialTextBoxEdit_Costo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.materialTextBoxEdit_Costo.Name = "materialTextBoxEdit_Costo";
@@ -190,7 +192,7 @@
             this.materialTextBoxEdit_Costo.SelectionStart = 0;
             this.materialTextBoxEdit_Costo.ShortcutsEnabled = true;
             this.materialTextBoxEdit_Costo.Size = new System.Drawing.Size(179, 48);
-            this.materialTextBoxEdit_Costo.TabIndex = 7;
+            this.materialTextBoxEdit_Costo.TabIndex = 8;
             this.materialTextBoxEdit_Costo.TabStop = false;
             this.materialTextBoxEdit_Costo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBoxEdit_Costo.TrailingIcon = null;
@@ -398,11 +400,42 @@
             this.materialTextBoxEdit_Marca.TrailingIcon = null;
             this.materialTextBoxEdit_Marca.UseSystemPasswordChar = false;
             // 
+            // materialTextBoxEdit_Email
+            // 
+            this.materialTextBoxEdit_Email.AnimateReadOnly = false;
+            this.materialTextBoxEdit_Email.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.materialTextBoxEdit_Email.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.materialTextBoxEdit_Email.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialTextBoxEdit_Email.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialTextBoxEdit_Email.Depth = 0;
+            this.materialTextBoxEdit_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBoxEdit_Email.HideSelection = true;
+            this.materialTextBoxEdit_Email.Hint = "Email";
+            this.materialTextBoxEdit_Email.LeadingIcon = null;
+            this.materialTextBoxEdit_Email.Location = new System.Drawing.Point(13, 250);
+            this.materialTextBoxEdit_Email.MaxLength = 32767;
+            this.materialTextBoxEdit_Email.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.materialTextBoxEdit_Email.Name = "materialTextBoxEdit_Email";
+            this.materialTextBoxEdit_Email.PasswordChar = '\0';
+            this.materialTextBoxEdit_Email.PrefixSuffixText = null;
+            this.materialTextBoxEdit_Email.ReadOnly = false;
+            this.materialTextBoxEdit_Email.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.materialTextBoxEdit_Email.SelectedText = "";
+            this.materialTextBoxEdit_Email.SelectionLength = 0;
+            this.materialTextBoxEdit_Email.SelectionStart = 0;
+            this.materialTextBoxEdit_Email.ShortcutsEnabled = true;
+            this.materialTextBoxEdit_Email.Size = new System.Drawing.Size(362, 48);
+            this.materialTextBoxEdit_Email.TabIndex = 7;
+            this.materialTextBoxEdit_Email.TabStop = false;
+            this.materialTextBoxEdit_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialTextBoxEdit_Email.TrailingIcon = null;
+            this.materialTextBoxEdit_Email.UseSystemPasswordChar = false;
+            // 
             // nuevoPorducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 377);
+            this.ClientSize = new System.Drawing.Size(386, 442);
             this.Controls.Add(this.airForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -434,5 +467,6 @@
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private System.Windows.Forms.Label label_Cargando;
         private System.Windows.Forms.PictureBox pictureBox_Cargando;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit_Email;
     }
 }

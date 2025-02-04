@@ -31,7 +31,7 @@ namespace AGN_predits.Formularios.Stoc_k {
             var clientes = await LogicaProducto.Instancia.ListarProductos();
 
             foreach (var dato in clientes) {
-                poisonDataGridView_Stock.Rows.Add(dato.ProductoID, dato.Marca, dato.Modelo, dato.Condicion, dato.Almacenamiento, dato.Bateria, dato.descripcion, dato.Stock, dato.PrecioCosto, dato.PrecioVenta);
+                poisonDataGridView_Stock.Rows.Add(dato.ProductoID, dato.Marca, dato.Modelo, dato.Condicion, dato.Almacenamiento, dato.Bateria, dato.descripcion,dato.Email, dato.Stock, dato.PrecioCosto, dato.PrecioVenta);
             }
 
             pictureBox_Cargando.Hide();
@@ -42,7 +42,7 @@ namespace AGN_predits.Formularios.Stoc_k {
             pictureBox_Cargando.Show();
             label_Cargando.Show();
             foreach (var dato in await LogicaProducto.Instancia.ListarProductos()) {
-                poisonDataGridView_Stock.Rows.Add(dato.ProductoID,dato.Marca,dato.Modelo,dato.Condicion,dato.Almacenamiento,dato.Bateria,dato.descripcion,dato.Stock,dato.PrecioCosto,dato.PrecioVenta);
+                poisonDataGridView_Stock.Rows.Add(dato.ProductoID,dato.Marca,dato.Modelo,dato.Condicion,dato.Almacenamiento,dato.Bateria,dato.descripcion,dato.Email, dato.Stock,dato.PrecioCosto,dato.PrecioVenta);
             }
             pictureBox_Cargando.Hide();
             label_Cargando.Hide();
@@ -59,13 +59,14 @@ namespace AGN_predits.Formularios.Stoc_k {
             decimal bateria = Convert.ToDecimal(seleccionarRow.Cells[5].Value);
 
             string descripcion = Convert.ToString(seleccionarRow.Cells[6].Value);
-            string stock = Convert.ToString(seleccionarRow.Cells[7].Value);
+            string email = Convert.ToString(seleccionarRow.Cells[7].Value);
+            string stock = Convert.ToString(seleccionarRow.Cells[8].Value);
 
-            decimal costo = Convert.ToDecimal(seleccionarRow.Cells[8].Value);
-            decimal venta = Convert.ToDecimal(seleccionarRow.Cells[9].Value);
+            decimal costo = Convert.ToDecimal(seleccionarRow.Cells[9].Value);
+            decimal venta = Convert.ToDecimal(seleccionarRow.Cells[10].Value);
 
             nuevoPorducto editarProducto = new nuevoPorducto(this);
-            editarProducto.SetProductData(ProductoID,marca,modelo,condicion,almacenamiento,bateria,descripcion,stock,costo,venta);
+            editarProducto.SetProductData(ProductoID,marca,modelo,condicion,almacenamiento,bateria,descripcion,email,stock, costo,venta);
             editarProducto.Text = "Editar Producto";
             editarProducto.Show();
         }

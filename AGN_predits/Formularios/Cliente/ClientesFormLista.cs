@@ -73,6 +73,9 @@ namespace AGN_predits.Formularios.Cliente {
 
             DialogResult result = MessageBox.Show($"Seguro que desea borrar a {NombreApellido}?  ", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             Mensaje mensaje = new Mensaje();
+
+            Console.WriteLine(IDselected);
+
             if (result == DialogResult.Yes) {
                 pictureBox_Cargando.Show();
                 label_Cargando.Show();
