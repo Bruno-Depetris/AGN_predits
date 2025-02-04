@@ -17,6 +17,7 @@ using iTextSharp.text.pdf;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Globalization;
 using System.Media;
+using System.Data.Common;
 
 namespace AGN_predits.Conexiones.BD.Logica {
     internal class LogicaDetalleVenta {
@@ -130,7 +131,7 @@ namespace AGN_predits.Conexiones.BD.Logica {
                 return false;
             }
         }
-        public bool GenerarPDFDetalleVenta(DetalleVenta venta) {
+        public async Task<bool> GenerarPDFDetalleVentaAsync(DetalleVenta venta) {
             try {
                 // Crear el diálogo para guardar el archivo
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -144,6 +145,8 @@ namespace AGN_predits.Conexiones.BD.Logica {
 
                     // Obtener datos de la base de datos
                     using (MySqlConnection conexion = new MySqlConnection(cadena)) {
+                        await conexion.OpenAsync(); // Aseguramos que la conexión esté abierta de forma asincrónica
+
                         string query = @"
                     SELECT
                         DetalleVenta.DetalleVentaID,
@@ -176,8 +179,10 @@ namespace AGN_predits.Conexiones.BD.Logica {
                         MySqlCommand cmd = new MySqlCommand(query, conexion);
                         cmd.Parameters.AddWithValue("@DetalleVentaID", venta.DetalleVentaID);
 
-                        using (MySqlDataReader reader = cmd.ExecuteReader()) {
-                            if (reader.Read()) {
+                        using (DbDataReader reader = await cmd.ExecuteReaderAsync()) // Usamos DbDataReader para la ejecución asincrónica
+{
+                            if (await reader.ReadAsync()) // Aseguramos que la lectura sea asincrónica
+                            {
                                 // Obtener los datos necesarios
                                 DateTime fecha = DateTime.Parse(reader["Fecha"].ToString());
                                 string nombreCliente = reader["NombreCliente"].ToString();
@@ -191,24 +196,22 @@ namespace AGN_predits.Conexiones.BD.Logica {
                                 int cuotas = int.Parse(reader["Cuotas"].ToString());
                                 string detalles = reader["Detalles"].ToString();
                                 string planCanje = reader["PlanCanje"].ToString();
-                                Document documento = new Document(PageSize.A4, 50, 50, 50, 50);
 
+                                Document documento = new Document(PageSize.A4, 50, 50, 50, 50);
                                 PdfWriter.GetInstance(documento, new FileStream(filePath, FileMode.Create));
                                 documento.Open();
 
                                 documento.AddCreator("AGN Predits");
-
                                 documento.AddTitle("Recibo de Venta - AGN Predits");
 
                                 string imgPath = Path.Combine(Application.StartupPath, "Img", "logo.png");
 
                                 if (File.Exists(imgPath)) {
-                                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imgPath);  // Especificar el espacio de nombres completo
+                                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imgPath);
                                     logo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
                                     logo.ScaleToFit(150f, 150f);
                                     documento.Add(logo);
                                 }
-
 
                                 documento.Add(new Paragraph("\n"));
 
@@ -228,25 +231,23 @@ namespace AGN_predits.Conexiones.BD.Logica {
                                 datosCliente.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
                                 documento.Add(datosCliente);
 
-
                                 documento.Add(new Paragraph("\n"));
 
                                 // Muestra info de la venta
-                                iTextSharp.text.Font fontDetalle = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_BOLD, 14f); // Asegúrate de usar "14f" como un float
+                                iTextSharp.text.Font fontDetalle = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_BOLD, 14f);
                                 documento.Add(new Paragraph("Detalles de la Venta:", fontDetalle));
 
-                                iTextSharp.text.Font fontTexto = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA, 12f); // Asegúrate de usar "12f" como un float
-
+                                iTextSharp.text.Font fontTexto = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA, 12f);
 
                                 Paragraph detallesVenta = new Paragraph(
                                     $@"Fecha: {fecha.ToShortDateString()}
-                            Producto: {producto}
-                            Forma de Pago: {formaPago}
-                            Cuotas: {cuotas}
-                            Cantidad: {cantidad} 
-                            Plan de Canje: {planCanje}
-                            Detalles: 
-                                {detalles}",
+    Producto: {producto}
+    Forma de Pago: {formaPago}
+    Cuotas: {cuotas}
+    Cantidad: {cantidad} 
+    Plan de Canje: {planCanje}
+    Detalles: 
+        {detalles}",
                                     fontTexto);
                                 detallesVenta.Alignment = Element.ALIGN_LEFT;
                                 documento.Add(detallesVenta);
@@ -254,7 +255,7 @@ namespace AGN_predits.Conexiones.BD.Logica {
                                 documento.Add(new Paragraph("---------------------------------------------------------------------------------------------------------------------------"));
 
                                 // Mensaje final de agradecimiento
-                                iTextSharp.text.Font fontFinal = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_OBLIQUE, 12f); // Asegúrate de usar "12f" como un float
+                                iTextSharp.text.Font fontFinal = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_OBLIQUE, 12f);
                                 Paragraph mensajeFinal = new Paragraph(
                                     "Esperamos que disfrutes tu compra. ¡Gracias por elegir AGN Predits!",
                                     fontFinal);
@@ -268,12 +269,12 @@ namespace AGN_predits.Conexiones.BD.Logica {
 
                                 documento.Add(new Paragraph("\n"));
 
-
                                 documento.Close();
                             } else {
                                 Console.WriteLine("No se encontró una venta con el ID proporcionado.");
                             }
                         }
+
                     }
                     return true;
                 } else {
@@ -285,5 +286,8 @@ namespace AGN_predits.Conexiones.BD.Logica {
             }
         }
 
+
     }
+
 }
+

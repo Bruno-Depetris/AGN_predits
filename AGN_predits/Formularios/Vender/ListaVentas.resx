@@ -339,10 +339,10 @@
         5/vT29Jr00vSs9PD0m3TVZJ37bMLe/b8fwNTxn1Kw3DTAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="Columni_Imprimir.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column_Imprimir.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Columni_Imprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Column_Imprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAV5tJREFUeF7t
         nQe0NUWZtc0BEVRUMAICZlRMPwqiiHEMo2IWAyqKAXPAnHNAZWSMg4w6ZkUG1FFQREVFZgxgxCwYEARR

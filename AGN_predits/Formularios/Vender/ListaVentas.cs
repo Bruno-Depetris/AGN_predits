@@ -1,4 +1,5 @@
 ﻿using AGN_predits.Conexiones.BD.Logica;
+using AGN_predits.Conexiones.BD.Modelo;
 using AGN_predits.Notificaciones;
 using System;
 using System.Collections.Generic;
@@ -99,8 +100,25 @@ namespace AGN_predits.Formularios.Vender {
             pictureBox_Cargando.Hide();
 
         }
-        private  void Imprimir(int rowIndex) {
-            
+        private  async void Imprimir(int rowIndex) {
+            var seleccionarRow = poisonDataGridView_Ventas.Rows[rowIndex];
+
+            var IDselected = seleccionarRow.Cells[0].Value;
+
+            Console.Write(IDselected);
+
+            DialogResult result = MessageBox.Show("Seguro que desea Imprimir?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes) {
+
+                DetalleVenta datos = new DetalleVenta() {
+                    DetalleVentaID = IDselected.GetHashCode(),
+
+                };
+                bool respuesta = await LogicaDetalleVenta.Instancia.GenerarPDFDetalleVentaAsync(datos);
+
+            } else if (result == DialogResult.No) {
+                return;
+            }
         }
 
         private async void Borrar(int rowIndex) {
