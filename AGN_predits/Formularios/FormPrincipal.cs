@@ -4,6 +4,7 @@ using AGN_predits.Formularios.Caja;
 using AGN_predits.Formularios.Cliente;
 using AGN_predits.Formularios.DashBoard;
 using AGN_predits.Formularios.Stoc_k;
+using AGN_predits.Formularios.Tecnico;
 using AGN_predits.Notificaciones;
 using Newtonsoft.Json;
 using System;
@@ -118,7 +119,8 @@ namespace AGN_predits {
         }
 
         private async void FormPrincipal_Load(object sender, EventArgs e) {
-            string urlApi = "https://dolarapi.com/v1/dolares";
+            
+                string urlApi = "https://dolarapi.com/v1/dolares";
 
 
             using (var apiHelper = new ApiCotizacion(urlApi)) {
@@ -160,6 +162,7 @@ namespace AGN_predits {
         }
 
         private void parrotButton_Tecnico_Click(object sender, EventArgs e) {
+            AbrirFormNuevo(new ListaTecnico());
             MoverPanel(parrotButton_Tecnico);
         }
     }

@@ -100,7 +100,8 @@ namespace AGN_predits.Formularios.Vender {
             pictureBox_Cargando.Hide();
 
         }
-        private  async void Imprimir(int rowIndex) {
+        private void Imprimir(int rowIndex) {
+            /*
             var seleccionarRow = poisonDataGridView_Ventas.Rows[rowIndex];
 
             var IDselected = seleccionarRow.Cells[0].Value;
@@ -118,7 +119,7 @@ namespace AGN_predits.Formularios.Vender {
 
             } else if (result == DialogResult.No) {
                 return;
-            }
+            }*/
         }
 
         private async void Borrar(int rowIndex) {

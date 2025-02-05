@@ -32,19 +32,19 @@
             this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             this.pictureBox_Cargando = new System.Windows.Forms.PictureBox();
             this.label_Cargando = new System.Windows.Forms.Label();
-            this.Column_ProductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Almacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Bateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_PrecioCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column_Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column_Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_PrecioCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Bateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Almacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_ProductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialCard_ContenedorDataGreed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView_Stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cargando)).BeginInit();
@@ -169,73 +169,14 @@
             this.label_Cargando.TabIndex = 3;
             this.label_Cargando.Text = "Cargando...";
             // 
-            // Column_ProductoID
+            // Column_Borrar
             // 
-            this.Column_ProductoID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_ProductoID.HeaderText = "ProductoID";
-            this.Column_ProductoID.Name = "Column_ProductoID";
-            this.Column_ProductoID.Visible = false;
-            // 
-            // Column_Marca
-            // 
-            this.Column_Marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Marca.HeaderText = "Marca";
-            this.Column_Marca.Name = "Column_Marca";
-            // 
-            // Column_Modelo
-            // 
-            this.Column_Modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Modelo.HeaderText = "Modelo";
-            this.Column_Modelo.Name = "Column_Modelo";
-            // 
-            // Column_Condicion
-            // 
-            this.Column_Condicion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Condicion.HeaderText = "Condicion";
-            this.Column_Condicion.Name = "Column_Condicion";
-            // 
-            // Column_Almacenamiento
-            // 
-            this.Column_Almacenamiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Almacenamiento.HeaderText = "Almacenamiento";
-            this.Column_Almacenamiento.Name = "Column_Almacenamiento";
-            // 
-            // Column_Bateria
-            // 
-            this.Column_Bateria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Bateria.HeaderText = "Bateria";
-            this.Column_Bateria.Name = "Column_Bateria";
-            // 
-            // Column_Descripcion
-            // 
-            this.Column_Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Descripcion.HeaderText = "Descripcion";
-            this.Column_Descripcion.Name = "Column_Descripcion";
-            // 
-            // Column_Email
-            // 
-            this.Column_Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Email.HeaderText = "Email";
-            this.Column_Email.Name = "Column_Email";
-            // 
-            // Column_Stock
-            // 
-            this.Column_Stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Stock.HeaderText = "Stock";
-            this.Column_Stock.Name = "Column_Stock";
-            this.Column_Stock.ReadOnly = true;
-            // 
-            // Column_PrecioCosto
-            // 
-            this.Column_PrecioCosto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_PrecioCosto.HeaderText = "Costo";
-            this.Column_PrecioCosto.Name = "Column_PrecioCosto";
-            // 
-            // Column_Venta
-            // 
-            this.Column_Venta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Venta.HeaderText = "Venta";
-            this.Column_Venta.Name = "Column_Venta";
+            this.Column_Borrar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Borrar.HeaderText = "Borrar";
+            this.Column_Borrar.Image = ((System.Drawing.Image)(resources.GetObject("Column_Borrar.Image")));
+            this.Column_Borrar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column_Borrar.Name = "Column_Borrar";
+            this.Column_Borrar.ReadOnly = true;
             // 
             // Column_Editar
             // 
@@ -246,14 +187,73 @@
             this.Column_Editar.Name = "Column_Editar";
             this.Column_Editar.ReadOnly = true;
             // 
-            // Column_Borrar
+            // Column_Venta
             // 
-            this.Column_Borrar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Borrar.HeaderText = "Borrar";
-            this.Column_Borrar.Image = ((System.Drawing.Image)(resources.GetObject("Column_Borrar.Image")));
-            this.Column_Borrar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column_Borrar.Name = "Column_Borrar";
-            this.Column_Borrar.ReadOnly = true;
+            this.Column_Venta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Venta.HeaderText = "Venta";
+            this.Column_Venta.Name = "Column_Venta";
+            // 
+            // Column_PrecioCosto
+            // 
+            this.Column_PrecioCosto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_PrecioCosto.HeaderText = "Costo";
+            this.Column_PrecioCosto.Name = "Column_PrecioCosto";
+            // 
+            // Column_Stock
+            // 
+            this.Column_Stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Stock.HeaderText = "Stock";
+            this.Column_Stock.Name = "Column_Stock";
+            this.Column_Stock.ReadOnly = true;
+            // 
+            // Column_Email
+            // 
+            this.Column_Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Email.HeaderText = "Email";
+            this.Column_Email.Name = "Column_Email";
+            // 
+            // Column_Descripcion
+            // 
+            this.Column_Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Descripcion.HeaderText = "Descripcion";
+            this.Column_Descripcion.Name = "Column_Descripcion";
+            // 
+            // Column_Bateria
+            // 
+            this.Column_Bateria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Bateria.HeaderText = "Bateria";
+            this.Column_Bateria.Name = "Column_Bateria";
+            // 
+            // Column_Almacenamiento
+            // 
+            this.Column_Almacenamiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Almacenamiento.HeaderText = "Almacenamiento";
+            this.Column_Almacenamiento.Name = "Column_Almacenamiento";
+            // 
+            // Column_Condicion
+            // 
+            this.Column_Condicion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Condicion.HeaderText = "Condicion";
+            this.Column_Condicion.Name = "Column_Condicion";
+            // 
+            // Column_Modelo
+            // 
+            this.Column_Modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Modelo.HeaderText = "Modelo";
+            this.Column_Modelo.Name = "Column_Modelo";
+            // 
+            // Column_Marca
+            // 
+            this.Column_Marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Marca.HeaderText = "Marca";
+            this.Column_Marca.Name = "Column_Marca";
+            // 
+            // Column_ProductoID
+            // 
+            this.Column_ProductoID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_ProductoID.HeaderText = "ProductoID";
+            this.Column_ProductoID.Name = "Column_ProductoID";
+            this.Column_ProductoID.Visible = false;
             // 
             // Stock
             // 

@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -190,9 +191,9 @@ namespace AGN_predits.Formularios {
             
             if (Validaciones()) {
                 Mensaje msj = new Mensaje();
-
+                int productoID = Convert.ToInt32(materialComboBox_SelectProducto.Text.ToString().Split(' ')[0].Replace("ID:", ""));
                 DetalleVenta nuevaVenta = new DetalleVenta(); 
-                nuevaVenta.ProductoID = Convert.ToInt32(materialComboBox_SelectProducto.Text.ToString().Split(' ')[0].Replace("ID:", ""));
+                nuevaVenta.ProductoID = productoID;
                 nuevaVenta.ClienteID = Convert.ToInt32(materialComboBox_SeleccionCliente.Text.ToString().Split(' ')[0].Replace("ID:", ""));
                 nuevaVenta.Fecha = DateTime.Now;
                 int formaPago = 0;
@@ -226,11 +227,38 @@ namespace AGN_predits.Formularios {
                     plan = "Sin plan";
                 }
                 nuevaVenta.PlanCanje = plan;
-
+                int cantidad = int.Parse(materialComboBox_Cantidad.Text);
                 label_Cargando.Show();
                 pictureBox_Cargando.Show();
+                //APLICAR PARA QUE SI NO HAY UN PRODUCTO ESTE MISMO REQUIERA RECARGA DE STOCK
                 if (await LogicaDetalleVenta.Instancia.CargarDetalleVenta(nuevaVenta)) {
                     msj.Show("Exito", "Venta Concretada", Color.White, Color.White, Mensaje.TipoIcono.Cash, Mensaje.TipoSonido.Money);
+
+                   
+
+                    Console.WriteLine(cantidad);
+
+                    foreach (var dato in await LogicaProducto.Instancia.ListarProductos()) {
+
+                        if (dato.ProductoID == productoID) {
+                            Producto restarStock = new Producto();
+                            restarStock.ProductoID = productoID;
+                            restarStock.Marca = dato.Marca;
+                            restarStock.Modelo = dato.Modelo;
+                            restarStock.Condicion = dato.Condicion;
+                            restarStock.Almacenamiento = dato.Almacenamiento;
+                            restarStock.Bateria = dato.Bateria;
+                            restarStock.Stock = dato.Stock - cantidad;
+                            restarStock.Email = dato.Email;
+                            restarStock.PrecioCosto = dato.PrecioCosto;
+                            restarStock.PrecioVenta = dato.PrecioVenta;
+                            restarStock.descripcion = dato.descripcion;
+
+                            await LogicaProducto.Instancia.EditarProducto(restarStock);
+                        } else {
+                            Console.WriteLine("que id maestro?");
+                        }
+                    }
                 } else {
                     msj.Show("Error", "Logica Venta", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.popTres);
                 }
