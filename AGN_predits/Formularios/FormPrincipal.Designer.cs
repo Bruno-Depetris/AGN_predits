@@ -26,6 +26,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panel_ContenedorLateral = new System.Windows.Forms.Panel();
+            this.parrotButton_Tecnico = new ReaLTaiizor.Controls.ParrotButton();
             this.parrotButton_Clientes = new ReaLTaiizor.Controls.ParrotButton();
             this.parrotButton_Dashboard = new ReaLTaiizor.Controls.ParrotButton();
             this.airSeparator2 = new ReaLTaiizor.Controls.AirSeparator();
@@ -47,7 +48,6 @@
             this.parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.panel_Contenedor = new System.Windows.Forms.Panel();
             this.timer_Fecha = new System.Windows.Forms.Timer(this.components);
-            this.parrotButton_Tecnico = new ReaLTaiizor.Controls.ParrotButton();
             this.panel_ContenedorLateral.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,31 @@
             this.panel_ContenedorLateral.Size = new System.Drawing.Size(241, 540);
             this.panel_ContenedorLateral.TabIndex = 1;
             this.panel_ContenedorLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_ContenedorLateral_Paint);
+            // 
+            // parrotButton_Tecnico
+            // 
+            this.parrotButton_Tecnico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(143)))), ((int)(((byte)(243)))));
+            this.parrotButton_Tecnico.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_Tecnico.ButtonImage")));
+            this.parrotButton_Tecnico.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            this.parrotButton_Tecnico.ButtonText = "Técnico";
+            this.parrotButton_Tecnico.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(143)))), ((int)(((byte)(243)))));
+            this.parrotButton_Tecnico.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(143)))), ((int)(((byte)(243)))));
+            this.parrotButton_Tecnico.CornerRadius = 5;
+            this.parrotButton_Tecnico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotButton_Tecnico.Font = new System.Drawing.Font("Arboria Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parrotButton_Tecnico.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Tecnico.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(110)))), ((int)(((byte)(220)))));
+            this.parrotButton_Tecnico.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(250)))));
+            this.parrotButton_Tecnico.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            this.parrotButton_Tecnico.Location = new System.Drawing.Point(13, 385);
+            this.parrotButton_Tecnico.Name = "parrotButton_Tecnico";
+            this.parrotButton_Tecnico.Size = new System.Drawing.Size(229, 50);
+            this.parrotButton_Tecnico.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.parrotButton_Tecnico.TabIndex = 32;
+            this.parrotButton_Tecnico.TextColor = System.Drawing.Color.Black;
+            this.parrotButton_Tecnico.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotButton_Tecnico.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Tecnico.Click += new System.EventHandler(this.parrotButton_Tecnico_Click);
             // 
             // parrotButton_Clientes
             // 
@@ -418,31 +443,6 @@
             // 
             this.timer_Fecha.Enabled = true;
             this.timer_Fecha.Tick += new System.EventHandler(this.timer_movimientos_Tick);
-            // 
-            // parrotButton_Tecnico
-            // 
-            this.parrotButton_Tecnico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(143)))), ((int)(((byte)(243)))));
-            this.parrotButton_Tecnico.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_Tecnico.ButtonImage")));
-            this.parrotButton_Tecnico.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            this.parrotButton_Tecnico.ButtonText = "Tecnico";
-            this.parrotButton_Tecnico.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(143)))), ((int)(((byte)(243)))));
-            this.parrotButton_Tecnico.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(143)))), ((int)(((byte)(243)))));
-            this.parrotButton_Tecnico.CornerRadius = 5;
-            this.parrotButton_Tecnico.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotButton_Tecnico.Font = new System.Drawing.Font("Arboria Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parrotButton_Tecnico.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.parrotButton_Tecnico.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(110)))), ((int)(((byte)(220)))));
-            this.parrotButton_Tecnico.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(250)))));
-            this.parrotButton_Tecnico.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            this.parrotButton_Tecnico.Location = new System.Drawing.Point(13, 385);
-            this.parrotButton_Tecnico.Name = "parrotButton_Tecnico";
-            this.parrotButton_Tecnico.Size = new System.Drawing.Size(229, 50);
-            this.parrotButton_Tecnico.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.parrotButton_Tecnico.TabIndex = 32;
-            this.parrotButton_Tecnico.TextColor = System.Drawing.Color.Black;
-            this.parrotButton_Tecnico.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotButton_Tecnico.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.parrotButton_Tecnico.Click += new System.EventHandler(this.parrotButton_Tecnico_Click);
             // 
             // FormPrincipal
             // 

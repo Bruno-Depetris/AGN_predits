@@ -100,12 +100,12 @@ namespace AGN_predits.Formularios {
 
                 int i = 1;
                 foreach (var dato in clientes) {
-                    materialComboBox_SeleccionCliente.Items.Insert(i, $"ID:{dato.ClienteID} | {dato.Nombre}  {dato.Apellido}  {dato.Telefono}  {dato.Gmail}");
+                    materialComboBox_SeleccionCliente.Items.Insert(i, $"ID:{dato.ClienteID} | {dato.Nombre} {dato.Apellido} tel: {dato.Telefono} gmail: {dato.Gmail}");
                     i++;
                 }
                 int x = 1;
                 foreach (var dato in producto) {
-                    materialComboBox_SelectProducto.Items.Insert(x, $"ID:{dato.ProductoID} | {dato.Marca}  {dato.Modelo} {dato.Condicion} almacenamiento: {dato.Almacenamiento} bateria: {dato.Bateria} precio: {dato.PrecioVenta}");
+                    materialComboBox_SelectProducto.Items.Insert(x, $"ID:{dato.ProductoID} | {dato.Marca} {dato.Modelo} - {dato.Condicion} - {dato.Almacenamiento}GB - {dato.Bateria}% precio: ${dato.PrecioVenta} Stock:{dato.Stock}");
                     x++;
                 }
             } catch (Exception ex) {
@@ -192,6 +192,10 @@ namespace AGN_predits.Formularios {
             if (Validaciones()) {
                 Mensaje msj = new Mensaje();
                 int productoID = Convert.ToInt32(materialComboBox_SelectProducto.Text.ToString().Split(' ')[0].Replace("ID:", ""));
+                string textoSeleccionado = materialComboBox_SelectProducto.Text;
+                int stock = Convert.ToInt32(textoSeleccionado.Split(new string[] { "Stock:" }, StringSplitOptions.None)[1].Trim());
+
+
                 DetalleVenta nuevaVenta = new DetalleVenta(); 
                 nuevaVenta.ProductoID = productoID;
                 nuevaVenta.ClienteID = Convert.ToInt32(materialComboBox_SeleccionCliente.Text.ToString().Split(' ')[0].Replace("ID:", ""));
@@ -230,42 +234,51 @@ namespace AGN_predits.Formularios {
                 int cantidad = int.Parse(materialComboBox_Cantidad.Text);
                 label_Cargando.Show();
                 pictureBox_Cargando.Show();
-                //APLICAR PARA QUE SI NO HAY UN PRODUCTO ESTE MISMO REQUIERA RECARGA DE STOCK
-                if (await LogicaDetalleVenta.Instancia.CargarDetalleVenta(nuevaVenta)) {
-                    msj.Show("Exito", "Venta Concretada", Color.White, Color.White, Mensaje.TipoIcono.Cash, Mensaje.TipoSonido.Money);
+                if (stock < cantidad) {
+                    msj.Show("Error", "Reponer producto", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.popTres);
+                    materialComboBox_SelectProducto.Focus();
+                    label_Cargando.Hide();
+                    pictureBox_Cargando.Hide();
+                } else if (stock >= cantidad) {
+                    if (await LogicaDetalleVenta.Instancia.CargarDetalleVenta(nuevaVenta)) {
+                        msj.Show("Exito", "Venta Concretada", Color.White, Color.White, Mensaje.TipoIcono.Cash, Mensaje.TipoSonido.Money);
 
-                   
 
-                    Console.WriteLine(cantidad);
 
-                    foreach (var dato in await LogicaProducto.Instancia.ListarProductos()) {
+                        Console.WriteLine(cantidad);
 
-                        if (dato.ProductoID == productoID) {
-                            Producto restarStock = new Producto();
-                            restarStock.ProductoID = productoID;
-                            restarStock.Marca = dato.Marca;
-                            restarStock.Modelo = dato.Modelo;
-                            restarStock.Condicion = dato.Condicion;
-                            restarStock.Almacenamiento = dato.Almacenamiento;
-                            restarStock.Bateria = dato.Bateria;
-                            restarStock.Stock = dato.Stock - cantidad;
-                            restarStock.Email = dato.Email;
-                            restarStock.PrecioCosto = dato.PrecioCosto;
-                            restarStock.PrecioVenta = dato.PrecioVenta;
-                            restarStock.descripcion = dato.descripcion;
+                        foreach (var dato in await LogicaProducto.Instancia.ListarProductos()) {
 
-                            await LogicaProducto.Instancia.EditarProducto(restarStock);
-                        } else {
-                            Console.WriteLine("que id maestro?");
+                            if (dato.ProductoID == productoID) {
+                                Producto restarStock = new Producto();
+                                restarStock.ProductoID = productoID;
+                                restarStock.Marca = dato.Marca;
+                                restarStock.Modelo = dato.Modelo;
+                                restarStock.Condicion = dato.Condicion;
+                                restarStock.Almacenamiento = dato.Almacenamiento;
+                                restarStock.Bateria = dato.Bateria;
+                                restarStock.Stock = dato.Stock - cantidad;
+                                restarStock.Email = dato.Email;
+                                restarStock.PrecioCosto = dato.PrecioCosto;
+                                restarStock.PrecioVenta = dato.PrecioVenta;
+                                restarStock.descripcion = dato.descripcion;
+
+                                await LogicaProducto.Instancia.EditarProducto(restarStock);
+                            } else {
+                                Console.WriteLine("que id maestro?");
+                            }
                         }
+                        label_Cargando.Hide();
+                        pictureBox_Cargando.Hide();
+                        Restaurar();
+                        CargarCB();
+                    } else {
+                        msj.Show("Error", "Logica Venta", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.popTres);
                     }
-                } else {
-                    msj.Show("Error", "Logica Venta", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.popTres);
+
                 }
-                label_Cargando.Hide();
-                pictureBox_Cargando.Hide();
-                Restaurar();
-                CargarCB();
+
+
             }
    
         }

@@ -72,9 +72,6 @@ namespace AGN_predits.Conexiones.BD.Logica {
                 throw new Exception($"Error al cargar el detalle de la venta: {ex.Message}");
             }
         }
-
-       
-
         public async Task<List<DetalleVenta>> ListarDetallesVentaAsync() {
             List<DetalleVenta> lista = new List<DetalleVenta>();
 
@@ -111,7 +108,6 @@ namespace AGN_predits.Conexiones.BD.Logica {
             return lista;
         }
 
-
         public async Task<bool> EliminarDetalleVenta(int id) {
             try {
                 using (MySqlConnection conexion = new MySqlConnection(cadena)) {
@@ -133,148 +129,137 @@ namespace AGN_predits.Conexiones.BD.Logica {
         }
         public async Task<bool> GenerarPDFDetalleVentaAsync(DetalleVenta venta) {
             try {
-                // Crear el diálogo para guardar el archivo
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "PDF Files|*.pdf";
-                saveFileDialog.Title = "Guardar PDF";
-                saveFileDialog.FileName = "Venta_" + venta.DetalleVentaID + ".pdf";
+                SaveFileDialog saveFileDialog = new SaveFileDialog {
+                    Filter = "PDF Files|*.pdf",
+                    Title = "Guardar PDF",
+                    FileName = "Venta_" + venta.DetalleVentaID + ".pdf"
+                };
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK) {
-                    // Obtener la ubicación donde el usuario desea guardar el archivo
                     string filePath = saveFileDialog.FileName;
 
-                    // Obtener datos de la base de datos
                     using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                        await conexion.OpenAsync(); // Aseguramos que la conexión esté abierta de forma asincrónica
+                        await conexion.OpenAsync();
 
-                        string query = @"
-                    SELECT
-                        DetalleVenta.DetalleVentaID,
-                        DetalleVenta.Fecha,
-                        Cliente.Nombre AS NombreCliente, 
-                        Cliente.Apellido AS ApellidoCliente, 
-                        Cliente.Direccion,
-                        Cliente.Email, 
-                        Productos.Nombre AS Producto, 
-                        Productos.PrecioVenta, 
-                        FormaPago.MetodoPago AS FormaPago, 
-                        Monedas.Moneda AS Moneda,  
-                        DetalleVenta.Cantidad,
-                        DetalleVenta.Cuotas,
-                        DetalleVenta.Detalles,
-                        DetalleVenta.PlanCanje
-                    FROM
-                        DetalleVenta
-                    LEFT JOIN
-                        Cliente ON DetalleVenta.ClienteID = Cliente.ClienteID
-                    LEFT JOIN
-                        Productos ON DetalleVenta.ProductoID = Productos.ProductoID
-                    LEFT JOIN
-                        FormaPago ON DetalleVenta.MedioPagoID = FormaPago.MedioPagoID
-                    LEFT JOIN
-                        Monedas ON DetalleVenta.MonedaID = Monedas.MonedaID
-                    WHERE
-                        DetalleVenta.DetalleVentaID = @DetalleVentaID";
+                        string query = @"SELECT
+                    Detallesventa.DetalleVentaID,
+                    Detallesventa.Fecha,
+                    clientes.Nombre AS NombreCliente, 
+                    clientes.Apellido AS ApellidoCliente, 
+                    clientes.Gmail, 
+                    producto.Marca AS Marca, 
+                    producto.Modelo AS Modelo,
+                    producto.PrecioVenta, 
+                    mediospago.Mediopago AS FormaPago, 
+                    Detallesventa.Cantidad,
+                    Detallesventa.Cuotas,
+                    Detallesventa.Detalles,
+                    Detallesventa.PlanCanje
+                FROM
+                    Detallesventa
+                LEFT JOIN
+                    clientes ON Detallesventa.ClienteID = clientes.ClienteID
+                LEFT JOIN
+                    producto ON Detallesventa.ProductoID = producto.ProductoID
+                LEFT JOIN
+                    mediospago ON Detallesventa.MedioPagoID = mediospago.MediosPagoID
+                WHERE
+                    Detallesventa.DetalleVentaID = @DetalleVentaID;";
 
-                        MySqlCommand cmd = new MySqlCommand(query, conexion);
-                        cmd.Parameters.AddWithValue("@DetalleVentaID", venta.DetalleVentaID);
+                        using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                            cmd.Parameters.AddWithValue("@DetalleVentaID", venta.DetalleVentaID);
 
-                        using (DbDataReader reader = await cmd.ExecuteReaderAsync()) // Usamos DbDataReader para la ejecución asincrónica
-{
-                            if (await reader.ReadAsync()) // Aseguramos que la lectura sea asincrónica
-                            {
-                                // Obtener los datos necesarios
-                                DateTime fecha = DateTime.Parse(reader["Fecha"].ToString());
-                                string nombreCliente = reader["NombreCliente"].ToString();
-                                string apellidoCliente = reader["ApellidoCliente"].ToString();
-                                string direccion = reader["Direccion"].ToString();
-                                string email = reader["Email"].ToString();
-                                string producto = reader["Producto"].ToString();
-                                string formaPago = reader["FormaPago"].ToString();
-                                string moneda = reader["Moneda"].ToString();
-                                int cantidad = int.Parse(reader["Cantidad"].ToString());
-                                int cuotas = int.Parse(reader["Cuotas"].ToString());
-                                string detalles = reader["Detalles"].ToString();
-                                string planCanje = reader["PlanCanje"].ToString();
+                            using (DbDataReader reader = await cmd.ExecuteReaderAsync()) {
+                                if (await reader.ReadAsync()) {
+                                    DateTime fecha = Convert.ToDateTime(reader["Fecha"]);
 
-                                Document documento = new Document(PageSize.A4, 50, 50, 50, 50);
-                                PdfWriter.GetInstance(documento, new FileStream(filePath, FileMode.Create));
-                                documento.Open();
+                                    string nombreCliente = reader["NombreCliente"].ToString(); 
+                                    string apellidoCliente = reader["ApellidoCliente"].ToString();
+                                    string email = reader["Gmail"].ToString();
+                                    string marca = reader["Marca"].ToString();
+                                    string precioventa = reader["PrecioVenta"].ToString();
+                                    string formaPago = reader["FormaPago"].ToString();
+                                    string modelo = reader["Modelo"].ToString();
+                                    int cantidad = Convert.ToInt32(reader["Cantidad"].ToString());
+                                    int cuotas = Convert.ToInt32(reader["Cuotas"].ToString());
+                                    string detalles = reader["Detalles"].ToString();
+                                    string planCanje = reader["PlanCanje"].ToString();
 
-                                documento.AddCreator("AGN Predits");
-                                documento.AddTitle("Recibo de Venta - AGN Predits");
+                                    Document documento = new Document(PageSize.A4, 50, 50, 50, 50);
+                                    PdfWriter.GetInstance(documento, new FileStream(filePath, FileMode.Create));
+                                    documento.Open();
 
-                                string imgPath = Path.Combine(Application.StartupPath, "Img", "logo.png");
+                                    documento.AddCreator("AGN Predits");
+                                    documento.AddTitle("Recibo de Venta - AGN Predits");
 
-                                if (File.Exists(imgPath)) {
-                                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imgPath);
-                                    logo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
-                                    logo.ScaleToFit(150f, 150f);
-                                    documento.Add(logo);
+                                    string imgPath = Path.Combine(Application.StartupPath, "Img", "logo.png");
+                                    if (File.Exists(imgPath)) {
+                                        iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imgPath);
+                                        logo.Alignment = Element.ALIGN_CENTER;
+                                        logo.ScaleToFit(150f, 150f);
+                                        documento.Add(logo);
+                                    }
+                                    documento.Add(new Paragraph("\n"));
+
+                                    iTextSharp.text.Font fontTitulo = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18);
+                                    Paragraph titulo = new Paragraph("Gracias por tu compra", fontTitulo) { Alignment = Element.ALIGN_CENTER };
+                                    documento.Add(titulo);
+                                    documento.Add(new Paragraph("\n"));
+
+                                    iTextSharp.text.Font fontCliente = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+                                    Paragraph datosCliente = new Paragraph(
+                                        $"Cliente: {nombreCliente} {apellidoCliente}\nEmail: {email}", fontCliente) {
+                                        Alignment = Element.ALIGN_CENTER
+                                    };
+                                    documento.Add(datosCliente);
+                                    documento.Add(new Paragraph("\n"));
+
+                                    iTextSharp.text.Font fontDetalle = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14f);
+                                    documento.Add(new Paragraph("Detalles de la Venta:", fontDetalle));
+
+                                    iTextSharp.text.Font fontTexto = FontFactory.GetFont(FontFactory.HELVETICA, 12f);
+                                    Paragraph detallesVenta = new Paragraph(
+                                        $"Fecha: {fecha.ToShortDateString()}\n" +
+                                        $"Marca: {marca}\n" +
+                                        $"Modelo: {modelo}\n" +
+                                        $"Forma de Pago: {formaPago}\n" +
+                                        $"Cuotas: {cuotas}\n" +
+                                        $"Cantidad: {cantidad}\n" +
+                                        $"Plan de Canje: {planCanje}\n" +
+                                        $"Precio: {precioventa} USD \n " +
+                                        
+                                        $"Detalles: {detalles}", fontTexto) {
+                                        Alignment = Element.ALIGN_LEFT
+                                    };
+                                    documento.Add(detallesVenta);
+                                    documento.Add(new Paragraph("---------------------------------------------------------------------------------------------------------------------------"));
+
+                                    iTextSharp.text.Font fontFinal = FontFactory.GetFont(FontFactory.HELVETICA_OBLIQUE, 12f);
+                                    Paragraph mensajeFinal = new Paragraph(
+                                        "Esperamos que disfrutes tu compra. ¡Gracias por elegir AGN Predits!", fontFinal) {
+                                        Alignment = Element.ALIGN_CENTER
+                                    };
+                                    documento.Add(mensajeFinal);
+                                    documento.Add(new Paragraph("\n"));
+
+                                    Paragraph comprobante = new Paragraph("Comprobante no válido como factura", fontFinal) {
+                                        Alignment = Element.ALIGN_CENTER
+                                    };
+                                    documento.Add(comprobante);
+                                    documento.Add(new Paragraph("\n"));
+                                    // Calcular fecha de garantía (30 días después)
+                                    DateTime fechaGarantia = fecha.AddDays(30);
+                                    Paragraph garantia = new Paragraph($"Garantía válida hasta: {fechaGarantia.ToShortDateString()}", fontFinal) {
+                                        Alignment = Element.ALIGN_CENTER
+                                    };
+                                    documento.Add(garantia);
+                                    documento.Add(new Paragraph("\n"));
+                                    documento.Close();
+                                } else {
+                                    Console.WriteLine("No se encontró una venta con el ID proporcionado.");
                                 }
-
-                                documento.Add(new Paragraph("\n"));
-
-                                // Título de la venta centrado
-                                iTextSharp.text.Font fontTitulo = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_BOLD, 18);
-                                Paragraph titulo = new Paragraph("Gracias por tu compra", fontTitulo);
-                                titulo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
-                                documento.Add(titulo);
-
-                                documento.Add(new Paragraph("\n"));
-
-                                // Información del cliente centrada y estilizada
-                                iTextSharp.text.Font fontCliente = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA, 12);
-                                Paragraph datosCliente = new Paragraph(
-                                    $"Cliente: {nombreCliente} {apellidoCliente}\nDirección: {direccion}\nEmail: {email}",
-                                    fontCliente);
-                                datosCliente.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
-                                documento.Add(datosCliente);
-
-                                documento.Add(new Paragraph("\n"));
-
-                                // Muestra info de la venta
-                                iTextSharp.text.Font fontDetalle = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_BOLD, 14f);
-                                documento.Add(new Paragraph("Detalles de la Venta:", fontDetalle));
-
-                                iTextSharp.text.Font fontTexto = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA, 12f);
-
-                                Paragraph detallesVenta = new Paragraph(
-                                    $@"Fecha: {fecha.ToShortDateString()}
-    Producto: {producto}
-    Forma de Pago: {formaPago}
-    Cuotas: {cuotas}
-    Cantidad: {cantidad} 
-    Plan de Canje: {planCanje}
-    Detalles: 
-        {detalles}",
-                                    fontTexto);
-                                detallesVenta.Alignment = Element.ALIGN_LEFT;
-                                documento.Add(detallesVenta);
-
-                                documento.Add(new Paragraph("---------------------------------------------------------------------------------------------------------------------------"));
-
-                                // Mensaje final de agradecimiento
-                                iTextSharp.text.Font fontFinal = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_OBLIQUE, 12f);
-                                Paragraph mensajeFinal = new Paragraph(
-                                    "Esperamos que disfrutes tu compra. ¡Gracias por elegir AGN Predits!",
-                                    fontFinal);
-                                mensajeFinal.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
-                                documento.Add(mensajeFinal);
-
-                                // Corregir la creación del segundo párrafo y alineación
-                                Paragraph comprobante = new Paragraph("Comprobante no valido como factura", fontFinal);
-                                comprobante.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
-                                documento.Add(comprobante);
-
-                                documento.Add(new Paragraph("\n"));
-
-                                documento.Close();
-                            } else {
-                                Console.WriteLine("No se encontró una venta con el ID proporcionado.");
                             }
                         }
-
                     }
                     return true;
                 } else {

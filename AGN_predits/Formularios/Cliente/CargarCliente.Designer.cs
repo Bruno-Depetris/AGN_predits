@@ -167,7 +167,7 @@
             this.materialTextBoxEdit_Telefono.Depth = 0;
             this.materialTextBoxEdit_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBoxEdit_Telefono.HideSelection = true;
-            this.materialTextBoxEdit_Telefono.Hint = "Telefono";
+            this.materialTextBoxEdit_Telefono.Hint = "Teléfono";
             this.materialTextBoxEdit_Telefono.LeadingIcon = null;
             this.materialTextBoxEdit_Telefono.Location = new System.Drawing.Point(12, 207);
             this.materialTextBoxEdit_Telefono.MaxLength = 32767;

@@ -60,21 +60,17 @@ namespace AGN_predits.Formularios.Tecnico {
                 label_Cargando.Hide();
 
                 return;
-            }
-            /*
-            if (Validaciones() && editar == true) {
-                Producto producto = new Producto();
+            }else if (Validaciones() && editar == true) {
+                TecnicoMod producto = new TecnicoMod();
 
-                producto.ProductoID = IdSeleccionado;
+                producto.TecnicoID = IdSeleccionado;
                 producto.Marca = materialTextBoxEdit_Marca.Text;
                 producto.Modelo = materialTextBoxEdit_Modelo.Text;
-                producto.Condicion = condicion;
                 producto.Almacenamiento = almacenamiento;
                 producto.Bateria = bateria;
-                producto.Stock = int.Parse(materialTextBoxEdit_Stock.Text);
-                producto.descripcion = materialTextBoxEdit_Descripcion.Text;
-                producto.PrecioCosto = costo;
-                producto.PrecioVenta = venta;
+                producto.Falla = materialTextBoxEdit_Falla.Text;
+                producto.CostoArreglo = venta;
+                producto.Costo = costo;
                 producto.Email = materialTextBoxEdit_Email.Text;
                 Mensaje msj = new Mensaje();
 
@@ -82,7 +78,7 @@ namespace AGN_predits.Formularios.Tecnico {
                 pictureBox_Cargando.Show();
                 label_Cargando.Show();
 
-                if (await LogicaProducto.Instancia.EditarProducto(producto)) {
+                if (await LogicaTecnico.Instancia.EditarTecnico(producto)) {
 
                     msj.Show("Producto", "Editado", Color.Green, Color.White, Mensaje.TipoIcono.Ok, Mensaje.TipoSonido.start);
                     Restaurar();
@@ -90,12 +86,12 @@ namespace AGN_predits.Formularios.Tecnico {
                 } else {
                     msj.Show("Error", "logica Edicion", Color.Red, Color.White, Mensaje.TipoIcono.Error, Mensaje.TipoSonido.archive);
                 }
-                await _stock.ActualizarDataGreed();
+                await _ListaTecnico.ActualizarDataGreed();
                 pictureBox_Cargando.Hide();
                 label_Cargando.Hide();
                 return;
             }
-            */
+            
         }
 
         int IdSeleccionado;
@@ -193,5 +189,22 @@ namespace AGN_predits.Formularios.Tecnico {
             materialTextBoxEdit_CostoReparacion.Clear();
             materialTextBoxEdit_Costo.Clear();
         }
+
+        public void SetProductData(int TecnicoID, string marca, string modelo, decimal almacenamiento, decimal bateria, string falla, string email, decimal costoreparacion, decimal costo) {
+
+            IdSeleccionado = TecnicoID;
+            materialTextBoxEdit_Marca.Text = marca;
+            materialTextBoxEdit_Modelo.Text = modelo;
+            materialTextBoxEdit_Almacenamiento.Text = almacenamiento.ToString();
+            materialTextBoxEdit_Bateria.Text = bateria.ToString();
+            materialTextBoxEdit_Falla.Text = falla;
+            materialTextBoxEdit_CostoReparacion.Text = costoreparacion.ToString();
+            materialTextBoxEdit_Costo.Text = costo.ToString();
+            materialTextBoxEdit_Email.Text = email.ToString();
+            materialButton_CargarProducto.Text = "Editar";
+            editar = true;
+
+        }
+
     }
 }
