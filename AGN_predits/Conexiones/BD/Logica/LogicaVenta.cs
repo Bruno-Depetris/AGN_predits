@@ -1,59 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using AGN_predits.Conexiones.BD.Modelo;
-using System.Drawing.Printing;
-using System.Drawing;
-using System.IO;
-using System.Xml.Linq;
+﻿using AGN_predits.Conexiones.BD.Modelo;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Lam7ara.Conexiones.BD;
+using System.Data.SQLite;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using System.Globalization;
-using System.Media;
-
-namespace AGN_predits.Conexiones.BD.Logica {
-    internal class LogicaDetalleVenta {
-        private static string cadena = ConfigurationManager.ConnectionStrings["cadena"].ConnectionString;
+namespace AGN_predits.Conexiones.BD.Logica
+{
+    internal class LogicaDetalleVenta
+    {
 
         private static LogicaDetalleVenta _LogicaDetalleVenta;
 
-        public static LogicaDetalleVenta Instancia {
-            get {
-                if (_LogicaDetalleVenta == null) {
+        public static LogicaDetalleVenta Instancia
+        {
+            get
+            {
+                if (_LogicaDetalleVenta == null)
+                {
                     _LogicaDetalleVenta = new LogicaDetalleVenta();
                 }
                 return _LogicaDetalleVenta;
             }
         }
 
-        private MySqlConnection conn;
+        private SQLiteConnection conn;
 
-        public void Connect() {
-            try {
-                conn = new MySqlConnection(cadena);
+        public void Connect()
+        {
+            try
+            {
+                conn = Conectar.ObtenerConexion();
                 conn.Open();
                 MessageBox.Show("Conexión exitosa.");
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error al conectar: " + ex.Message);
             }
         }
 
-        public async Task<bool> CargarDetalleVenta(DetalleVenta detalle) {
-            try {
-                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                    await conexion.OpenAsync(); // Abre la conexión de manera asíncrona
+        public async Task<bool> CargarDetalleVenta(DetalleVenta detalle)
+        {
+            try
+            {
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
+                {
+                     // Abre la conexión de manera asíncrona
 
-                    string query = "INSERT INTO Detallesventa (Fecha, ClienteID, ProductoID, MedioPagoID, Cuotas, Detalles, PlanCanje, Cantidad) " +
+                    string query = "INSERT INTO DetalleVenta (Fecha, ClienteID, ProductoID, MedioPagoID, Cuotas, Detalles, PlanCanje, Cantidad) " +
                                    "VALUES (@Fecha, @ClienteID, @ProductoID, @MedioPagoID, @Cuotas, @Detalles, @PlanCanje, @Cantidad)";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
+                    {
                         cmd.Parameters.AddWithValue("@Fecha", detalle.Fecha);
                         cmd.Parameters.AddWithValue("@ClienteID", detalle.ClienteID);
                         cmd.Parameters.AddWithValue("@ProductoID", detalle.ProductoID);
@@ -67,26 +70,35 @@ namespace AGN_predits.Conexiones.BD.Logica {
                         return filasAfectadas > 0;  // Devuelve verdadero si se insertó correctamente
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 throw new Exception($"Error al cargar el detalle de la venta: {ex.Message}");
             }
         }
 
-       
 
-        public async Task<List<DetalleVenta>> ListarDetallesVentaAsync() {
+
+        public async Task<List<DetalleVenta>> ListarDetallesVentaAsync()
+        {
             List<DetalleVenta> lista = new List<DetalleVenta>();
 
-            try {
-                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                    await conexion.OpenAsync();
+            try
+            {
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
+                {
+                    
 
-                    string query = "SELECT * FROM Detallesventa";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                    string query = "SELECT * FROM DetalleVenta";
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
+                    {
 
-                        using (var reader = await cmd.ExecuteReaderAsync()) { // Ejecuta la consulta de forma asíncrona
-                            while (await reader.ReadAsync()) { // Itera de forma asíncrona
-                                var detalleVenta = new DetalleVenta {
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        { // Ejecuta la consulta de forma asíncrona
+                            while (await reader.ReadAsync())
+                            { // Itera de forma asíncrona
+                                var detalleVenta = new DetalleVenta
+                                {
                                     DetalleVentaID = Convert.ToInt32(reader["DetalleVentaID"]),
                                     Fecha = Convert.ToDateTime(reader["Fecha"]),
                                     ClienteID = Convert.ToInt32(reader["ClienteID"]),
@@ -102,7 +114,9 @@ namespace AGN_predits.Conexiones.BD.Logica {
                         }
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine($"Error: {ex.Message}");
                 throw;
             }
@@ -111,39 +125,49 @@ namespace AGN_predits.Conexiones.BD.Logica {
         }
 
 
-        public async Task<bool> EliminarDetalleVenta(int id) {
-            try {
-                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                    await conexion.OpenAsync();
+        public async Task<bool> EliminarDetalleVenta(int id)
+        {
+            try
+            {
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
+                {
+                    
 
-                    string query = "DELETE FROM Detallesventa WHERE DetalleVentaID = @DetalleVentaID";
+                    string query = "DELETE FROM DetalleVenta WHERE DetalleVentaID = @DetalleVentaID";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
+                    {
                         cmd.Parameters.AddWithValue("@DetalleVentaID", id);
 
                         int filasAfectadas = await cmd.ExecuteNonQueryAsync();
                         return filasAfectadas > 0;
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine($"Error al eliminar el detalle de la venta: {ex.Message}");
                 return false;
             }
         }
-        public bool GenerarPDFDetalleVenta(DetalleVenta venta) {
-            try {
+        public bool GenerarPDFDetalleVenta(DetalleVenta venta)
+        {
+            try
+            {
                 // Crear el diálogo para guardar el archivo
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "PDF Files|*.pdf";
                 saveFileDialog.Title = "Guardar PDF";
                 saveFileDialog.FileName = "Venta_" + venta.DetalleVentaID + ".pdf";
 
-                if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
                     // Obtener la ubicación donde el usuario desea guardar el archivo
                     string filePath = saveFileDialog.FileName;
 
                     // Obtener datos de la base de datos
-                    using (MySqlConnection conexion = new MySqlConnection(cadena)) {
+                    using (SQLiteConnection conexion = Conectar.ObtenerConexion())
+                    {
                         string query = @"
                     SELECT
                         DetalleVenta.DetalleVentaID,
@@ -173,11 +197,13 @@ namespace AGN_predits.Conexiones.BD.Logica {
                     WHERE
                         DetalleVenta.DetalleVentaID = @DetalleVentaID";
 
-                        MySqlCommand cmd = new MySqlCommand(query, conexion);
+                        SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                         cmd.Parameters.AddWithValue("@DetalleVentaID", venta.DetalleVentaID);
 
-                        using (MySqlDataReader reader = cmd.ExecuteReader()) {
-                            if (reader.Read()) {
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
                                 // Obtener los datos necesarios
                                 DateTime fecha = DateTime.Parse(reader["Fecha"].ToString());
                                 string nombreCliente = reader["NombreCliente"].ToString();
@@ -202,7 +228,8 @@ namespace AGN_predits.Conexiones.BD.Logica {
 
                                 string imgPath = Path.Combine(Application.StartupPath, "Img", "logo.png");
 
-                                if (File.Exists(imgPath)) {
+                                if (File.Exists(imgPath))
+                                {
                                     iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imgPath);  // Especificar el espacio de nombres completo
                                     logo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
                                     logo.ScaleToFit(150f, 150f);
@@ -270,16 +297,22 @@ namespace AGN_predits.Conexiones.BD.Logica {
 
 
                                 documento.Close();
-                            } else {
+                            }
+                            else
+                            {
                                 Console.WriteLine("No se encontró una venta con el ID proporcionado.");
                             }
                         }
                     }
                     return true;
-                } else {
+                }
+                else
+                {
                     return false;
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.ToString());
                 return false;
             }

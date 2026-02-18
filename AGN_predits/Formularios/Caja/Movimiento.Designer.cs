@@ -222,6 +222,7 @@
             this.materialButton_CargarMovimiento.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_CargarMovimiento.UseAccentColor = false;
             this.materialButton_CargarMovimiento.UseVisualStyleBackColor = true;
+            this.materialButton_CargarMovimiento.Click += new System.EventHandler(this.materialButton_CargarMovimiento_Click);
             // 
             // parrotGradientPanel1
             // 

@@ -1,4 +1,5 @@
 ﻿using AGN_predits.Conexiones;
+using Lam7ara.Conexiones.BD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace AGN_predits {
         /// </summary>
         [STAThread]
         static void Main() {
+            AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+            Conectar.Comprobar();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormPrincipal());

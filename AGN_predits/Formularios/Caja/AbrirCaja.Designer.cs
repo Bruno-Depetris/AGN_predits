@@ -106,6 +106,7 @@
             this.materialButton_AbrirCaja.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_AbrirCaja.UseAccentColor = false;
             this.materialButton_AbrirCaja.UseVisualStyleBackColor = true;
+            this.materialButton_AbrirCaja.Click += new System.EventHandler(this.materialButton_AbrirCaja_Click);
             // 
             // parrotGradientPanel1
             // 

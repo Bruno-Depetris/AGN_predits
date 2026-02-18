@@ -89,6 +89,7 @@
             this.materialButton_DetallesDiarios.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_DetallesDiarios.UseAccentColor = false;
             this.materialButton_DetallesDiarios.UseVisualStyleBackColor = true;
+            this.materialButton_DetallesDiarios.Click += new System.EventHandler(this.materialButton_DetallesDiarios_Click);
             // 
             // materialButton_Movimiento
             // 
@@ -110,6 +111,7 @@
             this.materialButton_Movimiento.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_Movimiento.UseAccentColor = false;
             this.materialButton_Movimiento.UseVisualStyleBackColor = true;
+            this.materialButton_Movimiento.Click += new System.EventHandler(this.materialButton_Movimiento_Click);
             // 
             // materialButton_AbirirCaja
             // 
@@ -131,6 +133,7 @@
             this.materialButton_AbirirCaja.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_AbirirCaja.UseAccentColor = false;
             this.materialButton_AbirirCaja.UseVisualStyleBackColor = true;
+            this.materialButton_AbirirCaja.Click += new System.EventHandler(this.materialButton_AbirirCaja_Click);
             // 
             // materialButton1
             // 
@@ -152,6 +155,7 @@
             this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // label1
             // 
@@ -253,6 +257,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Caja";
             this.Text = "Caja";
+            this.Load += new System.EventHandler(this.Caja_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             this.ResumeLayout(false);

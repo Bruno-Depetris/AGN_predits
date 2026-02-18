@@ -41,7 +41,8 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,10 +63,13 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Predits.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AGN_predits.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -83,7 +87,9 @@
   <ItemGroup>
     <Compile Include="Conexiones\APIs\Logica\ApiCotizacion.cs" />
     <Compile Include="Conexiones\APIs\Modelo\ModeloApiCotizacion .cs" />
+    <Compile Include="Conexiones\BD\Logica\LogicaCaja.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaCliente.cs" />
+    <Compile Include="Conexiones\BD\Logica\LogicaDashboard.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaProducto.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaVenta.cs" />
     <Compile Include="Conexiones\BD\Modelo\Caja.cs" />
@@ -92,6 +98,7 @@
     <Compile Include="Conexiones\BD\Modelo\DetalleVenta.cs" />
     <Compile Include="Conexiones\BD\Modelo\MedioPago.cs" />
     <Compile Include="Conexiones\BD\Modelo\Producto.cs" />
+    <Compile Include="Conexiones\Conectar.cs" />
     <Compile Include="Formularios\Caja\AbrirCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,12 +177,6 @@
     <Compile Include="Formularios\Vender\Venta.Designer.cs">
       <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notificaciones\Mensaje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Notificaciones\Mensaje.Designer.cs">
-      <DependentUpon>Mensaje.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Caja\AbrirCaja.resx">
@@ -217,9 +218,6 @@
     <EmbeddedResource Include="Formularios\Vender\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notificaciones\Mensaje.resx">
-      <DependentUpon>Mensaje.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -230,7 +228,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="AGN_predits_TemporaryKey.pfx" />
+    <Content Include="Lam7araDataBaseAPP.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -248,8 +248,8 @@
     <PackageReference Include="iTextSharp">
       <Version>5.5.13.4</Version>
     </PackageReference>
-    <PackageReference Include="MySql.Data">
-      <Version>9.2.0</Version>
+    <PackageReference Include="Microsoft.Data.Sqlite">
+      <Version>10.0.3</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
@@ -259,6 +259,9 @@
     </PackageReference>
     <PackageReference Include="System.Configuration.ConfigurationManager">
       <Version>9.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <Version>2.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -437,6 +440,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Formularios\Tecnico\" />
+    <Folder Include="Notificaciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

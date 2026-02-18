@@ -205,6 +205,7 @@
             this.materialButton_CerrarCaja.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_CerrarCaja.UseAccentColor = false;
             this.materialButton_CerrarCaja.UseVisualStyleBackColor = true;
+            this.materialButton_CerrarCaja.Click += new System.EventHandler(this.materialButton_CerrarCaja_Click);
             // 
             // parrotGradientPanel1
             // 
