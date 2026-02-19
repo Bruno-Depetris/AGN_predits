@@ -97,6 +97,7 @@
     <Compile Include="Conexiones\BD\Modelo\ClienteMod.cs" />
     <Compile Include="Conexiones\BD\Modelo\DetalleVenta.cs" />
     <Compile Include="Conexiones\BD\Modelo\MedioPago.cs" />
+    <Compile Include="Conexiones\BD\Modelo\MovimientoCaja.cs" />
     <Compile Include="Conexiones\BD\Modelo\Producto.cs" />
     <Compile Include="Conexiones\Conectar.cs" />
     <Compile Include="Formularios\Caja\AbrirCaja.cs">
@@ -177,6 +178,12 @@
     <Compile Include="Formularios\Vender\Venta.Designer.cs">
       <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notificaciones\Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\Mensaje.Designer.cs">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Caja\AbrirCaja.resx">
@@ -217,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Vender\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notificaciones\Mensaje.resx">
+      <DependentUpon>Mensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -440,7 +450,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Formularios\Tecnico\" />
-    <Folder Include="Notificaciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
