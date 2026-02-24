@@ -62,7 +62,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Predits.ico</ApplicationIcon>
@@ -83,17 +83,19 @@
   <ItemGroup>
     <Compile Include="Conexiones\APIs\Logica\ApiCotizacion.cs" />
     <Compile Include="Conexiones\APIs\Modelo\ModeloApiCotizacion .cs" />
+    <Compile Include="Conexiones\BD\Logica\LogicaCaja.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaCliente.cs" />
+    <Compile Include="Conexiones\BD\Logica\LogicaDashboard.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaProducto.cs" />
-    <Compile Include="Conexiones\BD\Logica\LogicaTecnico.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaVenta.cs" />
     <Compile Include="Conexiones\BD\Modelo\Caja.cs" />
     <Compile Include="Conexiones\BD\Modelo\Cierre.cs" />
     <Compile Include="Conexiones\BD\Modelo\ClienteMod.cs" />
     <Compile Include="Conexiones\BD\Modelo\DetalleVenta.cs" />
     <Compile Include="Conexiones\BD\Modelo\MedioPago.cs" />
+    <Compile Include="Conexiones\BD\Modelo\MovimientoCaja.cs" />
     <Compile Include="Conexiones\BD\Modelo\Producto.cs" />
-    <Compile Include="Conexiones\BD\Modelo\TecnicoMod.cs" />
+    <Compile Include="Conexiones\Conectar.cs" />
     <Compile Include="Formularios\Caja\AbrirCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,7 +252,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="AGN_predits_TemporaryKey.pfx" />
+    <None Include="Lam7araDataBaseAPP.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -279,6 +283,9 @@
     </PackageReference>
     <PackageReference Include="System.Configuration.ConfigurationManager">
       <Version>9.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite.Core">
+      <Version>1.0.119</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

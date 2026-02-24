@@ -1,36 +1,42 @@
 ﻿using AGN_predits.Conexiones.BD.Modelo;
-using MySql.Data.MySqlClient;
+using Lam7ara.Conexiones.BD;
+using System.Data.SQLite;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Threading.Tasks;
 
-namespace AGN_predits.Conexiones.BD.Logica {
+namespace AGN_predits.Conexiones.BD.Logica
+{
 
-    internal class LogicaProducto {
-
-        private static string cadena = ConfigurationManager.ConnectionStrings["cadena"].ConnectionString;
-
+    internal class LogicaProducto
+    {
         private static LogicaProducto _LogicaProducto;
 
-        public static LogicaProducto Instancia {
-            get {
-                if (_LogicaProducto == null) {
+        public static LogicaProducto Instancia
+        {
+            get
+            {
+                if (_LogicaProducto == null)
+                {
                     _LogicaProducto = new LogicaProducto();
                 }
                 return _LogicaProducto;
             }
         }
 
-        public async Task<bool> CargarProducto(Producto prod) {
-            try {
-                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                    await conexion.OpenAsync();
+        public async Task<bool> CargarProducto(Producto prod)
+        {
+            try
+            {
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
+                {
+                    
 
-                    string query = "INSERT INTO producto (Marca, Modelo, Condicion, Almacenamiento, Bateria, Stock, Email, PrecioCosto, PrecioVenta, descripcion) " +
+                    string query = "INSERT INTO Producto (Marca, Modelo, Condicion, Almacenamiento, Bateria, Stock, Email, PrecioCosto, PrecioVenta, descripcion) " +
                                    "VALUES (@Marca, @Modelo, @Condicion, @Almacenamiento, @Bateria, @Stock, @Email, @PrecioCosto, @PrecioVenta, @descripcion)";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
+                    {
                         cmd.Parameters.AddWithValue("@Marca", prod.Marca);
                         cmd.Parameters.AddWithValue("@Modelo", prod.Modelo);
                         cmd.Parameters.AddWithValue("@Condicion", prod.Condicion);
@@ -46,25 +52,34 @@ namespace AGN_predits.Conexiones.BD.Logica {
                         return filasAfectadas > 0;
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine($"Error: {ex.Message}");
                 throw;
             }
         }
 
-        public async Task<List<Producto>> ListarProductos() {
+        public async Task<List<Producto>> ListarProductos()
+        {
             List<Producto> lista = new List<Producto>();
 
-            try {
-                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                    await conexion.OpenAsync();
+            try
+            {
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
+                {
+                    
 
-                    string query = "SELECT * FROM producto";
+                    string query = "SELECT * FROM Producto";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
-                        using (var reader = await cmd.ExecuteReaderAsync()) {
-                            while (await reader.ReadAsync()) {
-                                var Producto = new Producto {
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
+                    {
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                var Producto = new Producto
+                                {
                                     ProductoID = Convert.ToInt32(reader["ProductoID"]),
                                     Marca = reader["Marca"].ToString(),
                                     Modelo = reader["Modelo"].ToString(),
@@ -82,7 +97,9 @@ namespace AGN_predits.Conexiones.BD.Logica {
                         }
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine($"Error: {ex.Message}");
                 throw;
             }
@@ -90,36 +107,46 @@ namespace AGN_predits.Conexiones.BD.Logica {
             return lista;
         }
 
-        public async Task<bool> EliminarProducto(int id) {
-            try {
-                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                    await conexion.OpenAsync();
+        public async Task<bool> EliminarProducto(int id)
+        {
+            try
+            {
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
+                {
+                    
 
-                    string query = "DELETE FROM producto WHERE ProductoID = @ProductoID";
+                    string query = "DELETE FROM Producto WHERE ProductoID = @ProductoID";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
+                    {
                         cmd.Parameters.AddWithValue("@ProductoID", id);
                         int filasAfectadas = await cmd.ExecuteNonQueryAsync();
                         return filasAfectadas > 0;
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine($"Error al eliminar producto: {ex.Message}");
                 return false;
             }
         }
 
-        public async Task<bool> EditarProducto(Producto prod) {
-            try {
-                using (MySqlConnection conexion = new MySqlConnection(cadena)) {
-                    await conexion.OpenAsync();
+        public async Task<bool> EditarProducto(Producto prod)
+        {
+            try
+            {
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
+                {
+                    
 
-                    string query = "UPDATE producto SET Marca = @Marca, Modelo = @Modelo, Condicion = @Condicion, " +
+                    string query = "UPDATE Producto SET Marca = @Marca, Modelo = @Modelo, Condicion = @Condicion, " +
                                     "Almacenamiento = @Almacenamiento, Bateria = @Bateria, Stock = @Stock, " +
                                     "Email = @Email, PrecioCosto = @PrecioCosto, PrecioVenta = @PrecioVenta, descripcion = @Descripcion " +
                                     "WHERE ProductoID = @ProductoID";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion)) {
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
+                    {
                         cmd.Parameters.AddWithValue("@Marca", prod.Marca);
                         cmd.Parameters.AddWithValue("@Modelo", prod.Modelo);
                         cmd.Parameters.AddWithValue("@Condicion", prod.Condicion);
@@ -136,7 +163,9 @@ namespace AGN_predits.Conexiones.BD.Logica {
                         return filasAfectadas > 0;
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.WriteLine($"Error al editar producto: {ex.Message}");
                 return false;
             }
