@@ -95,6 +95,7 @@
     <Compile Include="Conexiones\BD\Modelo\MedioPago.cs" />
     <Compile Include="Conexiones\BD\Modelo\MovimientoCaja.cs" />
     <Compile Include="Conexiones\BD\Modelo\Producto.cs" />
+    <Compile Include="Conexiones\BD\Modelo\TecnicoMod.cs" />
     <Compile Include="Conexiones\Conectar.cs" />
     <Compile Include="Formularios\Caja\AbrirCaja.cs">
       <SubType>Form</SubType>
