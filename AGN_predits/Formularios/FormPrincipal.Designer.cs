@@ -1,5 +1,7 @@
-﻿namespace AGN_predits {
-    partial class FormPrincipal {
+﻿namespace AGN_predits
+{
+    partial class FormPrincipal
+    {
         /// <summary>
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Limpiar los recursos que se estén usando.
         /// </summary>
         /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +26,8 @@
         /// Método necesario para admitir el Diseñador. No se puede modificar
         /// el contenido de este método con el editor de código.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panel_ContenedorLateral = new System.Windows.Forms.Panel();

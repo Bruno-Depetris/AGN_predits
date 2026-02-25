@@ -87,6 +87,7 @@
     <Compile Include="Conexiones\BD\Logica\LogicaCliente.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaDashboard.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaProducto.cs" />
+    <Compile Include="Conexiones\BD\Logica\LogicaTecnico.cs" />
     <Compile Include="Conexiones\BD\Logica\LogicaVenta.cs" />
     <Compile Include="Conexiones\BD\Modelo\Caja.cs" />
     <Compile Include="Conexiones\BD\Modelo\Cierre.cs" />

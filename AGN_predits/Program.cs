@@ -13,6 +13,8 @@ namespace AGN_predits {
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
+            AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormPrincipal());
         }

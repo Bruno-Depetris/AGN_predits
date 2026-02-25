@@ -1,5 +1,7 @@
-﻿namespace AGN_predits.Formularios.Caja {
-    partial class Caja {
+﻿namespace AGN_predits.Formularios.Caja
+{
+    partial class Caja
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +26,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Caja));
             this.airSeparator1 = new ReaLTaiizor.Controls.AirSeparator();
             this.bigLabel = new ReaLTaiizor.Controls.BigLabel();
@@ -61,11 +66,11 @@
             // 
             this.bigLabel.AutoSize = true;
             this.bigLabel.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel.Font = new System.Drawing.Font("Arboria Light", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bigLabel.ForeColor = System.Drawing.Color.Black;
             this.bigLabel.Location = new System.Drawing.Point(12, 9);
             this.bigLabel.Name = "bigLabel";
-            this.bigLabel.Size = new System.Drawing.Size(238, 40);
+            this.bigLabel.Size = new System.Drawing.Size(231, 38);
             this.bigLabel.TabIndex = 26;
             this.bigLabel.Text = "Estado Rapido";
             // 
@@ -89,6 +94,7 @@
             this.materialButton_DetallesDiarios.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_DetallesDiarios.UseAccentColor = false;
             this.materialButton_DetallesDiarios.UseVisualStyleBackColor = true;
+            this.materialButton_DetallesDiarios.Click += new System.EventHandler(this.materialButton_DetallesDiarios_Click);
             // 
             // materialButton_Movimiento
             // 
@@ -110,6 +116,7 @@
             this.materialButton_Movimiento.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_Movimiento.UseAccentColor = false;
             this.materialButton_Movimiento.UseVisualStyleBackColor = true;
+            this.materialButton_Movimiento.Click += new System.EventHandler(this.materialButton_Movimiento_Click);
             // 
             // materialButton_AbirirCaja
             // 
@@ -131,6 +138,7 @@
             this.materialButton_AbirirCaja.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_AbirirCaja.UseAccentColor = false;
             this.materialButton_AbirirCaja.UseVisualStyleBackColor = true;
+            this.materialButton_AbirirCaja.Click += new System.EventHandler(this.materialButton_AbirirCaja_Click);
             // 
             // materialButton1
             // 
@@ -152,15 +160,16 @@
             this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arboria Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(575, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 15);
+            this.label1.Size = new System.Drawing.Size(156, 16);
             this.label1.TabIndex = 33;
             this.label1.Text = "Desde la ultima apertura:";
             // 
@@ -168,10 +177,10 @@
             // 
             this.label_FechaApertura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_FechaApertura.AutoSize = true;
-            this.label_FechaApertura.Font = new System.Drawing.Font("Arboria Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_FechaApertura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_FechaApertura.Location = new System.Drawing.Point(732, 37);
             this.label_FechaApertura.Name = "label_FechaApertura";
-            this.label_FechaApertura.Size = new System.Drawing.Size(55, 15);
+            this.label_FechaApertura.Size = new System.Drawing.Size(57, 16);
             this.label_FechaApertura.TabIndex = 34;
             this.label_FechaApertura.Text = "12/01/25";
             // 
@@ -198,40 +207,40 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arboria Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(17, 145);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 22);
+            this.label6.Size = new System.Drawing.Size(102, 24);
             this.label6.TabIndex = 39;
             this.label6.Text = "Ingresos: $";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arboria Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(17, 103);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 22);
+            this.label5.Size = new System.Drawing.Size(100, 24);
             this.label5.TabIndex = 38;
             this.label5.Text = "Egresos: $";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arboria Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(17, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 22);
+            this.label4.Size = new System.Drawing.Size(227, 24);
             this.label4.TabIndex = 37;
             this.label4.Text = "Cantidad de movimientos:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arboria Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 22);
+            this.label3.Size = new System.Drawing.Size(287, 24);
             this.label3.TabIndex = 36;
             this.label3.Text = "Cantidad de productos vendidos:";
             // 
@@ -253,6 +262,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Caja";
             this.Text = "Caja";
+            this.Load += new System.EventHandler(this.Caja_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             this.ResumeLayout(false);

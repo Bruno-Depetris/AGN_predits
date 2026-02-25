@@ -1,5 +1,7 @@
-﻿namespace AGN_predits.Formularios.Caja {
-    partial class Movimiento {
+﻿namespace AGN_predits.Formularios.Caja
+{
+    partial class Movimiento
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,16 +26,17 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Movimiento));
             this.airForm1 = new ReaLTaiizor.Forms.AirForm();
-            this.materialComboBox_Movimiento = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.materialTextBoxEdit_Motivo = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.materialTextBoxEdit_Responsable = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.materialComboBox_Medio = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.materialTextBoxEdit_Monto = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.materialButton_CargarMovimiento = new ReaLTaiizor.Controls.MaterialButton();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.materialButton_CargarMovimiento = new ReaLTaiizor.Controls.MaterialButton();
+            this.materialComboBox_Medio = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.materialTextBoxEdit_Responsable = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.materialTextBoxEdit_Monto = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.materialTextBoxEdit_Motivo = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.materialComboBox_Movimiento = new ReaLTaiizor.Controls.MaterialComboBox();
             this.airForm1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,59 +69,68 @@
             this.airForm1.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm1.Transparent = false;
             // 
-            // materialComboBox_Movimiento
+            // parrotGradientPanel1
             // 
-            this.materialComboBox_Movimiento.AutoResize = false;
-            this.materialComboBox_Movimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox_Movimiento.Depth = 0;
-            this.materialComboBox_Movimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox_Movimiento.DropDownHeight = 174;
-            this.materialComboBox_Movimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox_Movimiento.DropDownWidth = 121;
-            this.materialComboBox_Movimiento.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox_Movimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox_Movimiento.FormattingEnabled = true;
-            this.materialComboBox_Movimiento.Hint = "Seleccionar Movimiento";
-            this.materialComboBox_Movimiento.IntegralHeight = false;
-            this.materialComboBox_Movimiento.ItemHeight = 43;
-            this.materialComboBox_Movimiento.Location = new System.Drawing.Point(12, 39);
-            this.materialComboBox_Movimiento.MaxDropDownItems = 4;
-            this.materialComboBox_Movimiento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.materialComboBox_Movimiento.Name = "materialComboBox_Movimiento";
-            this.materialComboBox_Movimiento.Size = new System.Drawing.Size(623, 49);
-            this.materialComboBox_Movimiento.StartIndex = 0;
-            this.materialComboBox_Movimiento.TabIndex = 0;
+            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.Black;
+            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Fuchsia;
+            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(0, 326);
+            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
+            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel1.Size = new System.Drawing.Size(647, 10);
+            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
+            this.parrotGradientPanel1.TabIndex = 7;
+            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.White;
+            this.parrotGradientPanel1.TopRight = System.Drawing.Color.Silver;
             // 
-            // materialTextBoxEdit_Motivo
+            // materialButton_CargarMovimiento
             // 
-            this.materialTextBoxEdit_Motivo.AnimateReadOnly = false;
-            this.materialTextBoxEdit_Motivo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.materialTextBoxEdit_Motivo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.materialTextBoxEdit_Motivo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBoxEdit_Motivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBoxEdit_Motivo.Depth = 0;
-            this.materialTextBoxEdit_Motivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBoxEdit_Motivo.HideSelection = true;
-            this.materialTextBoxEdit_Motivo.Hint = "Ingrese motivo/razon";
-            this.materialTextBoxEdit_Motivo.LeadingIcon = null;
-            this.materialTextBoxEdit_Motivo.Location = new System.Drawing.Point(12, 203);
-            this.materialTextBoxEdit_Motivo.MaxLength = 32767;
-            this.materialTextBoxEdit_Motivo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.materialTextBoxEdit_Motivo.Name = "materialTextBoxEdit_Motivo";
-            this.materialTextBoxEdit_Motivo.PasswordChar = '\0';
-            this.materialTextBoxEdit_Motivo.PrefixSuffixText = null;
-            this.materialTextBoxEdit_Motivo.ReadOnly = false;
-            this.materialTextBoxEdit_Motivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBoxEdit_Motivo.SelectedText = "";
-            this.materialTextBoxEdit_Motivo.SelectionLength = 0;
-            this.materialTextBoxEdit_Motivo.SelectionStart = 0;
-            this.materialTextBoxEdit_Motivo.ShortcutsEnabled = true;
-            this.materialTextBoxEdit_Motivo.Size = new System.Drawing.Size(623, 48);
-            this.materialTextBoxEdit_Motivo.TabIndex = 2;
-            this.materialTextBoxEdit_Motivo.TabStop = false;
-            this.materialTextBoxEdit_Motivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBoxEdit_Motivo.TrailingIcon = null;
-            this.materialTextBoxEdit_Motivo.UseSystemPasswordChar = false;
+            this.materialButton_CargarMovimiento.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton_CargarMovimiento.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton_CargarMovimiento.Depth = 0;
+            this.materialButton_CargarMovimiento.HighEmphasis = true;
+            this.materialButton_CargarMovimiento.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_CargarMovimiento.Icon")));
+            this.materialButton_CargarMovimiento.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton_CargarMovimiento.Location = new System.Drawing.Point(219, 260);
+            this.materialButton_CargarMovimiento.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton_CargarMovimiento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton_CargarMovimiento.Name = "materialButton_CargarMovimiento";
+            this.materialButton_CargarMovimiento.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton_CargarMovimiento.Size = new System.Drawing.Size(202, 36);
+            this.materialButton_CargarMovimiento.TabIndex = 6;
+            this.materialButton_CargarMovimiento.Text = "Cargar Movimiento";
+            this.materialButton_CargarMovimiento.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton_CargarMovimiento.UseAccentColor = false;
+            this.materialButton_CargarMovimiento.UseVisualStyleBackColor = true;
+            this.materialButton_CargarMovimiento.Click += new System.EventHandler(this.materialButton_CargarMovimiento_Click);
+            // 
+            // materialComboBox_Medio
+            // 
+            this.materialComboBox_Medio.AutoResize = false;
+            this.materialComboBox_Medio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBox_Medio.Depth = 0;
+            this.materialComboBox_Medio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBox_Medio.DropDownHeight = 174;
+            this.materialComboBox_Medio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBox_Medio.DropDownWidth = 121;
+            this.materialComboBox_Medio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBox_Medio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBox_Medio.FormattingEnabled = true;
+            this.materialComboBox_Medio.Hint = "Seleccionar Medio";
+            this.materialComboBox_Medio.IntegralHeight = false;
+            this.materialComboBox_Medio.ItemHeight = 43;
+            this.materialComboBox_Medio.Location = new System.Drawing.Point(12, 148);
+            this.materialComboBox_Medio.MaxDropDownItems = 4;
+            this.materialComboBox_Medio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.materialComboBox_Medio.Name = "materialComboBox_Medio";
+            this.materialComboBox_Medio.Size = new System.Drawing.Size(623, 49);
+            this.materialComboBox_Medio.StartIndex = 0;
+            this.materialComboBox_Medio.TabIndex = 5;
             // 
             // materialTextBoxEdit_Responsable
             // 
@@ -149,29 +163,6 @@
             this.materialTextBoxEdit_Responsable.TrailingIcon = null;
             this.materialTextBoxEdit_Responsable.UseSystemPasswordChar = false;
             // 
-            // materialComboBox_Medio
-            // 
-            this.materialComboBox_Medio.AutoResize = false;
-            this.materialComboBox_Medio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox_Medio.Depth = 0;
-            this.materialComboBox_Medio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox_Medio.DropDownHeight = 174;
-            this.materialComboBox_Medio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox_Medio.DropDownWidth = 121;
-            this.materialComboBox_Medio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox_Medio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox_Medio.FormattingEnabled = true;
-            this.materialComboBox_Medio.Hint = "Seleccionar Medio";
-            this.materialComboBox_Medio.IntegralHeight = false;
-            this.materialComboBox_Medio.ItemHeight = 43;
-            this.materialComboBox_Medio.Location = new System.Drawing.Point(12, 148);
-            this.materialComboBox_Medio.MaxDropDownItems = 4;
-            this.materialComboBox_Medio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.materialComboBox_Medio.Name = "materialComboBox_Medio";
-            this.materialComboBox_Medio.Size = new System.Drawing.Size(623, 49);
-            this.materialComboBox_Medio.StartIndex = 0;
-            this.materialComboBox_Medio.TabIndex = 5;
-            // 
             // materialTextBoxEdit_Monto
             // 
             this.materialTextBoxEdit_Monto.AnimateReadOnly = false;
@@ -203,44 +194,59 @@
             this.materialTextBoxEdit_Monto.TrailingIcon = null;
             this.materialTextBoxEdit_Monto.UseSystemPasswordChar = false;
             // 
-            // materialButton_CargarMovimiento
+            // materialTextBoxEdit_Motivo
             // 
-            this.materialButton_CargarMovimiento.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton_CargarMovimiento.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton_CargarMovimiento.Depth = 0;
-            this.materialButton_CargarMovimiento.HighEmphasis = true;
-            this.materialButton_CargarMovimiento.Icon = ((System.Drawing.Image)(resources.GetObject("materialButton_CargarMovimiento.Icon")));
-            this.materialButton_CargarMovimiento.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton_CargarMovimiento.Location = new System.Drawing.Point(219, 260);
-            this.materialButton_CargarMovimiento.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton_CargarMovimiento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialButton_CargarMovimiento.Name = "materialButton_CargarMovimiento";
-            this.materialButton_CargarMovimiento.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton_CargarMovimiento.Size = new System.Drawing.Size(202, 36);
-            this.materialButton_CargarMovimiento.TabIndex = 6;
-            this.materialButton_CargarMovimiento.Text = "Cargar Movimiento";
-            this.materialButton_CargarMovimiento.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton_CargarMovimiento.UseAccentColor = false;
-            this.materialButton_CargarMovimiento.UseVisualStyleBackColor = true;
+            this.materialTextBoxEdit_Motivo.AnimateReadOnly = false;
+            this.materialTextBoxEdit_Motivo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.materialTextBoxEdit_Motivo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.materialTextBoxEdit_Motivo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialTextBoxEdit_Motivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialTextBoxEdit_Motivo.Depth = 0;
+            this.materialTextBoxEdit_Motivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBoxEdit_Motivo.HideSelection = true;
+            this.materialTextBoxEdit_Motivo.Hint = "Ingrese motivo/razon";
+            this.materialTextBoxEdit_Motivo.LeadingIcon = null;
+            this.materialTextBoxEdit_Motivo.Location = new System.Drawing.Point(12, 203);
+            this.materialTextBoxEdit_Motivo.MaxLength = 32767;
+            this.materialTextBoxEdit_Motivo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.materialTextBoxEdit_Motivo.Name = "materialTextBoxEdit_Motivo";
+            this.materialTextBoxEdit_Motivo.PasswordChar = '\0';
+            this.materialTextBoxEdit_Motivo.PrefixSuffixText = null;
+            this.materialTextBoxEdit_Motivo.ReadOnly = false;
+            this.materialTextBoxEdit_Motivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.materialTextBoxEdit_Motivo.SelectedText = "";
+            this.materialTextBoxEdit_Motivo.SelectionLength = 0;
+            this.materialTextBoxEdit_Motivo.SelectionStart = 0;
+            this.materialTextBoxEdit_Motivo.ShortcutsEnabled = true;
+            this.materialTextBoxEdit_Motivo.Size = new System.Drawing.Size(623, 48);
+            this.materialTextBoxEdit_Motivo.TabIndex = 2;
+            this.materialTextBoxEdit_Motivo.TabStop = false;
+            this.materialTextBoxEdit_Motivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialTextBoxEdit_Motivo.TrailingIcon = null;
+            this.materialTextBoxEdit_Motivo.UseSystemPasswordChar = false;
             // 
-            // parrotGradientPanel1
+            // materialComboBox_Movimiento
             // 
-            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.Black;
-            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.Fuchsia;
-            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel1.Location = new System.Drawing.Point(0, 326);
-            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
-            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
-            this.parrotGradientPanel1.Size = new System.Drawing.Size(647, 10);
-            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
-            this.parrotGradientPanel1.TabIndex = 7;
-            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.White;
-            this.parrotGradientPanel1.TopRight = System.Drawing.Color.Silver;
+            this.materialComboBox_Movimiento.AutoResize = false;
+            this.materialComboBox_Movimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBox_Movimiento.Depth = 0;
+            this.materialComboBox_Movimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBox_Movimiento.DropDownHeight = 174;
+            this.materialComboBox_Movimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBox_Movimiento.DropDownWidth = 121;
+            this.materialComboBox_Movimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBox_Movimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBox_Movimiento.FormattingEnabled = true;
+            this.materialComboBox_Movimiento.Hint = "Seleccionar Movimiento";
+            this.materialComboBox_Movimiento.IntegralHeight = false;
+            this.materialComboBox_Movimiento.ItemHeight = 43;
+            this.materialComboBox_Movimiento.Location = new System.Drawing.Point(12, 39);
+            this.materialComboBox_Movimiento.MaxDropDownItems = 4;
+            this.materialComboBox_Movimiento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.materialComboBox_Movimiento.Name = "materialComboBox_Movimiento";
+            this.materialComboBox_Movimiento.Size = new System.Drawing.Size(623, 49);
+            this.materialComboBox_Movimiento.StartIndex = 0;
+            this.materialComboBox_Movimiento.TabIndex = 0;
             // 
             // Movimiento
             // 
@@ -250,6 +256,7 @@
             this.ClientSize = new System.Drawing.Size(647, 336);
             this.Controls.Add(this.airForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(112, 35);
             this.Name = "Movimiento";
             this.Text = "Movimiento";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
