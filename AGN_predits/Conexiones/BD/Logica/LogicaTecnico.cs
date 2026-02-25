@@ -1,19 +1,21 @@
-﻿using System;
+﻿using AGN_predits.Conexiones.BD.Modelo;
+using Lam7ara.Conexiones.BD;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AGN_predits.Conexiones.BD.Modelo;
-using MySql.Data.MySqlClient;
-using System.Configuration;
+using System.Data.SQLite;
+
+
 
 namespace AGN_predits.Conexiones.BD.Logica
 {
 
     internal class LogicaTecnico
     {
-
-        private static string cadena = ConfigurationManager.ConnectionStrings["cadena"].ConnectionString;
 
         private static LogicaTecnico _LogicaTecnico;
 
@@ -34,14 +36,14 @@ namespace AGN_predits.Conexiones.BD.Logica
         {
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadena))
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
                 {
-                    await conexion.OpenAsync();
+                    
 
                     string query = "INSERT INTO Tecnico (Modelo, Marca, Bateria, Falla, Email, Almacenamiento, CostoArreglo, Costo) " +
                                    "VALUES (@Modelo, @Marca, @Bateria, @Falla, @Email, @Almacenamiento, @CostoArreglo, @Costo)";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
                     {
                         cmd.Parameters.AddWithValue("@Modelo", tecnico.Modelo);
                         cmd.Parameters.AddWithValue("@Marca", tecnico.Marca);
@@ -71,13 +73,13 @@ namespace AGN_predits.Conexiones.BD.Logica
 
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadena))
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
                 {
-                    await conexion.OpenAsync();
+                    
 
                     string query = "SELECT * FROM Tecnico";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
                     {
                         using (var reader = await cmd.ExecuteReaderAsync())
                         {
@@ -115,13 +117,13 @@ namespace AGN_predits.Conexiones.BD.Logica
         {
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadena))
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
                 {
-                    await conexion.OpenAsync();
+                    
 
                     string query = "DELETE FROM Tecnico WHERE TecnicoID = @TecnicoID";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
                     {
                         cmd.Parameters.AddWithValue("@TecnicoID", id);
                         int filasAfectadas = await cmd.ExecuteNonQueryAsync();
@@ -141,16 +143,16 @@ namespace AGN_predits.Conexiones.BD.Logica
         {
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadena))
+                using (SQLiteConnection conexion = Conectar.ObtenerConexion())
                 {
-                    await conexion.OpenAsync();
+                    
 
                     string query = "UPDATE Tecnico SET Modelo = @Modelo, Marca = @Marca, Bateria = @Bateria, " +
                                     "Falla = @Falla, Email = @Email, Almacenamiento = @Almacenamiento, " +
                                     "CostoArreglo = @CostoArreglo, Costo = @Costo " +
                                     "WHERE TecnicoID = @TecnicoID";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
                     {
                         cmd.Parameters.AddWithValue("@Modelo", tecnico.Modelo);
                         cmd.Parameters.AddWithValue("@Marca", tecnico.Marca);

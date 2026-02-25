@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.controlBoxEdit1 = new ReaLTaiizor.Controls.ControlBoxEdit();
             this.SuspendLayout();
             // 
             // parrotGradientPanel1
@@ -50,12 +51,25 @@
             this.parrotGradientPanel1.TopLeft = System.Drawing.Color.White;
             this.parrotGradientPanel1.TopRight = System.Drawing.Color.Silver;
             // 
+            // controlBoxEdit1
+            // 
+            this.controlBoxEdit1.BackColor = System.Drawing.Color.Transparent;
+            this.controlBoxEdit1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.controlBoxEdit1.DefaultLocation = true;
+            this.controlBoxEdit1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.controlBoxEdit1.Location = new System.Drawing.Point(0, 0);
+            this.controlBoxEdit1.Name = "controlBoxEdit1";
+            this.controlBoxEdit1.Size = new System.Drawing.Size(77, 19);
+            this.controlBoxEdit1.TabIndex = 10;
+            this.controlBoxEdit1.Text = "controlBoxEdit1";
+            // 
             // Detalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.controlBoxEdit1);
             this.Controls.Add(this.parrotGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Detalles";
@@ -67,5 +81,6 @@
         #endregion
 
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
+        private ReaLTaiizor.Controls.ControlBoxEdit controlBoxEdit1;
     }
 }

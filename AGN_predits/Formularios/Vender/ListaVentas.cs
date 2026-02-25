@@ -101,7 +101,7 @@ namespace AGN_predits.Formularios.Vender {
 
         }
         private void Imprimir(int rowIndex) {
-            /*
+
             var seleccionarRow = poisonDataGridView_Ventas.Rows[rowIndex];
 
             var IDselected = seleccionarRow.Cells[0].Value;
@@ -109,17 +109,21 @@ namespace AGN_predits.Formularios.Vender {
             Console.Write(IDselected);
 
             DialogResult result = MessageBox.Show("Seguro que desea Imprimir?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes) {
+            if (result == DialogResult.Yes)
+            {
 
-                DetalleVenta datos = new DetalleVenta() {
+                DetalleVenta datos = new DetalleVenta()
+                {
                     DetalleVentaID = IDselected.GetHashCode(),
 
                 };
                 bool respuesta = await LogicaDetalleVenta.Instancia.GenerarPDFDetalleVentaAsync(datos);
 
-            } else if (result == DialogResult.No) {
+            }
+            else if (result == DialogResult.No)
+            {
                 return;
-            }*/
+            }
         }
 
         private async void Borrar(int rowIndex) {

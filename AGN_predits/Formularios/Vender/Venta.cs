@@ -20,7 +20,6 @@ namespace AGN_predits.Formularios {
             InitializeComponent();
             VerificarProgreso();
             Restaurar();
-            CargarCB();
             label_Cargando.Hide();
             pictureBox_Cargando.Image = Image.FromFile("Gif/Dual Ring@1x-1.0s-200px-200px.gif");
             pictureBox_Cargando.SizeMode = PictureBoxSizeMode.Zoom;
@@ -85,7 +84,7 @@ namespace AGN_predits.Formularios {
             int porcentaje = (int)((double)camposCompletos / totalCampos * 100);
             parrotFlatProgressBar_BarraProgresoFormulario.Value = porcentaje;
         }
-        private async void CargarCB() {
+        private  async Task CargarCB() {
             try {
                 //load cliente
                 pictureBox_Cliente.Image = Image.FromFile("Gif/Pulse@1x-1.0s-200px-200px.gif");
@@ -115,12 +114,14 @@ namespace AGN_predits.Formularios {
             pictureBox_Prod.Image = Image.FromFile(Producto);
         }
 
-        private void Venta_Load(object sender, EventArgs e) {
+        private async void Venta_Load(object sender, EventArgs e) {
             Restaurar();
-  
+            await CargarCB();
+
+
         }
 
-       
+
         private void materialComboBox_SeleccionCliente_SelectedIndexChanged(object sender, EventArgs e) {
 
             VerificarProgreso();

@@ -47,11 +47,11 @@ namespace AGN_predits {
 
             // Si hay un botón anterior y es diferente al actual, restaurar su color
             if (botonAnterior != null && botonAnterior != botonActual) {
-                botonAnterior.BackgroundColor = Color.FromArgb(28, 143, 243); // Color por defecto
+                botonAnterior.BackgroundColor = Color.FromArgb(30, 64, 175); // Color por defecto
             }
 
             // Cambiar el color del botón actual
-            botonActual.BackgroundColor = Color.FromArgb(8, 123, 223);
+            botonActual.BackgroundColor = Color.FromArgb(35,69, 180);
 
             // Actualizar la referencia al botón actual como el último presionado
             botonAnterior = botonActual;
@@ -135,7 +135,7 @@ namespace AGN_predits {
 
                     foreach (var cotizacion in cotizacionFiltrada) {
 
-                        label_BLUE.Text = cotizacion.Compra.ToString();
+        
 
                     }
                 } catch (HttpRequestException httpex) {
@@ -164,6 +164,11 @@ namespace AGN_predits {
         private void parrotButton_Tecnico_Click(object sender, EventArgs e) {
             AbrirFormNuevo(new ListaTecnico());
             MoverPanel(parrotButton_Tecnico);
+        }
+
+        private void hopeForm1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
