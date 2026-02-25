@@ -49,7 +49,7 @@
             this.Column_Cuotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Detalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Borrar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Columni_Imprimir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column_Imprimir = new System.Windows.Forms.DataGridViewImageColumn();
             this.Ventas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cargando)).BeginInit();
             this.materialCard_ContenedorDataGreed.SuspendLayout();
@@ -102,8 +102,8 @@
             // 
             // materialCard_ContenedorDataGreed
             // 
-            this.materialCard_ContenedorDataGreed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.materialCard_ContenedorDataGreed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard_ContenedorDataGreed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard_ContenedorDataGreed.Controls.Add(this.poisonDataGridView_Ventas);
@@ -121,8 +121,8 @@
             // 
             this.poisonDataGridView_Ventas.AllowUserToAddRows = false;
             this.poisonDataGridView_Ventas.AllowUserToResizeRows = false;
-            this.poisonDataGridView_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.poisonDataGridView_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.poisonDataGridView_Ventas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.poisonDataGridView_Ventas.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -130,7 +130,7 @@
             this.poisonDataGridView_Ventas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arboria Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Gainsboro;
@@ -150,7 +150,7 @@
             this.Column_Cuotas,
             this.Column_Detalles,
             this.Column_Borrar,
-            this.Columni_Imprimir});
+            this.Column_Imprimir});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,13 +253,13 @@
             this.Column_Borrar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column_Borrar.Name = "Column_Borrar";
             // 
-            // Columni_Imprimir
+            // Column_Imprimir
             // 
-            this.Columni_Imprimir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Columni_Imprimir.HeaderText = "Imprimir";
-            this.Columni_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("Columni_Imprimir.Image")));
-            this.Columni_Imprimir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Columni_Imprimir.Name = "Columni_Imprimir";
+            this.Column_Imprimir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Imprimir.HeaderText = "Imprimir";
+            this.Column_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("Column_Imprimir.Image")));
+            this.Column_Imprimir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column_Imprimir.Name = "Column_Imprimir";
             // 
             // Lista_Ventas
             // 
@@ -304,6 +304,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Cuotas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Detalles;
         private System.Windows.Forms.DataGridViewImageColumn Column_Borrar;
-        private System.Windows.Forms.DataGridViewImageColumn Columni_Imprimir;
+        private System.Windows.Forms.DataGridViewImageColumn Column_Imprimir;
     }
 }
